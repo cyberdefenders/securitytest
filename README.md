@@ -1,6 +1,7 @@
 ---
 description: Getting Started.
 ---
+** Security Plus - new exam format updates coming soon**
 
 # Initial page
 
