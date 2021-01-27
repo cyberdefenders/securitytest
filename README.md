@@ -16,4 +16,7 @@ description: Getting Started.
 
 Sections to review for Security+, and relevant labs.
 
-1. 
+1. Ch1
+2. Ch6
+  ** [Access Control](/notes/ch6/AccessControl.md)
+  ** [Authentication](/notes/ch6/Authentication.md)
