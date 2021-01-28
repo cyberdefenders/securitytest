@@ -18,8 +18,8 @@ Sections to review for Security+, and relevant labs.
 
 1. Ch1
 2. Ch5
-   ** [Network Applications](/notes/ch6/NetworkSecurity.md)
-   ** [Router Security](/notes/ch6/RouterSecurity.md)
+   ** [Network Applications](/notes/ch5/NetworkSecurity.md)
+   ** [Router Security](/notes/ch5/RouterSecurity.md)
 3. Ch6
    ** [Access Control](/notes/ch6/AccessControl.md)
    ** [Authentication](/notes/ch6/Authentication.md)
