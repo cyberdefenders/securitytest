@@ -1,0 +1,301 @@
+Active directory: Windows platform-based distributed database(s), stores info in central database and allow users to give a single user account (domain user account) for the network. Controls access to settings resources and services even across domains.
+
+Everything is an object: A user, a group policy, or resources/hardware.
+
+Domain: logical group of rigs that share the same AD and namespace. Can be linked to each other via trust relationships.  Ideally one company should be under one domain, but this may be not be done for structural and security reasons.
+
+Domain controller: a rig that runs AD services, host a copy of the AD database, replicating all changes made in its local copy to other DC's/synchronizes globally. A user authenticated to the DC has measured access to services and resources.
+
+Protocols and technologies:
+
+NTDS.DIT contains AD directory, use x.500 standard.
+
+Hierarchical based distributed across servers.
+
+Hierarchy:
+
+Group policy oversees Organizational Units, folder-like organizations of group users, computers, and other AD objects. Child domains can link to this domain and share resources.
+
+To access the NTDS.DIT database, we use LDAP as protocol, which accepts IT-based networking.
+
+[powershell]
+
+LDAP syntax: [CN])CANONICAL /CONTAINER NAME(file name in directory) , OU[folder], DC(domain name), DC
+
+Ex, CN= john, OU = users, DC = [URL], DC = [COM] 
+
+Forest and Trees
+
+Domains that share same root name space are in a TREE. AD can manage trust between each domain.
+
+Ex. Potato.com is the root of it.potato.com and secure.potato.com, etc. Each of these domains have their own users, computers, and hence their own AD database.
+
+Adding a domain with a different name is a different Tree.
+
+You only need one tree for a forest, i.e a collection of tree(s)
+
+All domains in a forest share a schema, the AD Database, what can be stored, in what structure. --I.E SHARED DESIGN for the forest. A schema change changes all Domains in a forest. Auto trust relationship, and share resources/data accordingly.
+
+To find items in a forest, an index is needed, i.e Global catalogue Server( 1 per domain).
+
+A forest adding a forest can be done by manually adding trusts, i.e. merging companies, each have their own schemas. Can also be done for a testing environment.
+
+Global catalogue server:
+
+To access resources in the same forest, windows will automatically use your credentials to check against permissions,
+
+Workgroup: No server required, user accounts required on every machine
+
+Example: Login from a remote device.
+
+Can be Peer to peer, think computers hooked onto a hub.
+
+Challenges: difficulty in management (resource accessibility)
+
+Domain: Server (Domain controller) requires, users stored in active directory.
+
+Next step up from workgroup/p2p is the client server network (for size issues)
+
+Many computers hooked onto a switch, which have directory and file servers.
+
+Active directory contains users, groups, computers, managed by policies.
+
+Domain name: website like, could be [[hq]].org, for example.
+
+To start an active directory, go to server manager.
+
+First, make a domain à add roles wizard (A domain is essentially a server)
+
+Enable file and storage services, and active directory domain services.(stores objects and make them available to users and administrators), rest will self populate.
+
+In a company, there **MUST** be a DNS server to go with the AD. Modern setup is to do this with more than one domain controller, giving you a dhcp, dns and AD as well on one computer.
+
+Promote the server you set up to domain controller.
+
+Add a new forest, and set a root domain name
+
+NetBIOS: specifiy a helpdesk role, (overrides, installations) ex. Jss9/helpdesk
+
+To spot a dc:
+
+Is the name xyz/administrator?
+
+Define rights.
+
+Tools à aD users and computers
+
+You have several folders, those with dots are ORGANIZATIONAL UNITS.
+
+Those without dots are CONTAINERS, which automatically come with AD.
+
+**Built-in Containers cannot have group policies applied to them.**
+
+Example of containers: users folder
+
+Containers vs organizational units
+
+Default container units do not have sites, domains and OUs
+
+Cannot be deleted/duplicated
+
+Cannot associate gpoS
+
+-computer, users, builtin/foreign security principals(trust)
+
+-holds stuff
+
+Created container units, aka OUs
+
+-used to link GPOs, when linked, it enforces policies on these objects
+
+Site: grouping of objects vased on Ips in One physical area.
+
+Domain: Enables centralizaed management, can link GPOs
+
+Organizational unit: i.e groups like addounting and support.
+
+-contains objects
+
+Put an account into users, then assign roles
+
+Must make sure that in new accounts, that passwords must be reset on first login.
+
+People start as domain users, and are NOT domain admins by default.
+
+Stick them in the admin group
+
+Connect DNS to domain controller
+
+Use ipconfig /all to find your dc ip
+
+Also can use nslookup pc name
+
+(lab setting, other computers)
+
+Open network, ethernet, change adapter option, go to ipv4 properities and foce use your DNS server( DC controller IP)
+
+(usually pre-set for you)
+
+Joining a domain:
+
+This pc -> properties -> change computer/domain name à enter domain name
+
+In the futrue, login using you logon name as specified in AD.
+
+Set folder sharing:
+
+Properties of folderm enable advanced sharing.
+
+Set max simultaenous users, permissions and caching.
+
+Permissions à add, enter object name
+
+In the case of domain users on DC, this enables your people to share
+
+Group policy management:
+
+- Right click on default domain policies. Opening group policies management editor
+
+- Ex: change password management, security policy, password settings.
+
+Types of objects:
+
+User accounts, good for authenticatio and acces control. Put these in groups
+
+Group accounts, think sub-groups such as accounting /Mon-Thurs, great for further defining access.
+
+Computers
+
+Shared folders
+
+active directory users and computers
+
+-create and delete OU's here
+
+-advanced features enable override of deletion protction.
+
+-manage, enable, dissable accounts. Set logon times and restrict to computers.
+
+-create groups here
+
+Group policies
+
+Global security settings, and UAC(user access control)
+
+-UAC defined in DEFAULT DOMAIN POLICY à POLICIES à WINDOWS SETTINGS à SECURITY SETTINGS à LOCAL POLICIES à SECURITY OPTIONS.
+
+AD group policy management is your go to for any GPO issues
+
+GPO: even a collection of group policies is an object.
+
+-registery, scripts, templates, softwares, config, etc
+
+This can even be done locally ie. On a single rigm not connected to a domain.
+
+Access by right clicking default domain policy
+
+Window security policy: good for passwords.
+
+Computer configuration vs user configuration:
+
+Computer is "set to hardware":
+
+- Software, scripts to run, password, netsec restrictions
+
+- Enforced before login.
+
+- User rights: who can perform system maintainence such as
+
+o System time change
+
+o Load and unload devie drivers
+
+o Remove computer from dock
+
+o Shut down
+
+User config:
+
+- specific to the person logging on.
+
+- Similar levels of control, but must login before activation.
+
+o Software for specific users
+
+o Scripts
+
+o IE settings
+
+o Registery
+
+Policy types
+
+Account policies: password, lockout, kerberos
+
+Local policies-audit: logging and trail
+
+Local policies-user rights:permitted actions
+
+Local policies- security policies: unsigned drivers, ctrl-alt-del to login
+
+Registery: keys and values
+
+File system: change permissions to files and folders across many rigs
+
+Software restriction: what can be run(single user or global)
+
+Administrative templates: global settings for all users
+
+Group policy with Domain Controller:
+
+Gpedit is the command for a single computer(local policy)
+
+Tools à GPM à right clikc default domain
+
+GPO hieacrhy: ( last applied, highest priority)
+
+1\. local group policy
+
+2\. site gpo
+
+3\. GPO linked to OU holding user/computer object
+
+4\. GPO liinked to OU of a higher level compared to 3).
+
+Conflict resolution:
+
+Defined > undefined
+
+Last applied GPO wins.(object can be under control of more than 1 GPO)
+
+Linking GPOS:
+
+Keep in mind that Group policy management can be expanded to show OUs. Right click OUs to link GPOs.
+
+Templates may be imported by right clicking on a GPO, and finding the relevant section.
+
+**Types of Groups**
+
+*Security* groups are used to control access to resources.\
+Security groups can also be used as email distribution lists.
+
+*Distribution* groups can be used only for email distribution lists, or simple administrative groupings.\
+Distribution groups cannot be used for access control because they are not "security enabled."
+
+**Group Scope**
+
+*Universal groups*\
+Provide a simple 'does everything' group suitable mainly for small networks. Typically, organizations using WANs should use Universal groups only for relatively static groups in which memberships change rarely. Changes in membership will impose global catalog replication throughout an entire enterprise.
+
+*Global groups*\
+Provide domain-centric membership, place all user accounts into Global groups. Global groups can be nested within other Global groups, this can be particularly useful when delegating OU administrative functionality.
+
+It can be useful to give each Global group a name that is meaningful to the staff involved, i.e. matching the name of a Team or a Project, particularly if the group is also to be used as an email distribution list.
+
+*Domain Local groups*\
+Used for the direct assignment of access permissions on files, printer queues, and other such resources.
+
+It can be useful to give each Domain Local group a name that is meaningful to the IT Operations team e.g. if a group assigns rights to a shared folder on a specific server then the group name might include a prefix or suffix indicating the server name.
+
+*Local groups*\
+Stored on the local SAM (Local Computer) use for security settings. Offline okay.
