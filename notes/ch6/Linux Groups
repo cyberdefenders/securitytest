@@ -1,0 +1,24 @@
+**Section 6.8: Managing Linux Groups**
+
+- **Adding a new group**
+  - Standard users can not add groups, user with sudo privileges or root user
+  - Standard rules for new groups are found in /etc/login/defs
+  - Group id begins at 1000 and goes up to 60,000
+  - System ID begin at 201 and goes up to 999
+  - Add new group: groupadd (name of group)
+  - Modify group name: groupmod -n (new name) (old name)
+  - -p defines the password
+  - gpasswrd changes password
+  - gpasswrd -r deletes password
+  - -r recreates a system goup
+  - Newgrp changes group id during login session
+- **Add user to group**
+  - Modify user instead of group and add user to the group
+  - –g used to modify primary group of a user
+  - -G is used to modify a supplementary group
+  - Each user has one and ONLY one primary group
+  - If used alone, --G will remove all the supplementary groups with the new one added. Use –G -a to add a user to a group instead of replacing them
+  - Example: usermod –G (name of group) -a (name of user)
+- **Remove group**
+  - groupdel (name of group)
+  - Must remove the user from the group before deleting the users primary group
