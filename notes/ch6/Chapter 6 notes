@@ -1,0 +1,2265 @@
+6.1 Access Control Models
+
+|
+
+Term
+
+ |
+
+Definition
+
+ |
+|
+
+Access control
+
+ |
+
+Permit or deny the privileges that a user has when accessing resources on a network or computer
+
+- *Objects* are data, applications, systems, networks, and physical space.
+
+- *Subjects* are users, applications, or processes that need access to objects.
+
+- *access control system* includes policies, procedures, and technologies that are implemented to control subjects' access to objects.
+
+Access control includes the following processes:
+
+-   *Identification* specifies the name used to identify the subject. Examples include a user name or a user ID number.
+-   *Authentication* is the process of validating a subject's identity. It includes the identification process, the user providing input to prove identity, and the system accepting that input as valid.
+-   *Authorization* is granting or denying an authenticated subject's access to an object based on the subject's level of permissions or the actions allowed with the object.
+-   *Auditing*, also referred to as *accounting*, is maintaining a record of a subject's activity within the information system.
+
+ |
+|
+
+Access control policy
+
+ |
+
+An access control policy defines the steps and measures that are taken to control access to objects.
+
+-   *Preventive* access controls deter intrusion or attacks. These include separation of duties and dual-custody processes.
+-   *Detective* access controls search for details about the attack or the attacker. These include intrusion detection systems.
+-   *Corrective* access controls implement short-term repairs to restore basic functionality following an attack.
+-   *Deterrent* access controls discourage attack escalation.
+-   *Recovery* access controls restore the system to normal operations after the attack and the short-term stabilization period.
+-   *Compensative* access controls are alternatives to primary access controls.
+
+ |
+|
+
+Access control system
+
+ |
+
+An access control system includes policies, procedures, and technologies that are implemented to control access to objects.
+
+Within the directory service:
+
+-   A user account is created for each subject.
+-   Identification is performed during logon when the user supplies a valid user account name.
+-   Authentication is performed during logon when the user password or other credentials are verified.
+-   Authorization to use network resources, such as files, printers, or computers, is controlled by permissions or rights.
+-   Auditing is performed by the operating system as it tracks subjects' actions toward objects.
+
+ |
+|
+
+Access control measures
+
+ |
+
+Access control measures can also be classified based on how they restrict or control access:
+
+-   *Administrative* controls are policies that describe accepted practices. Examples include directive policies and employee awareness training.
+-   *Technical* controls are computer mechanisms that restrict access. Examples include encryption, one-time passwords, access control lists, and firewall rules.
+-   *Physical* controls restrict physical access. Examples include perimeter security, site location, networking cables, and employee segregation.
+
+ |
+|
+
+Access Control Models
+
+ |
+
+**Discretionary Access Control**, or DAC.
+
+- Least restrictive
+
+- Individual resources have owners which decide who has access using **DACLs**/groups. Example: NTFS within a Windows system.
+
+-   Objects have DACL entries for each subject.
+-   Owners add subjects to the DACL, assign rights or permissions.
+-   Subjects can pass permissions on to other subjects.
+
+**Dynamic Access Control**(DYAC) enhances NTFS permissions, controlling access to files and folders by adding tags and policies.
+
+**Mandatory access control, or MAC**
+
+- Static system with classification labels and levels. Every computer, every file, and every object is assigned a label, indicating importance.
+
+- MAC compares the object labels with the user's access level to grant or deny access to a given resource.
+
+- Example: Confidential, Secret, and Top Secret vs. 3 user access levels.
+
+- Users with access level 1 can see anything labeled Confidential only. Level 2 can see anything labeled Confidential or Secret, but not Top Secret.
+
+- Users with access level 3 can see anything.
+
+- permissions can't be altered for specific instances
+
+- Policy rather than ID based. Owners may only assign labels.
+
+- **Need-to-Know**
+
+**Role-based access control(user)**
+
+- Hybrid between MAC and DAC, and the most commonly used.
+
+- role within the organization determines whether or not you're able to access certain kinds of data.
+
+- Example: CFO can see Financial records, and reception can only see calendars.
+
+- Group-based access control uses a collection of users; **RBAC uses a collection of permissions.**
+
+**Rule-based access control(router/traffic)**
+
+- Used with routers through router ACLs.
+
+- Decide which IPs are allowed through the router using rules.
+
+- Nothing to do with user account, group membership or classification labels. (ID neutral)
+
+- Access control entries identify characteristics to match.
+
+- If all characteristics match, access allowed or denied based on rule.
+
+- Example of a rule-based access control: allows or denies traffic based on characteristics within the packet
+
+- Count as a form of mandatory access control.
+
+**Attribute-Based Access Control, or ABAC(AWS)**
+
+- More flexible, **combines object attributes to determine access with user's role, position, or even project association.**
+
+- If-then-else format. If the user has the required attribute, they're granted access. If the user doesn't have the required attribute, they're denied access.
+
+- Example: Role, Department, Project labels
+
+- Check: if role = manager, if department = development, if on Boring App.project? Any fail = denial.
+
+- uses special markup language, eXtensible Access Control Markup Language (**XACML**) to define access control policies
+
+**Conditional Access**
+
+- Enforce access control while also encouraging users to be productive
+
+- Not intended as the first point of security, but after granting first-factor authentication, can be configured to consider many different factors.
+
+- Administrators can:
+
+- **maintain specific control at the user or group level**,
+
+- **permit or deny access based on an IP address or an IP range**,
+
+- **Permit, restrict, or deny access to users that use specific applications or devices/device states.**
+
+ |
+|
+
+Authentication
+
+ |
+
+Process of validating identity.
+
+Identification process:
+
+1. user providing input to prove identity, i.e. claiming to be a user with (insert username here).
+
+2. system accepting that input as valid. Verification done via password, toke, biometrics, etc. and compared against database.
+
+ |
+|
+
+Authorization
+
+ |
+
+Granting or denying access to an object based on the level of permissions or the actions allowed with the object.
+
+First step: system administrator configures the rules for each user or group that dictate their access rights---"their permission scope.
+
+Second step: After authentication, a user is either authorized or denied access to a particular resource based on the rules configured.
+
+ |
+|
+
+Auditing/Accounting
+
+ |
+
+Tracks/gathers data on the actions of an authenticated user.
+
+A company might track:
+
+- which files a user accesses,
+
+- how much data a user sends and receives over the network,
+
+- What times the user is active on the system,etc. 
+
+ |
+|
+
+AAA server/example
+
+ |
+
+User-server interaction is required for the AAA process
+
+- User gives username and password to access company wireless network. **The username is their identity, and the password verifies their identity.**
+
+AAA server compares this information to the records stored in its database. Both match = **authentication** completed.
+
+AAA server checks rules to ensure user is **authorized** to access these files.
+
+**Accounting**: User activity, initial connection, the attempt to access this file server, and the opening of this document have all been logged by the server. Even when the user disconnects, this action will be logged by the accounting process.
+
+ |
+|
+
+Objects
+
+ |
+
+Objects are data, applications, systems, networks, and physical space.
+
+ |
+|
+
+Subjects
+
+ |
+
+Subjects are users, applications, or processes that need access to objects.
+
+ |
+|
+
+Principle of least privilege
+
+ |
+
+Easier to give privilege than it is to take away.
+
+Control Methods:
+
+-   *Implicit deny* denies access to users or groups who are not specifically given access to a resource. Weakest form of privilege control.
+-   *Explicit allow* specifically identifies users or groups who have access. Moderate form of access control
+-   *Explicit deny* identifies users or groups who are not allowed access. Strongest form of access control/overrules.
+
+Access recertification: continually reviewing permissions and privileges to make sure the user has the correct level of access.
+
+ |
+|
+
+*Need to know*
+
+ |
+
+Restriction of highly sensitive data unless needed for duty.
+
+-   Discourages casual browsing of sensitive materials.
+-   Even in a top secret setting, only given what they need, aka **mandatory access control (MAC).**
+
+ |
+|
+
+Separation of duties
+
+ |
+
+-   System users should have the lowest level of rights and privileges necessary for work and should have those privileges only for the shortest length of time possible.
+-   To achieve a separation of duties, a business can use the principle of **split knowledge**. no single person has total control of a system's security mechanisms/ability to compromise systems.
+-   In cases of sensitive or high-risk transactions, a business can use two-man controls.
+
+Having more than one person required to complete a task.
+
+- reduce conflicts of interest.
+
+- prevents insider attacks because no one person has end-to-end control and no one person is irreplaceable.
+
+ |
+|
+
+Job rotation
+
+ |
+
+Cross trains staff in different functional areas in order to detect fraud.
+
+-   Exchanges positions of two or more employees to allow for oversight of past transactions.
+-   Can be used for training purposes.
+
+ |
+|
+
+Defense-in-depth
+
+ |
+
+- *A*n access control principle which implements multiple access control methods. Multiple defenses make it harder to bypass security measures.
+
+ |
+|
+
+Identification
+
+ |
+
+Act of claiming an identity, such as telling someone your name. Important facts to know about identification include:
+
+-   username is a form of identification.
+-   Because anyone could pretend to be the user, identification by itself is not very secure.
+
+To substantiate identity, the person must provide some form of identity verification.
+
+ |
+|
+
+*Multi-Factor Authentication*
+
+ |
+
+Using more than one way to verify identity. Something you are, such as biometric information (e.g., fingerprint or retina scan).
+
+-   Something you have, such as smart cards, RSA tokens, or security key fobs.
+-   Something you know, such as passwords and PINs.
+-   Somewhere you are, such as a geographical location.
+-   Something you do, such as how you type a sentence on a keyboard.
+
+ |
+|
+
+Transition Best Practices
+
+ |
+
+- **Creeping privileges**: user's current access privileges are not removed or modified with new posting, resulting in privilege escalation.
+
+- User accumulates unnecessary privileges..
+
+On account creation:
+
+- Apply the appropriate access rights based on job role implemented in the access control system.
+
+- Give only the minimum privileges required for duties.
+
+When account is active:
+
+-   Modify access rights as job roles and circumstances change.
+-   Monitor password resets and lockouts to ensure account security.
+-   Re-evaluate access rights on a periodic basis.
+
+When an account is no longer needed, take appropriate actions to:
+
+-   Delete accounts that will no longer be used.
+-   Rename accounts to give new users in the same job role the same access privileges.
+-   Lock accounts that will not be used for extended periods
+-   Remove unnecessary rights from accounts that will be kept on the system.
+-   Archive important data or files owned by the user, or assign ownership to another user.
+-   Prohibit the use of generic user accounts, such as the Guest or Administrator users on Windows systems.
+
+End-of-life procedures prevent sensitive data from being accessible to unauthorized users
+
+- deactivating /deleting unused accounts
+
+- destroying data that might remain on storage media
+
+ |
+|
+
+*Mutual authentication*
+
+ |
+
+- Two communicating entities authenticate each other before exchanging data. It requires not only the server to authenticate the user, but the user to authenticate the server. More secure than one-way.
+
+ |
+|
+
+You are a contract support specialist managing the computers in a small office. You see that all the computers are only using local user accounts.
+
+Which of the following models could this office be using? (Select two.)
+
+ |
+
+The standalone and workgroup models can only use local user accounts for storing usernames and passwords.
+
+Active Directory is used to create client-server networks where domains are used to organize network resources. On these networks, user account information is stored in a centralized database on a network server.
+
+Azure AD is similar to Active Directory, but the domain is hosted on Microsoft servers in the cloud. This is where user account information would also be stored.
+
+ |
+
+6.2 -- Authentication
+
+|
+
+Authentication
+
+ |
+
+Authentication is usually the 2nd step in identification process
+
+It's verification process proving that you are who you say you are
+
+Multi-Factor Authentication
+
+Requires more than one method of identification, using factors and attributes
+
+ |
+|
+
+Factors for Authentication
+
+ |
+
+Something you know
+
+Weakest type of authentication, though most commonly used. Can be passwords, PINs, passphrases, security questions, or other information used along with a username to validate identity
+
+Something you have
+
+Also called token-based authentication, this is based on something physical in your possession. Can be swipe cards, photo IDs, key fobs, security tokens, or smart cards
+
+Something you are
+
+Uses a biometric system to authenticate. Can be eye/retina scan, fingerprint, etc. Most expensive and considered to be most secure form of authentication
+
+ |
+|
+
+#### Attributes for Authentication
+
+ |
+
+- Attributes (unlike factors) do not on their own verify identity
+
+- help improve security and work well when MFA is needed
+
+- Something you can do
+
+perform an action to verify your identity. Can be supplying handwriting sample to be analyzed against a baseline, or typing a sample text to analyze typing behaviors to verify identity
+
+- Something you exhibit
+
+-- Can be a personality trait or a habit, such as the time of day you usually log on, method used to access information, type of tasks usually peformed.
+
+- Somewhere you are/geolocation
+
+- Someone you know
+
+-- Certificates and attestation are examples of this attribute
+
+ |
+|
+
+#### Identity
+
+ |
+
+- Identity is as simple as providing a name/username, but alone identity is not secure
+
+### Key Identity Terms
+
+- **Identity Provider (IdP)** - online service that manages identity info for other organizations, and IdP creates records from the organization's existing data and those records are then used to authenticate
+
+- **Attributes** - can be your role, position, or current project. Often used to determine policy and permission.
+
+- **Certificates** - issued by a certificate authority and verify identity by providing the following:
+
+-- Public keys
+
+-- Details on owner of the certificate
+
+-- Details on issuer of the certificate
+
+- **Tokens** - device or file used to authenticate. Some examples are hardware tokens (key fobs) or soft tokens (stored on devices)
+
+- **SSH Keys** - an access credential that operates like usernames and passwords but mostly used to implement single sign-on (SSO) and other automated processes
+
+ |
+|
+
+#### Types of Authentication Methods
+
+ |
+
+- Directory Services:
+
+Implement SSO for resources on a network. Examples are Active Directory on a Microsoft Network, LDAP Directory Services, or Azure AD which is an identity and access management solution for the cloud. Can be implemented between directory service systems if they are compatible, such as with Windows and Linux
+
+- Federation
+
+A group of domains that have established trust and therefore share authorizations. Can be within one organization with multiple domains or include several trusted organizations to share resources. Everything happens onsite and provides detailed levels of access control
+
+- Attestation
+
+A protocol used to prove that a software can be trusted. Tells remote user that the application/software is legitimate and has been certified.
+
+ |
+|
+
+#### Biometric Authentication
+
+ |
+
+- Biometric authentication is based on a unique physical attribute or characteristic
+
+- For biometric authentication to be a viable security mechanism, it must conform to the following parameters:
+
+-- **Universal** - Does each person have the physical attribute being measured?
+
+-- **Unique** - Is the attribute distinctive enough that it can be used to distinguish between individuals?
+
+-- **Permanent** - How well does the specified attribute hold up to aging?
+
+-- **Collectible** - How easy is it to acquire this measurable attribute?
+
+-- **Circumvention** - Can the attribute be easily circumvented?
+
+-- **Accuracy** - Are the results accurate? (See: false rejection rate FRR, falce acceptance rate FAR, and crossover error rate)
+
+- Biometric information can be collected for fingerprint, retina, iris, facial, voice, vein, or gait analyzation.
+
+### Biometric Authentication Considerations
+
+- Biometrics used alone are no more secure than a strong password
+
+- Biometric attacks aren't necessarily violent attacks (i.e cutting off a finger) but can be a number of methods to fool the biometric reader
+
+- The most important consideration for a biometric device is accuracy
+
+ |
+
+|
+
+Technologies Used for MFA
+
+ |
+
+- Short Message Service (SMS)
+
+Uses SMS messaging to send one-time code or password
+
+- Phone Call
+
+User receives a phone call with the one-time code or password
+
+- Authentication Applications
+
+Third-party tools used by organizations to authenticate their users. Authenticator apps are often used. Similarly used is a one-time password that can be created via HMAC-based one-time password (HOTP) or time-based one-time password (TOPT)
+
+- Push notification
+
+After providing a username, user receives an access request notification via their mobile device
+
+ |
+
+**6.3 Authorization**
+
+|
+
+**Authorization**
+
+ |
+
+process of controlling access to resources such as computers, files, or printers. When managing access to resources, be aware of the following:
+
+Group: An object that identifies a set of users with similar needs.
+
+Group permissions give all members of the group the same permissions.
+
+On Microsoft systems, a user right is a privilege or action that can be taken on a system, such as logging on, shutting down, backing up the system, or modifying the system date and time.
+
+Permissions apply to objects (files, folders, printers, etc.), while user rights apply to the entire system (the computer).
+
+ |
+|
+
+**Access control list (ACL)**
+
+ |
+
+A list that identifies users or groups who have specific security assignments to an object.
+
+ |
+|
+
+**Permission**:
+
+ |
+
+A permission controls the type of access that is allowed or denied for an object.
+
+ |
+|
+
+**DACL**, discretionary access control list
+
+ |
+
+implementation of discretionary access control (DAC). Owners add users or groups to the DACL for an object and identify the permissions allowed for that object.
+
+ |
+|
+
+**SACL**, system access control list
+
+ |
+
+used by Microsoft for auditing in order to identify past actions performed by users on an object.
+
+ |
+|
+
+**Security Principal**:
+
+ |
+
+An object that can be given permissions to an object. Includes: user accounts, computer accounts, and security group accounts.
+
+- Each security principal is given a unique identification number , **Security ID (SID).**
+
+- When a security principal logs on, an access token is generated. The > access token is used for controlling access to resources and > contains the SID for the user or computer, for all groups the user > or computer is a member of, and the user rights granted to the > security principal.
+
+- When the security principal tries to access a resource or take an > action, information in the access token is checked. For example, > when a user tries to access a file, the access token is checked > for the SID of the user and all groups. The SIDs are then compared > to the SIDs in the object's DACL to identify permissions that > apply.
+
+- On a Microsoft system, the access token is only generated during > authentication. Changes made to group memberships or user rights > do not take effect until the user logs on again and a new access > token is created.
+
+ |
+|
+
+**Permissions, Privileges, and Roles**
+
+ |
+
+Permission, Privileges and Roles are usually cumulative, making it possible for one user to receive access to more than one entity.
+
+ |
+|
+
+Permission Types:
+
+ |
+
+**Effective Permissions**: Effective permissions are the combination of inherited permissions and explicit permissions, including multiple groups.
+
+**Deny Permissions**: Deny permissions override Allow permissions. Explicit Permissions override inherited permissions, including Deny permissions.
+
+**Cumulative Permission**: Mitigating issues related to cumulative permissions.
+
+- Identify the users and their access needs (the actions each user > needs to be able to perform).
+
+- Use groups.
+
+- Assign each group (not user) the permissions appropriate to the > group's data access needs. Grant only the permissions that are > necessary.
+
+- Take inheritance into account as you assign permissions. Inheritance > means that permissions granted to a parent container object flow > down to child objects within the container. Set permissions as > high as possible on the parent container and allow each child > container to inherit the permissions.
+
+- Override inheritance on a case-by-case basis when necessary.
+
+ |
+
+6.4: Window User Management
+
+|
+
+**What are the main differences between the workgroup network model and the domain network model?**
+
+ |
+
+Workgroup network model: Based on peer to peer networking. Each host is connected to a local network. None of the host have a specific role. Each system serves as a works station and server at the same time. In the peer to peer network we can share resource attached to other computers in the network. Only those in the peer group. Easy and inexpensive but should not be used with more than 10 computers in the network.
+
+Domain network model: Each host provides a different role. Much more efficient and scalable than workgroups due to a centralized management structure and function. a collection of security principals that share a central authentication database known as Active Directory (AD).
+
+ |
+|
+
+**What are the disadvantages of a large company using a peer-to-peer network model?**
+
+ |
+
+- Lack of scalability
+
+- Lack of centralized configuration control
+
+- Complexity of backing up data
+
+- Lack of centralized authentication. To use resources on another computer, the same user account must be created on both systems.
+
+Lack of centrally applied security settings
+
+ |
+|
+
+**What are the differences between the stand-alone model and client-server model**?
+
+ |
+
+Stand-alone model:
+
+o Functions independently, information cannot transmit directly from one host to another, must use public network like the internet to transmit data
+
+Client server model:
+
+o Shared network. Server provide shared space for all computers in network (file storage, user management, security configuration, printing)
+
+ |
+|
+
+**Windows compatible networking models**
+
+ |
+
+The following networking models can be used with the Windows operating system:
+
+-   Workgroup - computers that are physically connected to a wired or wireless network can be set up as a simple peer-to-peer network, which Microsoft refers to as a workgroup. Computers that are part of a workgroup are both workstations and servers. A workgroup is easy to set up, but it can become very difficult to manage if the number of computers exceeds 10 to 15.
+-   Client-server - in a client-server network, which Microsoft refers to as a domain, computers are joined to a network domain that uses an Active Directory database to contain user accounts and network security policies.
+
+Organizational units are logical containers in Active Directory that are used to hold and organize network resources.
+
+A domain controller is a server that holds a copy of the Active Directory database.
+
+Active Directory is a centralized database that contains user account and security information.
+
+ |
+|
+
+**Active Directory**:
+
+ |
+
+Developed by Microsoft, Active Directory is a centralized database that contains user accounts and security information. It is included in most Windows Server operating systems as a set of processes and services.
+
+ |
+|
+
+**Organizational unit (OU)**
+
+ |
+
+In Active Directory, an organizational unit is a way to organize such things as users, groups, computers, etc. It is also referred to as a container object.
+
+ |
+|
+
+**Domain objects**
+
+ |
+
+All network resources, such as users, groups, computers, and printers are stored as objects in Active Directory.
+
+ |
+|
+
+**Azure Active Directory**
+
+ |
+
+Azure AD is Microsoft's cloud-based identity and access management service. It helps employees sign in and access resources.
+
+ |
+|
+
+**Local user accounts**
+
+ |
+
+**Admins** have complete control of the system.
+
+-Change global settings
+
+-Create/delete users
+
+-Install applications
+
+-Run applications in an elevated state
+
+-Access all files on the system
+
+**Tools for local accounts**
+
+Windows Settings App:
+
+With this tool you can create a local account on a computer not joined to a domain.
+
+Computer Management:
+
+**Standard users** have very limited permissions
+
+-Use applications (but they cannot install them)
+
+-Change some settings that apply only to them
+
+With this tool you are not required to use security questions. This method also gives you the ability to:
+
+- Force users to change the password at the next sign-in
+
+- Restrict the user from changing the password
+
+- Allow the password to never expire
+
+- Disable/enable an account
+
+ |
+|
+
+**Workgroup membership:**
+
+ |
+
+When using workgroups, consider the following:
+
+-   Workgroups provide only sign-in security.
+-   No username or password is required to join a workgroup.
+-   Computers that belong to the same workgroup can share resources only if they are on the same segment.
+-   Workgroups have no centralized authentication. This means that for a user to access a remote system, the same username and password must be created on the remote system. Otherwise, each user would need to know the username and password on the remote system.
+-   If a domain is not used, the computer is a member of the workgroup named Workgroup by default.
+-   Local user accounts only
+
+ |
+|
+
+**Microsoft account sign-in:**
+
+ |
+
+Microsoft accounts use a single sign-on system. You can sign into different systems while maintaining the same user settings and password.
+
+ Microsoft accounts also provide synchronized access to other Microsoft services such as Office 365, Outlook, Skype, OneDrive, Xbox Live, Bing, and Microsoft Store.
+
+ |
+|
+
+**Domain account sign-in:**
+
+ |
+
+Signing into your system, the username and password entered are sent to the domain controller. The domain controller then checks to see if the username and password submitted match the credentials
+
+Domain user account must have already been created in Active Directory and the computer must have been joined to the desired domain.
+
+ |
+|
+
+**Azure Active Directory account sign-in**
+
+ |
+
+Azure AD, users can sign in and access both internal and external resources. Internal resources include such things as the applications on a corporate network. External resources include such things as Microsoft Office 365 and other Software as a Service (SaaS) applications.
+
+As with on-premises Active Directory, to use Azure AD a user account must be created in Azure AD and the local computer must be joined to the Azure AD domain.
+
+ |
+
+**6.5 Active Directory Overview**
+
+|
+
+Active Directory
+
+ |
+
+Centralized database that contains user account and security information. In a workgroup, security and management are decentralized. They take place on each individual computer; each computer holds its own information about users and resources. With Active Directory, all computers share the same central database on a remote computer called a domain controller.
+
+**Advantages**
+
+**Organization** -- Hierarchical databases let you sort and organize your user accounts by location, function and department.
+
+**Replication** -- AD databases can be replicated to other systems. This eliminates the need to manually recreate user accounts on every system to which a user may need to access.
+
+**Delegation** -- Allows you to assign users to manage portions of the Active Directory database without giving all user rights to the entire database.
+
+**Scalability** -- A hierarchical database lets you grow the Active Directory to meet the needs of your environment.
+
+ |
+|
+
+Domain
+
+ |
+
+administratively-defined collection of network resources that share a common directory database and security policies. The domain is the basic administrative unit of an Active Directory structure.
+
+ |
+|
+
+Tree
+
+ |
+
+group of related domains that share the **same contiguous DNS namespace.**
+
+ |
+|
+
+Forest
+
+ |
+
+collection of related domain trees. Establishes the relationship between trees that have different DNS namespace. Highest level of hierarchy
+
+ |
+|
+
+Organizational Unit
+
+ |
+
+Similar to a folder. It subdivides and organizes network resources within a domain.
+
+- Is a container object
+
+- Can hold other organizational units
+
+- Can hold objects such as users and computers
+
+- Can be used to logically organize network resources
+
+- Simplifies security administration
+
+ |
+|
+
+Object
+
+ |
+
+Each resource within an Active Directory is identified as an object.
+
+- Users
+
+- Groups
+
+- Computers
+
+- Shared folders
+
+Each object contains additional information about the shared resource that can be used for locating and securing resources.
+
+Groups are composed of other directory objects that have a common level of access.
+
+The schema identifies the object classes (the type of objects) that exist in the tree and the attributes (properties) of the objects.
+
+In Active Directory, each user is assigned a Security Account Manager (SAM) account name; therefore, each user name must be unique.
+
+ |
+|
+
+Generic Container           
+
+ |
+
+Like OUs, generic containers are used to organize Active Directory objects. Generic container objects:
+
+- Are created by default
+
+- Cannot be moved, renamed, or deleted
+
+- Have very few properties you can edit
+
+- Cannot be linked to GPOs(just like OUs)
+
+ |
+|
+
+Domain Controller
+
+ |
+
+A server that holds a copy of the Active Directory database. The copy of the Active Directory database on a domain controller can be written to.
+
+ |
+|
+
+Replication
+
+ |
+
+The process of copying changes to Active Directory on the domain controllers.
+
+ |
+|
+
+Member services
+
+ |
+
+Servers in the domain that do not have the Active Directory database.
+
+ |
+|
+
+Policy
+
+ |
+
+A set of configuration settings applied to users or computers. .
+
+Group policies allow the administrator to apply multiple settings to multiple objects within the Active Directory domain at one time. A set or collection of Group Policy configurations is called a Group Policy Object (GPO).
+
+**Group Policy Object**, or GPO is a collection of files that includes registry settings, scripts, templates, and software-specific configuration values.
+
+ |
+|
+
+**GPO Structure- computer configuration**
+
+ |
+
+Computer Configuration - Computer policies are enforced for the entire computer and are initially applied when the computer boots. Computer policies are in effect regardless of the user logging into the computer. Computer policies include:
+
+- Software that should be installed on a specific computer
+
+- Scripts that should run at startup or shutdown
+
+- Password restrictions that must be met for all user accounts
+
+- Network communication security settings
+
+- Registry settings that apply to the computer (the HKEY_LOCAL_MACHINE
+
+  subtree)
+
+A policy is a set of configuration settings applied to users or computers
+
+Computer policies also include a special category of policies called user rights. User rights identify system maintenance tasks and the users or groups who can perform these actions. Actions include:
+
+- Changing the system time
+
+- Loading and unloading device drivers
+
+- Removing a computer from a docking station
+
+- Shutting down the system
+
+Computer policies are initially applied as the computer boots and are enforced before any user logs on.
+
+ |
+|
+
+**GPO Structure- User configuration**
+
+ |
+
+User Configuration - User policies are enforced for specific users and are applied when the user logs on. User Policy settings include:
+
+- Software that should be installed for a specific user
+
+- Scripts that should run at logon or logoff
+
+- Internet Explorer user settings (such as favorites and security
+
+  settings)
+
+- Registry settings that apply to the current user (the
+
+  HKEY_CURRENT_USER subtree)
+
+User policies are initially applied as the user logs on and customizes Windows based on his or her preferences.
+
+GPOs apply to objects when they are linked to containers and configured with specific settings.
+
+ |
+|
+
+**More on GPOs**
+
+ |
+
+GPOs can be linked to Active Directory domains or organizational units (OUs).
+
+- Built-in containers (such as the Computers container) and folders
+
+  cannot have GPOs linked to them.
+
+- A GPO applied to an OU affects only the users and computers in that
+
+  OU.
+
+- A GPO applied to a domain affects all users and computers in all OUs
+
+  in that domain.
+
+- A local GPO is stored on a local machine. It can be used to define
+
+  settings even if the computer is not connected to a network.
+
+- A specific setting in a GPO can be:
+
+-- Undefined - this means that the GPO has no value for that
+
+  setting and does not change the current setting.
+
+-- Defined - this means that the GPO identifies a value to enforce.
+
+- GPOs are applied in the following order:
+
+-- The Local Group Policy on the computer.
+
+-- GPOs linked to the site.
+
+-- GPOs linked to the domain that contains the User or Computer
+
+  object.
+
+-- GPOs linked to the organizational unit(s) that contain(s) the
+
+  User or Computer object (from the highest-level OU to the lowest-level OU).
+
+**Use the acronym LSDOU (Local, Site, Domain, and OU) to help you remember the order that GPOs are applied.** The local policy is always applied, but it may be overwritten by a policy from Active Directory**.(last in, first out)**
+
+- Individual settings within all GPOs are combined to form the
+
+  effective Group Policy setting as follows:
+
+-- If a setting is defined in one GPO and undefined in another, the
+
+  defined setting is enforced (regardless of the position of the GPO in the application order).
+
+-- If a setting is configured in two GPOs, the setting in the
+
+  last-applied GPO is used.
+
+ |
+|
+
+Click on the object in the TESTOUTDEMO.com Active Directory domain that is used to manage individual desktop workstation access.
+
+ |
+
+Computer objects are used to manage access for individual computer systems in the domain, including servers, desktops, and notebooks. In this example, the desktop named CORPWS7 is represented by a corresponding computer object in the domain.
+
+A domain (in this case, TESTOUTDEMO.com) is an administratively defined collection of network resources that share a common directory database and security policies.
+
+An organizational unit (OU) subdivides and organizes network resources within a domain. Several OUs are displayed in this scenario, including MarketingManagers, PermMarketing, and TempMarketing.
+
+User objects are used to manage access for individual employees. In this scenario, the employee named Tom Plask is represented by a corresponding user object in the domain.
+
+ |
+|  |
+
+Administrative templates are registry-based settings that can be configured within a GPO to control the computer and the overall user experience. These include:
+
+-   Use Windows features such as BitLocker, Offline Files, and Parental Controls
+-   Customize the Start menu, taskbar, or desktop environment
+-   Control notifications
+-   Restrict access to Control Panel features
+-   Configure Internet Explorer features and options
+
+Use software restriction policies to define the software permitted to run on any computer in the domain. These policies can be applied to specific users or all users.
+
+Security options allow you to apply or disable rights for all users the Group Policy applies to.
+
+Use account policies to control password settings, account lockout settings, and Kerberos settings.
+
+ |
+|  |
+
+Network communication security settings are configured in the Computer Policies section of a GPO.
+
+Built-in containers (such as the Computers container) and folders cannot be linked to a GPO.
+
+ |
+|
+
+The Hide Programs and Features page setting is configured for a specific user as follows:
+
+After logging in, the user is able to see the Programs and Features page. Why does this happen?
+
+ |
+
+The GPO linked to the user's organizational unit is applied last. With this in mind, the setting that disables the policy to hide the Programs and Features page takes precedence.
+
+In this question's scenario, Local Group Policy enables the policy to hide the Programs and Features page.
+
+When the Default Domain Policy GPO is applied, this policy is set to Not configured. It doesn't change anything.
+
+When the GPO linked to the user's organizational unit is applied, the setting for this policy is disabled. This reverses the setting in the Local Group Policy and makes the Programs and Features page visible to the user.
+
+The Local Group Policy is applied first. GPOs linked to the user's domain are applied second and take precedence over settings in the Local Group Policy. GPOs linked to the user's organizational unit are applied last and take precedence over any preceding policy settings.
+
+ |
+|
+
+Group Policy Objects (GPOs) are applied in which of the following orders?
+
+ |
+
+Group Policy Objects (GPOs) are applied in the following order:
+
+- The Local Group Policy on the computer.
+
+- GPOs linked to the site.
+
+- GPOs linked to the domain that contains the User or Computer object.
+
+- GPOs linked to the organizational unit (OU) that contains the User or Computer object (from the highest-level OU to the lowest-level OU).
+
+ |
+|
+
+You manage an Active Directory domain. All users in the domain have a standard set of internet options configured by a GPO linked to the domain, but you want users in the Administrators OU to have a different set of internet options.
+
+ |
+
+Internet options are configured in the User Policies section of a GPO. Linking this policy to the Administrators OU only applies it to users in that OU because GPOs linked to OUs are applied last.
+
+If Local Group Policies are created on the Administrator's computers, the policies are overwritten by the GPO that is linked to the domain, which applies a standard set of internet options to all users in the domain. There is already a GPO user policy linked to the domain.
+
+ |
+
+**6.6 Hardening Authentication**
+
+|
+
+Hardening aspects
+
+ |
+
+User education
+
+Passwords with set durations, enforce complexity, prevent reuse
+
+Self-service password management
+
+apply restrictions to user accounts
+
+-Limit concurrent logins.
+
+-limit logon times.
+
+-account and reset lockout.
+
+Logging and management software
+
+Delete and disable accounts as needed
+
+Auto expiration
+
+Appropriate levels of access:
+
+-Domain controller residents managed by admins
+
+-Local workstation accounts(should not be given admin)
+
+-disable local guest accounts.
+
+-Enable remote access only for necessary users.
+
+-connect through DMZ, to enable traffic monitoring.
+
+-audit remote logins
+
+(login dates and times, addresses, spike in failed logins)
+
+ |
+|
+
+Multifactor authentication
+
+ |
+
+Using more than one method to authenticate users.
+
+Something they know
+
+Something they have
+
+Something they are
+
+Somewhere they are
+
+ |
+|
+
+Smart cards
+
+ |
+
+cards with an embedded memory chip that contains encrypted authentication information, used for authentication.
+
+ |
+|
+
+Microprobing
+
+ |
+
+accessing a smart cards chip surface directly to observe, manipulate, and interfere with the circuit.
+
+ |
+|
+
+Radio frequency identification\
+(RFID)
+
+ |
+
+wireless, non-contact use of radio frequency waves to transfer data.
+
+ |
+|
+
+**Hardening windows workstations**
+
+ |
+
+**User account restrictions.**
+
+Temporary employees need to have their login hours restricted and their accounts set to expire automatically.
+
+Disable accounts for long term absences, reenable as needed.
+
+Restrict users in certain groups to certain workstations.
+
+Minimum password length and max password age, complexity, password history.
+
+Lockout threshold, lockout counter(minutes until retry ok)[note: # 0 = not enabled ]
+
+Lockout duration(how long to lock out after x u
+
+Restrict UACs
+
+ |
+|
+
+**Hardening User accounts**
+
+ |
+
+restricting local accounts to limit local admin rights prevents installation of software and security config changes.
+
+If workstation in domain, use a Domain user to authenticate.
+
+Give only baked-in admin and domain admin access
+
+Use a **GPO** at [[Default Domain Policy]] to mark settings once to be distributed to every workstation at right click edit, [[control panel]], [[default domain settings]], local users and groups.
+
+Remove all users in admin group, but first, add in and exclude the local default admin account, 'BUILTIN\ADMINISTRATORS'
+
+Also add in '%DOMAIN%\Domain Admins', allowing for future domain name changes
+
+**Secure default accounts: [do this is computer management, don't ask why]**
+
+change name of default admin
+
+disable guest account
+
+make passwords expire
+
+delete unused accounts
+
+ |
+|
+
+**Hardening Best practices**
+
+ |
+
+-   For large environments, implement password management system with self-service password reset management system.
+-   Implement account auditing to track incorrect login attempts.\
+-   Scan systems to identify unused user accounts or accounts with blank passwords.
+-   When implementing account lockout and account policies on Microsoft systems:
+
+-   The Local Security Policy controls policies for user accounts that are defined on a local system.
+-   Policy settings in Group Policy are linked to the domain control settings for all user accounts in the domain. Settings defined at other levels in Group Policy do not affect password or account lockout settings.
+
+-   Disable and/or remove unnecessary accounts
+-   Prohibit the use of generic user accounts.
+-   Prohibit the use of shared user accounts.
+
+-   Increase the likelihood of the account being compromised.
+-   Make password management more difficult.
+-   Reduce responsibility for the account.
+-   Destroy audit trails for the account..
+-   Make it difficult to monitor the account for unusual activity.
+
+ |
+|
+
+**Smart Card Authentication Configuration**
+
+ |
+
+Tools à Server Manager à GPO, target OU.
+
+Enable Interactive Log on Requires Smart Card.
+
+Set interactive log on smart card removal behavior to force log off.
+
+Because these are computer policies and not user policies, go to Windows > Security Settings > Local Policies, and then we are going to go to Security Options.
+
+Define Enable Smart Card
+
+DefineForce Logoff.
+
+Group Policy Management Editor, right click -- enforce. Enforce = cannot be overridden by lower OUs
+
+**for administrative users**:
+
+Active Directory Users and Computers.
+
+Within the Admins, make it work for everyone
+
+ |
+|
+
+Smart Card Authentication
+
+ |
+
+-   Use public key infrastructure (PKI) technology to store digital signatures, cryptography keys, and identification codes.
+-   Typically have RAM, ROM, programmable ROM, and a microprocessor integrated within the card itself.
+-   Have their own processor for its own cryptographic functions.
+-   Use a serial interface to connect to the card reader.
+-   Are powered externally by the smart card reader.
+-   Are generally considered to be tamper-proof.
+-   two categories:
+
+-   Contact smart cards: gold-plated contact pad that must physically touch the contact pad on a smart card reader.
+-   Contactless smart cards: Radio Frequency Identification (RFID) technology to communicate with the smart card reader. An antenna is wound around the edge of the card and activated when the card is within proximity of the card reader.
+
+-   tamper-resistant storage for private key and other personally identifying information (PII).
+-   isolate security-related operations from the rest of the system.
+-   allow security credentials to be portable.
+
+-   Microprobing - accessing the chip surface directly to observe, manipulate, and interfere with the circuit.
+-   Software attacks - exploit vulnerabilities in the card's protocols or encryption methods.
+-   Eavesdropping - captures transmission data produced by the card as it is used.
+-   Fault generation - deliberately induces malfunctions in the card.
+
+ |
+|
+
+granular password policies
+
+ |
+
+force different password policy requirements for different users.
+
+Password and account lockout policies are enforced only in GPOs linked to the domain, not to individual OUs.
+
+To use a different set of policies for a specific user, create a Password Settings Object (PSO) for the user and apply it directly to the user account. Higher priority.
+
+You could create a second group only for Matt's account and password policy. However, this policy must have a lower precedence value than the value set for the policy applied to the DirectorsGG group.
+
+ |
+
+6.7.1 Linux User and Group Overview
+
+![Video Previous Segment](file:///C:\Users\Leng\AppData\Local\Temp\msohtmlclip1\01\clip_image001.png)![Video Control Pause](file:///C:\Users\Leng\AppData\Local\Temp\msohtmlclip1\01\clip_image002.png)![Video Next Segment](file:///C:\Users\Leng\AppData\Local\Temp\msohtmlclip1\01\clip_image003.png)![Toggle Full Screen Video](file:///C:\Users\Leng\AppData\Local\Temp\msohtmlclip1\01\clip_image004.png)
+
+|
+
+True multi-user system
+
+ |
+
+Each user account has their own unique, customizable computing environment.
+
+If stored locally, Linux stores the user, group, and password information in three separate files on the local file system in the /etc directory.
+
+ |
+|
+
+passwd
+
+ |
+
+User accounts go here, not passwords.
+
+Fields:
+
+- username
+
+- password: placeholder
+
+- user ID: numerical
+
+- group ID : default -- users - 100
+
+- full name
+
+- home directory
+
+- Shell: default /bin/bash
+
+User vs system user:
+
+- Humans vs Services/Daemons
+
+ |
+|
+
+Shadow
+
+ |
+
+Username
+
+Password Hashes(asterisk if system user)
+
+Last modified
+
+Min days
+
+Max days
+
+Days warning
+
+Days to disable( if pw unchanged, -1 to disable)
+
+expire
+
+use built in software, not text editor to do edits and keep passwd/shadow synchronized.
+
+[[pwck]] compares 2 files.
+
+[[pwconf]] adds info to sync files
+
+ |
+|
+
+/etc
+
+ |
+
+Linux uses groups to assign privileges to users.
+
+Fields:
+
+- Group
+
+- Password(usually x)
+
+- GID
+
+- List
+
+Gshadow: some distros use this for passwords.
+
+ |
+|
+
+Linux user management
+
+ |
+
+[[useradd]] followed by username creates a user while in a root account.
+
+- -D to specify home directory
+
+- -c " " usefor full name
+
+- -g for a single primary group
+
+- -G to add supplementary groups, delimit by commas.
+
+/etc/login.defs configs group and user ID, password parameters, and pw expiration. Both IDs are at 1000 minimum.
+
+Less /etc/default/useradd shows file where default directory will be created.
+
+Bin/bash is shell, and skeleton is etc/skel.
+
+Must add:
+
+-   .bashrc
+-   .bash_logout
+-   .bash_profile
+-   .kshrc
+
+Skel is useful for putting specific folders in new user's home directory.
+
+Mail spool auto created.
+
+- Sudo passwd --S username creates a password(accounts locked by default)
+
+- Sudo usermod --C changes user name
+
+- Sudo userdel [username] deletes account; -r deletes home directory.
+
+-f for force delete.
+
+ |
+|
+
+Passwd as command:
+
+ |
+
+Assign or change a password for a user.
+
+-   **passwd** (without a user name or options) changes the current user's password.
+-   Users can change their own passwords. The root user can execute all other **passwd** commands.
+
+Be aware of the following options:
+
+-   **-S username** displays the status of the user account. LK indicates that the user account is locked, and PS indicates that the user account has a password.
+-   **-l** disables (locks) an account. This command inserts a !! before the password in the /etc/shadow file, effectively disabling the account.
+-   **-u** enables (unlocks) an account.
+-   **-d** removes the password from an account.
+-   **-n** sets the minimum number of days after a password exists before it can be changed.
+-   **-x** sets the number of days before a user must change the password (password expiration time).
+-   **-w** sets the number of days before the password expires that the user is warned.
+-   **-t** sets the number of days following the password expiration that the account will be disabled.
+
+ |
+|
+
+Usermod commands
+
+ |
+
+Used to modify an existing user account; **usermod** uses several of the same switches as **useradd**. Be aware of the following switches:
+
+-   **-c** changes the description for the account.
+-   **-l(lowercase L)** renames a user account.
+-   **-L** locks the user account. This command inserts a ! before the password in the /etc/shadow file, effectively disabling the account.
+-   **-U** unlocks the user account.
+-   **-d for home directory, plus --m for user name**
+
+ |
+|
+
+Linux User security and restrictions
+
+ |
+
+Users can modify soft limits, but only the root user can modify hard limits. Options include:
+
+-   **-c** limits the size of a core dump file. The value is in blocks.
+-   **-f** limits the file size of files created using the shell session. The value is in blocks.
+-   **-n** limits the maximum number of files that can be open.
+-   **-t** limits the amount of CPU time a process can use. This is set in seconds.
+-   **-u** limits the number of concurrent processes a user can run.
+-   **-d** limits the maximum amount of memory a process can use. The value is in kilobytes.
+-   **-H** sets a hard resource limit.
+-   **-S** sets a soft resource limit.
+-   **-a** displays current limits. The default shows soft limits.
+
+ |
+
+6.8 Linux Groups
+
+|
+
+Command
+
+ |
+
+Function
+
+ |
+|
+
+**groupadd**
+
+ |
+
+Creates a new group. The following options override the settings as found in the /etc/login.defs file: SUDO LEVEL ONLY
+
+New group defaults stored in /etc/login.defs( ground ID starts at 1000, and system group starts at 201)
+
+-   - **g** defines the group ID (GID).
+-   - **p** defines the group password.
+-   - **r** creates a system group.
+
+ |
+|
+
+tail /etc/group
+
+ |
+
+Shows end of a file. Default at 10. --n for number of lines -v for verbose, -c for bytes, -q to show fileS without names, -f to update last 10 lines continuously
+
+ |
+|
+
+**groupmod**
+
+ |
+
+Modifies the existing group. Be aware of the following options:
+
+-   **groupname** prompts for a new password.
+-   - **r** removes a group password.
+-   -n for name change
+-   -p brand new password
+
+ |
+|
+
+**groupdel**
+
+ |
+
+Modifies the system account files by deleting all entries that refer to the specified group. The named group must exist.
+
+You cannot remove the primary group of any existing user. You must remove the user before you remove the group.
+
+ |
+|
+
+**gpasswd**
+
+ |
+
+Changes a group password.
+
+-   **groupname** prompts for a new password.
+-   - **r** removes a group password.
+-   -d removes user + group name
+-   -a to add
+-   -r removes group password
+-   -R restricts group
+-   -A admin
+-   -M member
+
+ |
+|
+
+**newgrp**
+
+ |
+
+change the current group ID during a login session. If the optional - flag is given, the user's environment will be reinitialized as though the user had logged in.
+
+used when working in a directory in which all the files must have the same group ownership.
+
+ |
+|
+
+**usermod**
+
+ |
+
+Modifies group membership for the user account. Be aware of the following options:
+
+-   - **g** assigns a user to a primary group.
+-   - **G** assigns a user to a secondary group (or groups). Follow the command with a comma-separated list of groups. Also good from removal( adding to one group removes membership in all other groups)
+-   - **aG** assigns a user to a secondary group (or groups) by appending the group to any groups the user already belongs to. Follow the command with a comma-separated list of groups.
+-   - **G ""** removes the user from all secondary group memberships. Do not include a space between the quotes.
+
+ |
+|
+
+**groups**
+
+ |
+
+Displays the primary and secondary group membership for the specified user account.
+
+ |
+
+6.9 Remote Access
+
+|
+
+Term
+
+ |
+
+Definition
+
+ |
+|
+
+Remote access policies
+
+ |
+
+Restricts access by ID'ing authorized users, conditions, permissions, and connection parameters such as time of day, authentication protocol, caller id, connection type.
+
+Steps:
+
+1. Establish physical connection
+
+2. Establish Data Link connection through authentication.
+
+Can be configured to work with a separate user database, i.e. active directory.
+
+Might require multiple remote access servers, which need to also share settings.
+
+Shared content for remote users placed directly on the remote access server.
+
+Access restricted to specific devices.
+
+**Used for AUTHORIZATION**
+
+Allows a host to connect to a server, or private network, and access resources as if the host was connected locally.
+
+Used to connect to the office from home or while traveling.
+
+ |
+|
+
+Remote Access protocols
+
+ |
+
+- Public Switch Telephone Network (PSTN): slow and outdated
+
+- PPP/PPPoE
+
+- PAP
+
+Simple Network Management Protocol Version 3(SNMPv3)
+
+- used to monitor and manage devices on a network.
+
+- provides authentication and encryption.
+
+- Hypertext Transport Protocol Secure (HTTPS)
+
+1. HTTP over Secure Socket Layer (SSL)
+
+2. Sesson-based encryption technology,
+
+- (keys used for that session are valid for that session only)
+
+3. operates over TCP port 443.
+
+ |
+|
+
+Point-to-Point Protocol (PPP)/Point-to-Point Protocol over Ethernet (PPPoE)
+
+ |
+
+Used to ID upper layer protocols, encryption or compression for communication. Client device assigned an IP.
+
+PPP is less common because it typically uses dial-up connections.
+
+PPPoE normally requires a static IP from the ISP and sometimes a username and a password to authenticate with the ISP.
+
+ |
+|
+
+Password Authentication Protocol (PAP)
+
+ |
+
+uses PAP to verify users.
+
+simple two-way handshake in which hostname and password are sent to the desired server, and the server either accepts or rejects access.
+
+-plaintext and insecure
+
+ |
+|
+
+Challenge Handshake Authentication Protocol (CHAP)
+
+ |
+
+uses a three-way handshake where unique challenge phrases are exchanged for authentication
+
+-repeatedly and randomly re-testing the validated system.
+
+-More secure than PAP: MS-CHAP encrypts
+
+-MS-CHAP also has mutual authentication, stops MITM and server impersonation.
+
+ |
+|
+
+Extensible Authentication Protocol (EAP)
+
+ |
+
+More secure than CHAP
+
+allows the client and the server to negotiate the type of authentication, including MFA, passwords, certs and smartcards.
+
+ |
+|
+
+AAA server
+
+ |
+
+Authentication, Authorization and Accounting servers handle user request for access to computer resources.
+
+Types: RADIUS and TACACS+
+
+Uses Remote Access Policies to ID users and parameters.
+
+AAA: receives Authentication requests from Remote access server and issues approval/denial. Policies are defined once on the AAA server instead of on each individual remote access server.
+
+VS Small implementation: both user accounts and policies on remote access server, must be defined once at each remote access server.
+
+ |
+|
+
+RADIUS
+
+ |
+
+UDP only, port 1812, 1813.
+
+authentication and authorization are combined into a single device,
+
+optional separate accounting or all in one.
+
+Predominantly Microsoft, not cross compatible.
+
+Supports PPP, CHAP, and PAP.
+
+Uses a challenge-response method for authentication. MD5 Hashed passwords and secret phrase.
+
+Vulnerable to buffer overflow.
+
+ |
+|
+
+Setting up RADIUS
+
+ |
+
+- Network Policy Server Manuscript console contain RADIUS clients (which talks to RADIUS) and remote RADIUS servers.
+
+- No setup is needed if RADIUS is installed on the same server as Remote Access
+
+- Routing and Remote Access as a RADIUS client needed otherwise.
+
+- Network Policy and Access Server(NPS) role, once installed, is required to configure authentication and accounting providers.
+
+- User may change authentication only.
+
+- A device which needs to talk to the NPS must be defined as clients. A template may also be used.
+
+- Connection to device is encrypted via a shared secret string between RADIUS Client and NPS. Remember to define and point RADIUS for your device.
+
+- MS-CHAP V2, MS-CHAP or CHAP used for authentication certs.
+
+ |
+|
+
+TACACS+
+
+ |
+
+TACACS and the updated version, TACACS+:
+
+-   Separate authentication, authorization, and accounting into different services.
+-   Allow the services to be on the same server or split between different servers.
+-   Use Transmission Control Protocol (TCP) instead of UDP.(49)
+-   Full session encryption
+-   Predominantly Cisco
+
+TACACS+:
+
+-   Provides three protocols, one each for authentication, authorization, and accounting. This allows each service to be provided by a different server.
+-   Uses TCP port 49.
+-   Encrypts the entire packet contents, not just authentication packets. The client-server dialogs are also encrypted.
+-   Supports more protocol suites than RADIUS.
+-   Requires remote access servers to become TACACS+ clients to the backend TACACS+ server, similar to a RADIUS solution.
+
+TACACS: BBN Technologies
+
+TACACS+: Cisco Systems, supported by many vendors, such as BlueCat Networks, IBM, Netgear.
+
+ XTACACS: older and less secure.
+
+ |
+
+6.10 Network Authentication
+
+|
+
+Term
+
+ |
+
+Definition
+
+ |
+|
+
+Authentication Protocol
+
+ |
+
+Method used to exchange user credentials that prove user identity.
+
+Authenticator vs Authenticated.
+
+Network authentication components:
+
+- Challenge Response Authentication:
+
+Server sends Challenge, Client takes Challenge, and encrypts using shared key/password. Good Response -- OK.
+
+Mutual authentication is possible.
+
+- Symmetric-Key Cryptography.
+
+Single Key used to Encrypt and Decrypt.
+
+Mutual known password hashed to create a secret key(shared secret)
+
+Authentication established by encrypting info with secret key and transmitting to other party.
+
+ |
+|
+
+Certificate
+
+ |
+
+-   Digital document that identifies a user or a computer. Includes a subject name, which is the name of a user or a computer.
+-   Obtained from a public key infrastructure (PKI).
+-   **PKI: collection of hardware, software, policies, and organizations that create, issue, and manage digital certificates. Made up of certificate authorities (CA)**
+-   **Certificate Authorities:**
+
+-   **Accepts certificate requests**
+-   **Verifies the information provided by the requester**
+-   **Creates and issues the certificate to the requester**
+-   **Revokes certificates, which invalidates them**
+-   **Publishes a list of revoked certificates known as the certificate revocation list (CRL)**
+
+-   DigiCert or your own PKI and CAs may issue certificates to users and computers in your organization.( Must teach computers to trust your own certs)
+-   Computers accept any certificate issued by a trusted CA as valid.
+-   **Digital signature: digital document altered so that it could have come only from the subject identified by certificate.**
+-   PKI-given certificates are signed by issuing CA that issued the certificate, digital signature included.
+-   Computer verifies signature to authenticate.
+
+ |
+|
+
+Kerberos
+
+ |
+
+MIT made, prove ID in insecure netowrks.
+
+Default protocol in AD
+
+SSO, Mutual Auth, Symmetric and Asymmetric
+
+Process is fully encrypted
+
+**Authentications and Authorization**
+
+Ticket-Based ID Mechanism:
+
+***1. ******Authentication server accepts and processes authentication requests. Gives TGT(Ticket Granting Ticket) for a Ticket Granting Server, as well as a TGS session Key.***
+
+***2. ******Client Decrypts TGS with shared secret key, made from Hash of password. TGS and TGT sent out.***
+
+***3. ******Ticket Granting Server: grants tickets that are valid for specific resources on specific servers. Takes TGTS and gives Client 2 Server ticket + FSS key***
+
+4. ***Service Server provides or holds network resources. Takes C2S, FSS key from client and gives service.***
+
+Authentication + Ticket Granting = KDC
+
+ |
+|
+
+Controlling Authentication method on Domain Controllers.
+
+ |
+
+Kerberos account policy settings are set automatically in the Default Domain Policy on installation, affecting all objects in the domain.
+
+Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Kerberos Policy.
+
+**Enforce user logon restrictions**
+
+**Maximum lifetime for a service ticket**
+
+**Maximum lifetime for user ticket**
+
+**The Maximum lifetime for user ticket renewal**
+
+**Maximum tolerance for computer clock synchronization**
+
+Clocks on Windows hosts automatically synchronize themselves to the **PDC emulator**, first domain controller in each domain.
+
+Prevent Replay attacks(captured ticket from the past used to access PI)
+
+Default Domain Controllers Policy
+
+Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options.
+
+**Interactive logon: Don't display last signed-in policy.**
+
+**Number of previous logons to cache**. most useful with laptops that may be authenticating users that are not currently connected to the domain
+
+KDC service.
+
+Tools and scroll down to Services. .
+
+Check for service status.
+
+ |
+|
+
+OAuth
+
+ |
+
+- Open standard for token-based authentication and authorization on the internet.
+
+- Allows access tokens to be issued to third-party clients by an authorization server with the approval of the resource owner.
+
+- The third party uses the access token to access the protected resources hosted by the resource server. (Think showing your facebook profile to candy crush)
+
+- Authorization WITHOUT credential sharing.
+
+- Works with HTTP. Complementary from Open ID.
+
+ |
+|
+
+Extensible Authorization Protocol(EAP)
+
+ |
+
+IDs authentication protocol to use between two devices.
+
+EAP allows the client and server to negotiate the characteristics of authentication. Must share same TYPE of EAP to function.
+
+-   On connection, client and server negotiate type, submit credentials based on the allowed or required authentication types/rules configured on each device.
+-   Smart cards, biometrics, and certificate-based authentication.
+
+Protected Extensible Authentication Protocol (PEAP)
+
+-   Provides authentication for WLAN that supports 801.1x.
+-   Uses a public key over TLS.
+
+**EAP-FAST**, flexible authentication via secure tunneling performs session authentication **in wireless networks and point-to-point connections.**
+
+ |
+|
+
+802.1x
+
+ |
+
+Extension of EAP, used on a LAN
+
+Connection Point + RADIUS
+
+Consists of switch or access point which allow allows authentication traffic connected to RADIUS.
+
+Client connecting to access point sends credentials to be passed through to Authentication Server, validating with database.
+
+Authenticated users may pass into network. Unauth- = radius
+
+User Name/Passwords or Certificates/Smart Card.
+
+(uses EAP to specify credential/protocol types)
+
+ |
+|
+
+OpenID
+
+ |
+
+Open standard and decentralized authentication protocol.
+
+Allows users to be authenticated by co-operating sites using a third-party service and to log in to multiple unrelated websites without separate credentials.
+
+One issued key, many logins.
+
+No central authority for authenticating a user's identity.
+
+Authentication methods range from passwords to smart cards and biometrics.
+
+ |
+|
+
+LDAP
+
+(Lightweight Directory Access Control)
+
+ |
+
+**Ports 389 and 636**
+
+Standardized open protocol for accessing AD, openLDAP, and eDirectory.
+
+Data must be stored using a standard method. Each database entry must be an object with specific attributes.
+
+Supports mutual authentication.
+
+client sends a request with required credentials to Active Directory. When Active Directory receives the request and the credentials, it compares them the information to the database.
+
+Ok = connect
+
+Must  set up LDAP to authenticate credentials against the information stored in directory services.
+
+Bind method sets the authentication state for an LDAP session.
+
+Modes to complete bind request:
+
+- Anonymous
+
+- Simple:(user+pass) Cleartest
+
+- SASL:(Simple Authentication and Security layer) Extensible Mechanism, may use Kerberos.
+
+ |
+|
+
+Windows Credential Management
+
+ |
+
+Credential Manager saves authentication credentials in the vault.
+
+Control Panelà User Accountsà Credential Manager.
+
+Web credentials and  Windows credentials
+
+Web Credentials can be tied to network resources, edited, backed or removed. File is mycreds.crd. Can also store credentials on IE.
+
+-   Saves authentication credentials in the Windows Vault.
+-   Uses saved account credentials when the user accesses a particular network resource.
+-   Stores account credentials from Windows Explorer, Internet Explorer, or the Remote Desktop client.
+-   Allows account credentials to be added to the vault using one of the following methods:
+
+-   The Remember My Credentials link in the Windows Security dialog allows the credentials to be added when accessing the resource.
+-   The Add a Windows credential link allows the credentials to be added without accessing the resource. When using this option, you must enter the internet or network address of the resource.
+
+-   Allows saved credentials to be edited or deleted.
+
+Does not display passwords for saved credentials.
+
+ |
+|
+
+Linux Credential Managers
+
+ |
+
+KWalletManager stores account credentials for network resources, such as file servers and websites.
+
+- Saves the account credentials in a secure "wallet."
+
+-   Stores authentication credentials for network servers andsecure websites.
+-   Uses saved account credentials when the user accesses a particular network resource.
+-   Offers two encryption options, Blowfish and GPG, for protecting credentials stored in the wallet.
+-   Does not display passwords for saved credentials.
+
+Uses KDE Wallet Manager application to add, remove, or modify saved credentials. KDE Wallet Manager can also back up the contents of the wallet by exporting it to an encrypted .kwl file.
+
+ |
