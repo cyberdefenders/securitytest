@@ -1,0 +1,1648 @@
+7.1 Cryptography
+
+|
+
+Term
+
+ |
+
+Definition
+
+ |
+|
+
+Cryptography
+
+ |
+
+The science and study of concealing information.
+
+ |
+|
+
+Cipher/algorithm
+
+ |
+
+The process or formula used to encrypt a message or otherwise hide the message's meaning.
+
+ |
+|
+
+Encryption key
+
+ |
+
+A string of bits randomly generated using a specific cipher. An encryption key is used to encrypt or decrypt data.
+
+ |
+|
+
+Plaintext
+
+ |
+
+The readable form of a message.
+
+ |
+|
+
+Ciphertext
+
+ |
+
+The encrypted form of a message that is readable only by those for whom the message is intended.
+
+ |
+|
+
+Encryption
+
+ |
+
+The process of using an algorithm or cipher to transform data from cleartext to ciphertext in order to protect the confidentiality, Integrity, and authenticity of the message.
+
+ |
+|
+
+Encryption Key
+
+ |
+
+- random strings of bits used to lock and unlock data
+
+- generated using ciphers i.e. AES, 3DS, MD5, SHA-256
+
+- Symmetric encryption uses the same key to encrypt and decrypt data., GOOD FOR BULK, non repudiation
+
+- Asymmetric encryption uses one key to encrypt and then another key to decrypt. GOOD FOR SMOL non repudiation
+
+ |
+|
+
+Symmetric Encryption
+
+ |
+
+- Both party need to have shared the secret key first
+
+- Use same key to encrypt and decrypt messages
+
+- Mass distro difficult, dangerous of key compromised.
+
+- Preferable for large amounts of data(low CPU overhead)
+
+DES: short key length of only 56 bits, broken
+
+3DES: 3 keys ,length of 168 bits, high overhead
+
+RC4: deprecated, RC6 = 128 bits(new)
+
+AES:Dominant, 128, 192 or 256 bits.(802.11, bitlocker, game engines)
+
+ |
+|
+
+Breaking Symmetrical Keys
+
+ |
+
+Short keys break easier than long ones.
+
+Cryptool
+
+Analysis à RC4 algorithm. Even just 56 bits can take 3 years.
+
+ |
+|
+
+Asymmetric encryption
+
+ |
+
+Private key never leaves their sides.
+
+Use a pre-agreed public key to encrypt data, then receiver decrypts with private key.
+
+Example: browser requests private public key from web server on logon.
+
+Credentials encrypted with public key and sent on.
+
+Private key used to decrypt credentials.
+
+**Also useful for digital signatures.**
+
+ |
+|
+
+Hashing
+
+ |
+
+Converting one value into another using mathematical algorithms like MD5 or SHA.
+
+- Deterministic:same data being hashed always results in the same hash value.
+
+- cannot be decrypted, but can be collected and compared.
+
+- infeasible to find two messages with the same hash value.
+
+- Used to verify passwords, file integrity
+
+- Salting: adding random characters to passwords pre-hashing prevents reverse engineering
+
+ |
+|
+
+Digital signatures(think ASYMMETRIC)
+
+ |
+
+- combining a user's private encryption key and a hash of the data
+
+- verifies that legitimacy and provides non-repudiation.
+
+- Decrypted with public key(not secure)
+
+- DIRECT INTEGRITY PROTECTION(detects changes to data)
+
+Diffie-Hellman
+
+- two users each agree on a paint color such as yellow. (public key)
+
+- Each user then decides on a secret color to mix with their common color, creating a color they can share publicly.
+
+- They send each other their results and then mix in their secret color. (private key, also USED to make Digital Signatures)
+
+- Each user ends up with the same new secret color.
+
+- This new secret color, or key, is then used to encrypt and decrypt their messages.
+
+- Only sender's public key can be used to verify and decrypt sender private key.
+
+- Note: sender's private key protects hashing value. Must use sender's public key to read.[INTEGRITY]
+
+- For reading messages, use someone's public key to encrypt. Only private key of recipient can decrypt.[DATA]
+
+implemented in TLS, IPSec, SSH, and more.
+
+Tls: (asymmetric keys to confirm, then symmetric for speed(aes-256))
+
+RSA
+
+using a public key to encrypt data and a secret key to decrypt it. RSA is still one of the most widely used algorithms for securing data transmissions and creating digital signatures.
+
+DSA NIST-based analog to RSA
+
+ECC-smaller key, more secure, new standard.
+
+ |
+|
+
+Asymmetric encryption
+
+ |
+
+Inefficient, reliant on complicated mathematical computations.
+
+Facilitate easier exchange of keys.
+
+Symmetric methods are efficient, but inconvenient to get the keys out.
+
+hybrid cryptosystem combines the efficiency of symmetric methods and the convenience of asymmetric methods.
+
+Example:
+
+Travis first uses a symmetric private key to encrypt the data.
+
+Next, Travis encrypts the secret key using Craig's public key.
+
+The file is then sent to Craig.
+
+Craig first uses his private key to decrypt the symmetric secret key
+
+Craig then uses the symmetric key to decrypt the message.
+
+As long as Craig's private key is kept secret, the data is secure.
+
+Components: symmetric private key, secret key, Destination private key.[Only private keys can decrypt public keys]
+
+Used in TLS.
+
+ |
+|
+
+Ephemeral Keys
+
+ |
+
+generated for each new session or transaction.
+
+Perfect forwarding and Ephemeral keys used in IM.
+
+Every sent message generates its own encryption key.
+
+Only one snippet stolen at a time.
+
+ |
+|
+
+Decryption
+
+ |
+
+The process of converting data from ciphertext into plaintext.
+
+ |
+|
+
+Steganography
+
+ |
+
+The practice of concealing a file, message, image, or video within another file, message, image, or video.
+
+ |
+|
+
+Blockchain
+
+ |
+
+A decentralized and distributed ledger of transactions between two or more parties. Blockchain uses cryptography to keep sensitive data secure.
+
+ |
+|
+
+Caesar Cipher
+
+ |
+
+shift each letter down the alphabet by three places(ROT =3)
+
+ |
+|
+
+Elliptic Curve Cryptology(ECC)
+
+ |
+
+Next gen algorithm for generating smaller, more secure keys.
+
+ |
+|
+
+Perfect Forward Secrecy
+
+ |
+
+- Messaging apps
+
+Eeach transmission is encrypted with a different unique key.
+
+ |
+|
+
+Steganography
+
+ |
+
+Hiding data in another piece of data.
+
+ |
+
+More Symmetric encryption algorithms:
+
+|
+
+International Data Encryption Algorithm\
+(IDEA)
+
+ |
+
+IDEA was first developed in 1991 by James Massey and Xuejia Lai.
+
+-   IDEA was used in Pretty Good Privacy (PGP) 2.0 and is an optional algorithm in the OpenPGP standard.
+-   IDEA uses a 128-bit key.
+
+ |
+|
+
+Blowfish
+
+ |
+
+Blowfish was developed in 1993 by Bruce Schneier. It was meant to be a replacement for DES.
+
+-   Blowfish is unpatented so that it can be used freely by anyone.
+-   Blowfish uses a 128-bit key.
+-   Vulnerabilities have been discovered in the Blowfish cipher and it is recommended to use its successor, Twofish, instead.
+
+ |
+|
+
+Twofish
+
+ |
+
+Twofish was one of the five finalists for the AES contest but ultimately was not chosen.
+
+-   Twofish uses keys up to 256 bits in size.
+-   Twofish is slower than AES.
+
+ |
+|
+
+CAST
+
+ |
+
+CAST is a family of ciphers that now consists of CAST-128 (CAST5) and CAST-256 (CAST6).
+
+-   CAST5 is the most widely used CAST cipher. It replaced IDEA in PGP 3.0 and is also an option in all versions of Open PGP.
+-   CAST6 was entered in the AES competition but was not a finalist.
+
+ |
+|
+
+Ciphers
+
+ |
+
+**One Time Pad.**
+
+Symmetric, 1 bit at a time
+
+Uses XoR(exclusive-or), comparing message + key for output. Working = 0. This creates ciphertext. Perfect secrecy: looks very random, equally difficult to brute force key or ciphertext. Works only once per key.
+
+**Stream Ciphers**
+
+uses a smaller fixed-length SEED key, repeatable throughout encryption
+
+Key run through a pseudorandom number generator, outputting new and unique encryption key called a keystream.
+
+Keystream matches dara length, XORed with the data to give ciphertext.
+
+less secure than the one-time pad, but can be used in real time.
+
+Deprecated example: RC4
+
+**Block Cipher**
+
+Many symmetric encryption algorithms use the block cipher method.
+
+data encrypted one (64, 128, 256 bits)block at a time, with padding as needed.
+
+**ECB**
+
+Electronic Code Book Mode, simplest block cipher operation mode.
+
+each block of plaintext data iencrypted separately. Several blocks can be encrypted at the same time for speed.
+
+identical data results in the same ciphertext,, can be deciphered if multiple blocks are captured.
+
+**CBC**
+
+Cipher Block Chaining, like ECB
+
+Uses initialization vector,starting variable that's XORed with the current block's plaintext to encrypt the data.
+
+first initialization vector= random string
+
+each subsequent initialization vector = ciphertext from the previous block.
+
+more secure than ECB but slower
+
+**CFB**
+
+Cipher Feedback Mode, also uses an initialization vector.
+
+Encrypted nitialization vector XORed with the plaintext to create the ciphertext block, equivalent to one time pad.
+
+**OFM**
+
+Output Feedback Mode, almost like CFM.
+
+initialization vector used after the first round of encryption.
+
+CFB's output is XORed with the plaintext to become next block's initialization vector.
+
+**Counter Mode**
+
+Similar to ECB, every encryption process in Counter Mode is separate.
+
+No initialization vector, uses a nonce(universal random string) combined with an encrypted counter(starts at 0 and goes up). Nonce is simply a fancy word for a random string that's used for all blocks.
+
+The nonce's encrypted output and counter XORed with the plaintext to create ciphertext.
+
+Same data, different output.
+
+**GCM(AUTHENTICATED encryption)**
+
+authentication with confidentiality,
+
+After counter mode, ciphertext is combined with a special hash.
+
+ciphertext + message authentication code for integrity.
+
+Efficient and fast, often used in SSH or TLS.
+
+Lightweight: made for IoT(weak, low power devices)
+
+**Homomorphic(asymmetric)**
+
+Allows encrypted data to be used without decryption.
+
+performing mathematical operations on the ciphertext instead of actual data
+
+public key to encrypt the data and a private key to decrypt it.
+
+Partially homomorphic, only simple mathematical operations like addition and subtraction to be performed;
+
+somewhat homomorphic, for more complex math such as multiplication to occur but only for a limited number of times;
+
+fully homomorphic, which can handle any mathematical operation an unlimited number of times.
+
+Currently very slow and inefficient.
+
+ |
+|
+
+Blockchain
+
+ |
+
+New cryptography, common with cryptocurrency.
+
+Using his personal secret key and Craig's public key, Travis requests the transaction, which is represented online as a block. The transaction is sent out on a peer-to-peer network that consists of a bunch of computers called nodes.
+
+Algorithm verifies transaction, adding transaction to a ledger(CHAIN).
+
+Think AD domain controllers. Every node has a copy of the transaction.
+
+VALUE BY PLATFORMS OF VALIDATION.
+
+ |
+|
+
+Nodes and Mining
+
+ |
+
+Nodes store transactions and add blocks(transactions-calculations)
+
+Mining: Generation of 64 digit hexadecimal hashes to add blocks, done in a p2p and rewarded with Bitcoin.
+
+Blocks contain:
+
+-   Time
+-   Date
+-   Parties involved
+-   A unique hash that separates the block from other blocks on the chain
+
+All transactions are publically available(no names), all persons involved held responsible.
+
+Each block goes through:
+
+1.  User1 requests a transaction with User2. The request is made using User1's personal secret key and User2's public key.
+2.  The transaction is represented online as a block.
+3.  The block is distributed to everyone on a peer-to-peer network.
+4.  The network users verify the transaction is valid.
+5.  The block is added to the chain. This provides a indisputable and transparent record of the transaction.
+6.  The contents of the transaction move to User2.
+
+ |
+|
+
+Other applications of blockchain
+
+ |
+
+Clear legal transaction of physical assets.
+
+Track movements of goods.
+
+ |
+
+7.1.13 Cryptographic Attack Facts
+
+|
+
+Attack Method
+
+ |
+
+Description
+
+ |
+|
+
+Dictionary
+
+ |
+
+A dictionary attack is a type of brute-force attack. The hacker uses a list of words and phrases to try to guess the decryption key.
+
+-   Dictionary attacks work well if weak passwords are used.
+-   Using longer and uncommon passphrases is the best way to secure data against these attacks.
+
+ |
+|
+
+Collision attack
+
+ |
+
+A collision attack tries to find two inputs that produce the same hash value. This type of attack is often used on digital signatures.
+
+-   If a hacker wanted to get User2 to sign a document by making it seem like it came from User1, the hacker would generate two documents that generate the same hash.
+-   The hacker would send one document to User1 and get that signature.
+-   The signature would be attached to the second document and sent to User2. Because the hashes are identical, User2 thinks the document is legitimate and has been signed by User1.\
+Generating longer hash outputs is the key to stopping these types of attacks.
+
+ |
+|
+
+Birthday attack
+
+ |
+
+This attack combines a collision attack and brute-force attack. The name is taken from the birthday probability math problem.
+
+The birthday probability math problem states that if you have 30 people in a room, the probability that someone has the same birthday as you is approximately 8%. However, the probability that any two people in the room have the same birthday is 70%. This is because we're not looking for an exact match (just any match), so the probability is higher. Digital signatures can be susceptible to birthday attacks.
+
+Generating longer hash outputs is the key to stopping these attacks.
+
+ |
+|
+
+Downgrade attack
+
+ |
+
+A downgrade attack forces the system to use an older, less secure communication protocol.
+
+-   SSL exploitation is a common implementation of this attack. A hacker can set up their computer to only use SSL so that when the request is sent to the server, the server downgrades from TLS to SSL to communicate. This then allows the hacker to launch SSL-based attacks on the server.
+-   Downgrade attacks are often used as part of a man-in-the-middle (MITM) attack. The hacker can intercept a HTTPS packet and downgrade it to a HTTP packet. If the server is not configured properly, the server responds using HTTP. This allows the hacker to now see all communications.\
+To prevent downgrade attacks, servers must be set up to not support these older and less secure protocols. Proper server configuration is the key to stopping these types of attacks.
+
+ |
+|
+
+Rainbow Table attack
+
+ |
+
+Table of passwords and their generated hashes. This can be used by a hacker to try to match hashes instead of the plaintext password itself.
+
+ |
+
+**7.2.2 Cryptography Uses and Limitations**
+
+|
+
+CIA(u)N
+
+ |
+
+Confidentiality, Integrity, authenticity, non-repudiation.
+
+ |
+|
+
+Obfuscation
+
+ |
+
+making something more difficult to understand without changing the data itself.
+
+ |
+|
+
+Cryptography limitations
+
+ |
+
+Slower, especially with size. 2tb = 67 hours
+
+Resource intensive
+
+Potentially weak keys
+
+ |
+|
+
+Weaknesses of encryption keys
+
+ |
+
+- Reuse increases likelihood of cracking
+
+- Key Length -- ideally 256 bits or block 128 bits(AES)
+
+- Predictability -- entrophy(insufficiently random)
+
+- Longevity -- arms race
+
+ |
+|
+
+Availability
+
+ |
+
+More security(encryption), less availability.
+
+ |
+|
+
+More on Hybrid Models
+
+ |
+
+- Use symmetric encryption for fast and efficient encryption of bulk data.
+
+- Use hashing to verify message integrity.
+
+- Use asymmetric encryption for authentication and non-repudiation.
+
+- Use asymmetric encryption for secure exchange of symmetric encryption keys (encrypting the key used for symmetric encryption prior to sharing the key with the recipient) for smaller data pieces.
+
+Double encryption: file gets hit with private key. Private key encrypted by public asymmetric key.
+
+Decrypt key, then decrypt file.
+
+Example: Microsoft EFS
+
+1\. A file is encrypted using a File Encryption Key (FEK).
+
+2\. The FEK is encrypted with the user's public asymmetric key.
+
+3\. The file is sent to the intended recipient.
+
+4\. The user's private key is used to decrypt the FEK.
+
+5\. The FEK is used to decrypt the file.
+
+Strength limited by user password strength, used to generate private key.
+
+ |
+|
+
+Digital Envelope
+
+ |
+
+Asymmetrically encrypts message pre transmission
+
+1. Sender requests recipient's public key.
+
+2. Key sent in digital certificate
+
+3. Asymmetric encryption
+
+4. Send traffic
+
+5. Message decrypted with recipient's private key.
+
+ |
+|
+
+Steganographic encryption
+
+ |
+
+1\. Encrypt plaintext with a private key to generate ciphertext.
+
+2\. The ciphertext is hidden inside of a media file, such as an image, using steganography.
+
+3\. The recipient extracts the ciphertext and decrypts it using the matching public key.
+
+4\. note: existence of file must be known to attempt decryption
+
+ |
+|
+
+Hardware-Based Encryption
+
+ |
+
+TPM and HSM
+
+ |
+|
+
+Trusted Platform Module (TPM)
+
+ |
+
+Motherboard component that can generate and store cryptographic keys. TPM 2.0 mandatory since 2014.
+
+- A TPM is required to check the integrity of startup files and components in BitLocker implementations.
+
+ - The TPM generates a hash of the startup files to verify the integrity of those files.
+
+ - TPM creates a hash of system components, ensuring that system components have not changed./serve as ID.
+
+- Windows Credential Guard requires a TPM chip
+
+ - protection for virtual-based security encryption keys that are stored in the firmware. (attacker with BIOS access)
+
+- Generates truly random numbers(entrophy resistant)
+
+- full support for asymmetric encryption; good for **public and private keys**
+
+- provides encrypted storage for user passwords, encryption keys, and digital certificates.
+
+- avoids RAM storage
+
+ |
+|
+
+Hardware Security Module (HSM)(used in cloud/data system)
+
+ |
+
+software/firmware associated hardware
+
+ - Generate and store encryption keys
+
+ - Generate and validate digital signatures
+
+ - Generate keys used in smart cards
+
+benefits over TPM chips.
+
+ - more powerful, quicker.
+
+ - multiple simultaneous cryptographic functions
+
+ - attachable to a network, serve multiple users across the network.
+
+AKA - Personal Computer Security Module (PCSM)
+
+ - Secure Application Module (SAM)
+
+ - Hardware cryptographic devices
+
+ - Cryptographic modules
+
+ |
+
+7.3 Hashing
+
+|
+
+Hashing
+
+ |
+
+generating a fixed-length hexadecimal string value from any file type or data.
+
+Size dependent on algorithm used
+
+Algorithm used to create message digest for integrity.
+
+WHEN WE SEE HASHING, THINK ASYMMETRY.
+
+ |
+|
+
+Good hash characteristics
+
+ |
+
+Quick & Efficient : Use the whole message, least amount of resources, fastest time.
+
+Deterministic: same data, same hash
+
+One-way: prevent reverse-engineering
+
+Collision resistant: no two pieces of data should have the same hash.
+
+Avalanche effect: Change one bit of data, change the hash completely.
+
+ |
+|
+
+Hashing uses
+
+ |
+
+file integrity: completeness, unaltered, uncorrupted.
+
+Digital signatures: Hash of (data + private key) to proof identity.(combination of asymmetric and hashing)
+
+Secure exchange of logon credentials: Password used as key to generate hash on text value. Only value, and not PW is passed. Used by CHAP, NTLM and Kerberos.
+
+ |
+|
+
+MD5
+
+ |
+
+Hash value of 128 bit, extreme vulnerability to collision. Good for integrity checks
+
+Note: MD2 is 8 bit, earlier md5
+
+Weakest hashing
+
+ |
+|
+
+SHA
+
+ |
+
+Standard for tls, ssl, pgp, ssh, ipsec. 224, 256, 384 or 512 bits.
+
+Hash values of 160 bits
+
+ |
+|
+
+HMAC
+
+ |
+
+Like a digital signature, senders provides secret key used with hash to create authentication code.
+
+Key used to verify integrity and authenticity
+
+ |
+|
+
+RIPEMD
+
+ |
+
+Bitcoin, crypto.
+
+ |
+
+7.4
+
+|
+
+Encrypting File systems(EFS)
+
+ |
+
+Fast Asymmetric encryption for individual folders and files.
+
+Note: Bitlocker works for the whole drive.
+
+Windows generates a FEK, a pseudorandom number, combined with AES to encrypt files.
+
+Double encryption with user's public key and stored in file header, Data Decryption Field, or DDF.
+
+Private key unlocks FEK, used to unlock file
+
+Safeguard: Data Recovery Agent for when original user account becomes corrupt or password is lost.
+
+Backup decryption keys.
+
+Use Group policy(now) to define DRA.
+
+File stays encrypted if moved in NTFS, but if moved onto FAT or EXFAT, or moved by SMB AUTO DECRYPT.(think USB) YOU WILL NOT BE WARNED.
+
+Private key is only kept safe by a STRONG password.
+
+ |
+|
+
+Securing systems with EFS
+
+ |
+
+Feature of the NTFS file system on Windows.
+
+allows a user to encrypt a file in the file system and specify the users who can decrypt the file, view the file, and modify the file's contents.
+
+an additional layer of security for the files in the file system.
+
+NTFS permissions restrict access to files.
+
+EFS encrypts files to further protect their contents.
+
+By default, only the user who encrypts the file using EFS can decrypt the file and view its contents.
+
+designated recovery agent (DRA) can decrypt any EFS-encrypted file on the system, protects against lockout from account deletion, corrupted, certificate loss, etc
+
+In command Prompt:
+
+'cipher/?'. /R to generate a EFS recovery key and certificate, writing to PFX file with cert, private key and CER file(certificate only)
+
+Add CER to EFS to create recovery key and to import PX to recovery.
+
+C:/users, 'cipher /R:recovery'.
+
+Set PFX password.
+
+Files: .cer and .pfx created.
+
+Either create a local recovery agent for this workstation, or create a domain-wide recovery agent.
+
+Command Prompt, MMC
+
+Add or remove snap-ins. Add Group Policy Manager.
+
+Local Computer Policy
+
+Computer Configuration > Windows > Security Settings > Public Key Policies.
+
+Right click Encrypting File System > add Data Recovery Agent
+
+To encrypt file/folder:
+
+Properties, encryot, choose file or folder.
+
+To add additional users, login to the system as that user and create an encrypted file at least once on the system to create a new certificate for that user.
+
+ |
+|
+
+PGP and GPG
+
+ |
+
+Bitlocker or EFS automates encryption of files and emails in Windows.
+
+Linux uses GNU privacy Guard, GPG, based on PGP
+
+PGP combines symmetric and asymmetric keys to encrypt by generating a lage one tie session key, which is double-encrypted with user's public key.
+
+Recipients use their private key to decrypt the session key, which is then used to decrypt the message.
+
+GPG = CLI PGP, open source, cross platform, and truly random session key based on user actions.
+
+ |
+|
+
+GPG file encryption
+
+ |
+
+1. Generate Key Pair with
+
+'gpg --gen-key'
+
+Generate a key and a passphrase to make a public and private key.
+
+2. To encrypt, type in
+
+'gpg -e example.txt'
+
+/n 'created username',
+
+3. Decrypt with
+
+'gpg --output newfilename--decrypt example.txt.gpg'.
+
+ |
+|
+
+Bitlocker and Database encryption
+
+ |
+
+Bitlocker provides full drive encryption.
+
+MS-based. Works across computers.
+
+Partition into two volumes: boot and standard.
+
+Improvements: Encrypt only used space, use of native TPM to verify startup ontegrity.
+
+Encrypt boot files to store on TPM(drive only works on one PC), also works with USB key or sysvolume password.
+
+Randomly generated recovery key, savable to micosoft account, USB or file on local rig, print, or even AD.
+
+AD: may use recovery key, DRA.
+
+Database encryption types:
+
+Transparent: TDE, encrypts all of db and backups, good for at-rest data. Auto decrypt for legitimate user.
+
+Column:
+
+Encrypt each column with a different key to increase security, poor performance.
+
+Application: same program for db creation used for encryption- data encrypted prior to entering database. High resources.
+
+ |
+|
+
+Bitlocker Configuration
+
+ |
+
+Bios, system security, TPM security.
+
+In AD, one may use group security setting to bypass TPM requirement for bitlocker.
+
+Group policy manager > Administrative Templates > windows components > bitlocker
+
+Control Panel > System and security > Bitlocker drive encryption.
+
+Key backup: Save to USB
+
+Encrypt used vs encrypt full.
+
+Mode of encryption: new for fixed devices.
+
+Compatible for removable.
+
+ |
+
+7.5
+
+|  |
+
+-   What is the lifecycle of an encryption key?
+-   What is the role of a certificate authority (CA)?
+-   What are the types of certificates?
+-   Which standard defines the format of certificates?
+-   Which trust model would be used to connect the CAs of two organizations?
+
+ |
+|
+
+Public key infrastructure\
+(PKI)
+
+ |
+
+PKI is an environment in which public encryption keys can be created and managed throughout the key lifecycle.
+
+Certificate Authorities are responsible for issuing, validating, and revoking certificates.
+
+Elements of PKI
+
+CAs need to be reputable organizations that are respected enough .CAs operate in a hierarchy of multiple CAs. This is done so that if one CA is compromised, only the certificates it issued need to be revalidated.
+
+Root CA is a self-signed certificate that's used to validate additional CAs.
+
+Subordinate CAs are also known as Intermediate CAs.
+
+Multiple Intermediate CAs based on their policies and regulations validate the Issuing certificate authorities
+
+Issuing Authorities hand out the certificates.
+
+To obtain a certificate:
+
+1. Send in a certificate signing request, or CSR, to a Certificate Authority, containing the organization's public key, domain name, and digital signature. Then the CA verifies this information and issues the certificate.
+
+2. Organization provides CN(fully qualified domain name)
+
+3. Subject Alliterative name(SAN) for multiple host names.
+
+CA may rely on a third party, or **Registration Authorities** to perform the validation. Certified by a Root CA, authorized to issue certificates for specific uses only.
+
+Certificate attributes.
+
+serial number
+
+signature algorithm
+
+public key
+
+Expiration date.
+
+Defined in the X.509 standard, which also defines OSCP, a protocol for determining the state of a cert.
+
+If an organization is found to no longer exist, if the private key is compromised, or if the certificate was discovered to be fake, the CA should immediately revoke the certificate.
+
+CRL, Certification Revocation List is a type of certificate blacklist.
+
+OCSP: browser sends a status request to an OCSP responder and receives a response as to whether a certificate is valid or has been revoked.
+
+Timely updates, better bandwidth management (avoids downloading CRL, and a grace period for renewal.
+
+ |
+|
+
+Certificate authorities
+
+ |
+
+Certificate authorities are reputable organizations that are responsible for issuing public certificates to companies or organizations that want to securely communicate over the internet.
+
+ |
+|
+
+X.509
+
+ |
+
+The standard that defines the format of certificates.
+
+ |
+|
+
+Certificate chaining
+
+ |
+
+Certificate authorities are usually setup in a hierarchy of multiple CAs to increase security. This structure is known as certificate chaining or the chain of trust.
+
+ |
+|
+
+Trust model
+
+ |
+
+A PKI uses a trust model to establish trust between two communicating entities. Depending on the number of CAs being implemented and the use, there are a few configurations that can be used to setup certificate authorities.
+
+ |
+|
+
+Certificate Process
+
+ |
+
+Common name: The fully qualified domain name (FQDN) of the website.
+
+Subject alternative name (SAN): Optional. Multiple hosts
+
+Organization: The legal name of the organization. The name cannot be abbreviated and any suffixes, such as LLC, must be included.
+
+Organizational unit: This is the division that is handling the certificate.
+
+City/locality
+
+State/county/region: No Abbreviation
+
+Country : Two letters
+
+Email address of manager of cert.
+
+Public key
+
+ |
+|
+
+Certificate Attributes
+
+ |
+
+-   Version - The X.509 version used for the certificate.
+-   Serial Number - A unique identifier for each certificate.
+-   Signature algorithm - The algorithm used to sign the certificate (SHA-2, RSA, etc.).
+-   Issuer - The CA that issues the certificate.
+-   Valid From and Valid To - The two fields that show the validity period of the certificate.
+-   Subject - The field that contains the name and location information of the organization.
+-   Public Key - The algorithm used to create the key and the public key information.
+
+ |
+|
+
+Root Certificate
+
+ |
+
+A root certificate is the first certificate that a Certificate Authority creates. Root certificates are:
+
+-   Self-signed certificates. These certificates go through a different validation process which varies depending on the certificate and organization.
+-   Used to sign lower-level certificates such as intermediate certificates.
+
+ |
+|
+
+Subject Alternative Name (SAN)
+
+ |
+
+SAN certificates allow an organization to cover multiple domains with one certificate. For example, TestOut could cover the following domains in a single SAN certificate:
+
+-   TestOut.com
+-   TestOut.net
+-   LabSim.com
+
+ |
+|
+
+Wildcard Certificate
+
+ |
+
+Wildcard certificates are similar to SAN certificates. But instead of covering multiple domains, the organization can cover one domain and multiple subdomains. For example, TestOut could cover the following in one certificate:
+
+-   quiz.testout.com
+-   labs.testout.com
+-   videos.testout.com
+
+ |
+|
+
+Code Signing Certificate
+
+ |
+
+Code-signing certificates are used by app developers to prove that their application is legitimate.
+
+If a user tries to run an app that does not have a certificate, they will receive an error stating that the app cannot be trusted. The user can decide to close the app or run it.
+
+ |
+|
+
+Self-Signed Certificate
+
+ |
+
+Self-signed certificates are certificates that have not been validated or signed by a CA.
+
+-   Self-signed certificates are easy and free to make.
+-   Self-signed certificates do not provide the same protection and security as a CA-validated certificate.
+-   When a user visits a website using a self-signed certificate, they see a warning that the certificate is not trusted.
+
+ |
+|
+
+Email Certificate
+
+ |
+
+Secure, encrypted emails are sent using the S/MIME Protocol.
+
+-   Senders need to know the recipient's public key when sending a secure email. The public key is found in email certificates.
+-   Email certificates are mainly used in an organization that uses its own CA. But some public CAs provide email certificates as well.
+
+ |
+|
+
+User and Computer Certificate
+
+ |
+
+User and computer certificates are used in a network environment to identify and validate specific users or computers.
+
+When a user or computers logs into a network, their certificate is sent to the server for validation. This provides extra security to the network.
+
+ |
+|
+
+SSL validation Levels
+
+ |
+
+certificates prove to the user that the site is legitimate and trustworthy. When a user visits a website that has been issued a certificate, they see a lock icon in the address bar. The user can click that lock to view the certificate information.
+
+ |
+|
+
+Domain Validation
+
+ |
+
+Domain validation is the lowest level of validation. With domain validation:
+
+-   A CA issues a domain-validated certificate to anyone listed as an administrator on the WHOIS record.
+-   Validation generally consists of a phone call or email.
+-   Certificates are usually issued within minutes.
+
+ |
+|
+
+Organization Validation
+
+ |
+
+The organization validation is one step up from the domain validation. With organization validation:
+
+-   The purchaser needs to prove they are a domain administrator and also prove the organization is legitimate.
+-   The validation process includes proving the organization is real and some basic information. But it is not as in depth as the extended validation.
+-   These certificates can be issued in 1-3 days.
+
+ |
+|
+
+Extended Validation
+
+ |
+
+Extended validation is the highest level of validation offered by a CA. With extended validation:
+
+-   The purchaser needs to prove they are a domain administrator and the CA will also validate all information on the organization.
+-   The CA will validate using a thorough and standardized identity verification process. This process includes proving:
+
+-   Exclusive rights to the domain
+-   The organization's legal, physical, and operational existence
+-   The organization has authorized the issuance of the certificate
+
+-   These certificate can take up to 5 days to be issued.
+
+ |
+|
+
+Certificate Management
+
+ |
+
+Two methods to request a certificate:
+
+1. Install cert authority and cert enrollment page, using a webpage from IIS on the CA
+
+local host /certsrv.
+
+2.  Use the MMC console. Run, MMC,
+
+Add Certificate snap-in. Go to Add, My User Account, Finish, and Okay. The snap-in is here.
+
+Go to Certificates, right-click, click All Tasks, and Request New Certificate. Go through Next, Next, Select User, Enroll, and Finish.
+
+Approving Certificates:
+
+CA console> Pending Requests
+
+Approve or deny
+
+Open up a web browser and access the enrollment web page on the CA. Then click View the status of this certificate request.
+
+Once approved, download and use the certificate. Verify this by going back to the MMC console. In Active Directory User Object > Certificates, Cert issued to account.
+
+Revoking certificates:
+
+If the private key gets compromised, we should no longer use this certificate for encryption.
+
+right-click the certificate, go to All Tasks, and to Revoke. You can specify a reason code for why this certificate is being revoked.
+
+Certificate Hold: Not sure
+
+Key Compromise= permanent
+
+Revoked Certificates folder, we right-click, go to All Tasks, and then click Publish. This will publish the latest list of revoked certificates to the Certificate Revocation List.
+
+CRL
+
+CRL types: Full or Delta(new entries only)
+
+CA should be configured to automatically publish the CRL regularly
+
+By default, the full CRL is published once a week and the delta CRLs are published once a day.
+
+View CRLs tab, then click CRL, and then click the revocation list, we can see the current CRL and the certificates that were just revoked.
+
+AIA
+
+Root CA > Properties>extension
+
+Authority Information Access, or AIA allows end users to obtain the certificate used by the CA itself. Useful if Root CA is (kept) offline
+
+AIA publishes a copy of the root CA certificate to another accessible location.
+
+**Root CA certificate with the CA's public key needed to verify digital signatures that the CA has implemented.**
+
+When a CA digitally signs something, must have a copy of its public key to verify that signature.
+
+CRL Distribution Point gives out latest CRL copies. Root CA must be Can publish it to Active Directory via LDAP. access it on a web page, or n the file system.
+
+download the CA certificate= AIA or
+
+view the certificate chain or CRL= CDP
+
+ |
+|
+
+Extended Validation
+
+ |
+
+Most common use of certificates is for websites using (SSL) or (TLS), to show that site is legitimate and trustworthy.
+
+Lock icon with certificate info
+
+Highest level of these certificates is the Extended Validation certificate. The CA conducts a thorough and standardized identity verification process before issuing an Extended Validation certificate.
+
+Applicants must prove:
+
+-   Exclusive rights to the domain.
+-   The organization's legal, physical, and operational existence.
+-   The organization's authorization for the issuance of the certificate.
+
+Extended validation certificates can take up to 5 days to be issued.
+
+ |
+|
+
+Distinguished Encoding Rules
+
+ |
+
+Distinguished encoding rules (DER), is one of the older formats used. DER characteristics are:
+
+-   DER is a set of rules that defines how data must be encoded in a file.
+-   DER is defined by the ASN.1 standard.
+-   DER is a binary (non-text) encoding format.
+-   DER is mainly used in Windows systems.
+-   DER certificates usually have a .der or .cer file extension.
+
+ |
+|
+
+Privacy-Enhanced Email (PEM)
+
+ |
+
+most common certificates in use. created to securely encode emails, but S/MIME and PGP quickly replaced it. Perfect for encoding certificates.
+
+-   BASE64 DER formatted:binary information encoded into ASCII text.
+-   header and footer that identify the data type. Common identifiers are:
+
+-   CERTIFICATE
+-   CERTIFICATE REQUEST
+-   PRIVATE KEY
+-   X509 CRL
+
+-   A single PEM certificate can contain the intermediate certificate, root certificate, and private key.
+-   PEM certificates can have a .pem, .crt, .cer, or .key file extension.
+
+ |
+|
+
+Public Key Cryptography Standards #7\
+(PKCS #7)
+
+ |
+
+-   Is also known as the Cryptographic Message Syntax (CMS) standard.
+-   Is based on the PEM standard.
+-   Can contain only the intermediate certificate and root certificate, but not the private key.
+-   Is mainly used with digital signatures.
+-   Uses a file extension of .p7b or .p7c.
+
+ |
+|
+
+Public Key Cryptography Standards #12\
+(PKCS #12)
+
+ |
+
+-   the Personal Information Exchange Syntax Standard.
+-   Is based on the PEM standard.
+-   Holds certificate chains and the private key.
+-   Protects certificates and private keys with a password.
+-   Uses a file extension of .pfx or .p12.
+
+ |
+
+7.5.10 Certificate Concepts Facts
+
+Certificate Chaining
+
+Certificate authorities are generally setup in a hierarchy of multiple CAs to increase security.
+
+-   Self-signed Root CA used to validate subordinate, intermediate CAs.
+-   Subordinate CAs validate issuing CAs
+-   Issuing CAs validate and distribute the certificates.
+
+If a CA is compromised, only the certificates issued by that CA would need to be replace.
+
+Also, CAs are bought online only as needed.
+
+Certificate Revocation List Management
+
+|
+
+CRL Management
+
+ |
+
+Description
+
+ |
+|
+
+Intermediate CA
+
+ |
+
+An organization can choose to setup and configure an intermediate CA whose sole purpose is to maintain and update the CRL.
+
+ |
+|
+
+Online Certificate Status Protocol (OCSP)
+
+ |
+
+OCSP is to replace the need for the CRL, commonly implemented using:
+
+-   OCSP Stapling
+
+-   Server holding the certificate also provides revocation information, sending a query to the OCSP responder at set intervals to verify the status of itS certificate.
+-   During the initial SSL or TLS handshake between the server and a user's web browser, the OCSP validation is sent along with the certificate.
+
+-   Certificate pinning
+
+-   A web browser, has a server's certificate hard coded into it. When the application connects to the server, it downloads and checks the certificate. If the two certificates don't match, the application takes appropriate action including blocking the connection.
+-   Mostly used for in-house CAs
+
+ |
+
+Trust Models
+
+|
+
+Trust model
+
+ |
+
+Description
+
+ |
+|
+
+Single trust model
+
+ |
+
+All CAs start with a single trust model. This is the simplest model to setup. The single trust model has the following characteristics:
+
+-   There is only one CA that issues and distributes certificates.
+-   All users trust the CA and there are no trusts established with other CAs.
+-   This model works properly only in a small organization.
+-   If the CA is compromised, all certificates must be replaced.
+
+ |
+|
+
+Hierarchical model
+
+ |
+
+A hierarchical model looks like a tree.
+
+-   The first CA created is the root CA. It is a self-signed certificate and is used to validate additional subordinate CAs.
+-   The subordinate CAs are known as intermediate CAs. The intermediate CAs validate issuing CAs.
+-   Issuing CAs validate and distribute the certificates.
+
+ |
+|
+
+Mesh model
+
+ |
+
+In the mesh model, multiple CAs are setup to issue certificates to each other. No CAs are configured in a subordinate relationship.
+
+-   If a CA is compromised, certificates can still be trusted because multiple CAs have authenticated them.
+-   This model is difficult and expensive to expand on a large scale.
+
+ |
+|
+
+Bridge model
+
+ |
+
+A hybrid model that connects the hierarchical models of two organizations.
+
+-   Clients in both organizations will trust certificates issued by CAs of either organization.
+-   Trusts can be setup further down the tree for deeper customization and security.
+
+ |
+|
+
+Web of trust
+
+ |
+
+typically used with PGP. Instead of implementing a CA, everyone is considered a trusted authority. For example, if User1 trusts User2 and User2 trusts User3, User1 will also trust User3.
+
+ |
+
+Private Key Safety/Backup
+
+|
+
+Key Backup Method
+
+ |
+
+Description
+
+ |
+|
+
+Key archival
+
+ |
+
+Key is backed up by the CA. User sends the private key in a secure transmission to the CA ,used in an organization that manages its own CA.
+
+If the CA is breached, all private keys will be compromised.
+
+ |
+|
+
+Key escrow
+
+ |
+
+keys are sent to a trusted 3rd party instead of a CA. This is often done for security and legal purposes. Legal action might be required to access the keys.
+
+ |
