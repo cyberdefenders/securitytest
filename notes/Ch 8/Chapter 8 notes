@@ -1,0 +1,667 @@
+**8.1.3 Wireless Networking**
+
+|
+
+**Wireless Network Hardware**
+
+ |
+
+**Description**
+
+ |
+|
+
+**Wireless access point (WAP)**
+
+ |
+
+**Broadcasts information and data over radio waves.  [Makes the signals]**
+
+-   **Functions as a wireless hub.**
+-   **May provide a connection to a physical wired network.**
+-   **Multiple WAPS can split and share loads in the organization.**
+-   **FAT and THIN classes**
+
+-   **Fat access points has all resources to manage wireless clients and broadcast the network: standalone devices.**
+-   **Thin access points: radio and antenna. Require another system to manage clients and the network, aka controller based services. Can broadcast by itself**
+-   **Uses an service set identifier (SSID) to hook a name**
+
+ |
+|
+
+**Wireless interface**
+
+ |
+
+**Connects to wireless access points**
+
+ |
+|
+
+**Wireless bridge**
+
+ |
+
+**Connects two wireless networks together.**
+
+-   **Created using a wired connection between the two access points.**
+-   **Also done wirelessly using a wireless distribution system (WDS).**
+
+ |
+|
+
+**Wireless LAN controller\
+(WLC)**
+
+ |
+
+**Used in an enterprise environment to manage multiple access points. The WLC is placed in the networking closet and connected to a switch, communicating with and manage the wireless access points.**
+
+**Manage client connects and access point loads to allow WAPs to operate and work together as a single system instead of each device working in isolation.**
+
+**[manages the signal-makers]**
+
+ |
+|
+
+**Lightweight access point\
+(LWAP)**
+
+ |
+
+**Used in conjunction with the wireless controller.**
+
+-   **WLC handles everything including client connections, authentication, updating configurations, etc.**
+-   **Purpose: LWAP forwards frames to the WLC to either drop the packet or forward it. Essentially a mailroom worker.**
+
+ |
+|
+
+**Small Office Home Office (SOHO) wireless router**
+
+ |
+
+**Three in one devices**
+
+-   **A router function connects the internal LAN to the internet.(LAN to ISP)**
+-   **A switch portion connects the internal wired LAN devices together.(Ethernet cables)**
+-   **An access point portion allows the internal wireless devices to connect to the network.(wireless local network)[bridges wired and wireless]**
+
+ |
+|
+
+**Enterprise network**
+
+ |
+
+o **Multiple access points, many more devices**
+
+o **Much wider area**
+
+o **Separated into routers, switches and access points**
+
+ |
+|
+
+**Ad hoc Wireless Network Configuration**
+
+ |
+
+**Peer-to-peer, provides wireless communication without a wireless access point. Directly interface with one another**
+
+ |
+|
+
+**Infrastructure mode wireless network configuration**
+
+ |
+
+**uses a wireless access point that acts similarly to a hub or switch in a wired network**
+
+-   **More scalable than an ad hoc implementation.**
+-   **Can also connect the wireless device to a wired network.**
+-   **Can be used to create a separate guest network**
+
+ |
+|
+
+**Wireless antenna /types**
+
+ |
+
+1.  **Absorbing incoming radio signals**
+2.  **Radiating outgoing radio signals**
+3.  **May be internal or external**
+4.  **Range dependent on power gain (dBi) of radiation compared to standard reference antenna. The higher the stronger**
+
+o **Normal : 2-9**
+
+o **High 12 +**
+
+o **Omni: equally spreading**
+
+o **Directional(narrower, higher gain and range)**
+
+o **Parabolic: highly directional, very high gain, must have LoS(think satellite dish)**
+
+o **Omnidirectional normal: most common wireless antenna.**
+
+ |
+|
+
+**Wireless installation best practices**
+
+ |
+
+-   **Site survey: check layout and barriers, installation points**
+-   **Survey done using wifi analyzer to check for signals**
+-   **Map in conjunction with wifi analyzer**
+-   **Install in tamper-resistant locations.**
+
+- **Passive: done without plugging in to access point(listening only) using temp WAPs**
+
+**Heat Mapping done to show signal strength**
+
+- **Active: Connect Wi-Fi analyzer to WAP to check for weakness, check for channel overlapping**
+
+- **Predictive: uses software to load blueprints and determine installation sites.**
+
+ |
+
+**8.2 Wireless Attacks**
+
+|
+
+**1. ****Accessing Rogue Access Points -- Access Points (APs) that are not authorized to be on the network**
+
+**2. ****Evil Twin Attack - rogue AP is configured to mimic the legitimate network. Users are kicked off the legitimate AP and inadvertently use the rogue AP**
+
+**3. ****Compromised Initialization Vectors (IV) -- Reuse Initialization Vectors when an AP is using WEP allowing attackers to crack encryption keys and access the network.**
+
+**4. ****Jamming Attacks --**
+
+**a. ****Spark Jamming -- Repeated blasts of short duration high intensity Radio Frequency**
+
+**b. ****Random Noise Jamming -- Radio signals that are of random amplitudes and frequencies**
+
+**c. ****Random pulse jamming -- Radio signal pulses that are of random amplitudes and frequencies**
+
+**5. ****Disassociation Attacks -- Because 802.11 allows for multiple associations to APs they are at risk of deauthentication and disassociation from a network. **
+
+**a. ****An attacker pretends to be the wireless router the device is connected to. The attacker disconnects the device from the network. When the user tries to reconnect, the attacker can intercept the user's information. This is a deauthentication attack.**
+
+**b. ****Disassociation tricks the user into giving a fake router responsibility for forwarding packets.**
+
+ |
+
+**Bluetooth-based attacks/ RFID/NFC**
+
+|
+
+**Bluetooth -- Bluetooth is wireless communication between devices in in a Personal Area Network (PAN) using 2.4 GHz range and adaptive frequency hopping (AFH)**
+
+**Bluejacking - looks for nearby devices that are in discovery mode and sends unwanted messages.**
+
+**Bluesnarfing - exploits a vulnerability in the object exchange (OBEX) protocol. This allows someone to pair to a device. Once paired, the attacker can view the calendar, emails, text messages, contact lists, and other data on the device. **
+
+**Radio Frequency Identification (****RFID) - radio waves to transmit data from small circuit boards, called RFID tags, to special scanners. The transmission is either Active that uses batteries and can send signals over distance or Passive which relies on the energy of the scanner to transmit data. The attacks are:**
+
+**Eavesdropping**
+
+**Man-in-the-middle (MTM)**
+
+**Denial of service (DOS)**
+
+**Cloning and spoofing**
+
+**Active vs passive (LONG and short)**
+
+**Near Field Communication (****NFC) - allows two-way communication between two devices at a very close distance i.e. a few centimeters such as mobile payment and identity cards**
+
+**If lost, the NFC device allows anyone who finds it to access the information and resources.**
+
+**Vulnerable to jamming attacks which is ****interference that is malicious that is designed to disrupt a wireless network such as ****RF ****interference**
+
+**Vulnerable to Man-in-the-middle exploits, where an attacker captures transmissions from the reader and forwards them on to the device, potentially reading and/or modifying data in transit.**
+
+**Vulnerable to Relay attacks - An attacker can capture NFC data in transit and use the information to masquerade as the original device.**
+
+ |
+
+**Attacking wireless networks**
+
+|
+
+**1. ****Common tools:**
+
+**a. ****Fern Wi-Fi Cracker --graphical**
+
+**b. ****Aircrack--ng another name is airmon-ng**
+
+**c. ****Airsnort**
+
+**d. ****Cain and Able**
+
+**e. ****Wireshark**
+
+**2. ****Wiggle.net is a useful database of all open Wi-Fi that people report all over the world.**
+
+**3. ****An example of using airodump (which captures wireless signals), ipconfig (command line) and other command line and airmon-ng is demonstrated.**
+
+**4. ****A demonstration of using Aircrack is given**
+
+**5. ****A demonstration and lab of how to configure rogue host protection on your AP is presented**
+
+ |
+
+**Wireless Network remediation**
+
+|
+
+**1. ****Put WAPs in separate virtual LANs.**
+
+**2. ****Use site survey tools to identify hosts and APs on the wireless network. ****Perform regular site surveys regularly**
+
+**3. ****Check connected MAC addresses to identify unauthorized hosts.**
+
+**4. ****Analyze wireless traffic to identify rogue hosts.**
+
+**5. ****Disconnect any rogue access points you discover.**
+
+**6. **** Conduct a radio frequency (RF) noise analysis to detect a malicious rogue AP that uses jamming to force wireless clients to connect to it, instead of legitimate APs to protect again an Evil Twin attack.**
+
+**7. ****Discontinue using WEP to protect against IV attacks. Use WPA 2 and WPA 3 instead since they do not use IV.**
+
+**8. ****To mitigate the risks of Bluetooth attacks, enable Bluetooth only when needed and make sure discovery mode is turned off except for when pairing devices.**
+
+**9. ****RFID chips often operate at different frequencies to protect against attack**
+
+ |
+
+**8.3 Wireless Defenses**
+
+-   **Which settings in a wireless access point can you configure to improve security?**
+-   **Which cryptographic protocol uses a Remote Authentication Dial-In User Service (RADIUS) server?**
+-   **Which access method forces a user to view and interact with it before accessing a network?**
+-   **What are the three components in an 802.1x setup?**
+-   **Which EAP standard is considered to be one of the most secure?**
+
+|
+
+**Term**
+
+ |
+
+**Definition**
+
+ |
+|
+
+**Wi-Fi Protected Access\
+(WPA)**
+
+ |
+
+**The most commonly used cryptographic protocol in use for wireless networks. WPA2 and WPA3 are the two versions in use.**
+
+ |
+|
+
+**Pre-shared key\
+(PSK)**
+
+ |
+
+**Wireless access method that utilizes a passphrase for users to connect.**
+
+ |
+|
+
+**Wi-Fi Protected Setup\
+(WPS)**
+
+ |
+
+**Wireless access method that allows a device to securely connect to a wireless network without typing the PSK.**
+
+ |
+|
+
+**Open network**
+
+ |
+
+**Wireless access method that has no authentication.**
+
+ |
+|
+
+**Captive portal**
+
+ |
+
+**Wireless access method that forces a user to view and interact with it before accessing a network.**
+
+ |
+|
+
+**802.1x**
+
+ |
+
+**Standard for local area networks that is used to authenticate users to a wireless network. It was created by The Institute of Electrical and Electronics Engineers Standards Association (IEEE-SA).**
+
+ |
+|
+
+**Remote Authentication Dial-In User Service**
+
+ |
+
+**A protocol used to authenticate users in a enterprise environment to a wireless network.**
+
+ |
+|
+
+**Extensible Authentication Protocol\
+(EAP)**
+
+ |
+
+**An authentication framework that uses a set of interface standards. EAP allows various authentication methods to be used.**
+
+ |
+
+**8.3.2 Wireless Security Facts**
+
+**Wireless networking uses radio frequencies to transmit data. This means anyone with a wireless receiver can capture data from an improperly secured network.**
+
+|
+
+**Security Configuration\
+Action**
+
+ |
+
+**Description**
+
+ |
+|
+
+**Change default login credentials**
+
+ |
+
+- **Change default WAP credentials to prevent hostile takeover.**
+
+ |
+|
+
+**Change default service set identification (SSID) and broadcast**
+
+ |
+
+- **Service set identifiers.**
+
+- **Max length = 32 bytes.**
+
+- **Change default SSIDS**
+
+- **Consider disabling SSID broadcasts(cloaking/suppression), but this is not foolproof and may cause connection issues.**
+
+ |
+|
+
+**Enable MAC address filtering**
+
+ |
+
+- **Blacklisting MAC addresses is time consuming and requires upkeep.**
+
+- **Attackers may still be able to capture packets and retrieve a valid MAC address**
+
+- **MAC address spoofing defeats this**
+
+ |
+|
+
+**Update the firmware**
+
+ |
+
+- **Patch and update regularly, but not without testing.**
+
+ |
+|
+
+**Enable the WAP firewall**
+
+ |
+
+**Most wireless APs come with a built-in firewall that connects the wireless network to a wired network. This should be enabled to help prevent unauthorized access to the network.**
+
+ |
+|
+
+**Wi-Fi signal strength**
+
+ |
+
+**Data emanation is a significant security problem due to omnidirectional/distanced broadcasting.**
+
+**n attacker sitting outside the building may be able to connect to the wireless network if the signal is traveling outside.**
+
+**Adjust signal strength and antenna placement.**
+
+ |
+
+|
+
+**Cryptographic Protocol**
+
+ |
+
+**Description**
+
+ |
+|
+
+**Wi-Fi Protected Access 2\
+(WPA2)**
+
+ |
+
+**802.11i compliant security standard since 2004**
+
+-   **WPA2-Personal uses a pre-shared key, or passphrase, to protect the network. WPA2-PSK:**
+
+-   **Uses (AES-CCMP) as the encryption algorithm:**
+-   **128-bit key and a 128-bit block size.**
+-   **4-way handshake to authenticate the device when it connects to the access point.**
+-   **PSK and SSID are used to generate a session key.**
+-   **vulnerabilities exist that allow a hacker to intercept data and perform offline password attacks.**
+
+-   **WPA2-Enterprise uses a RADIUS server to authenticate users to the network.**
+
+ |
+|
+
+**Wi-Fi Protected Access 3\
+(WPA3)**
+
+ |
+
+- **In 2018, WPA3 implements the Simultaneous Authentication of Equals (SAE) standard instead of using the pre-shared key.**
+
+- **SAE uses a 128-bit key and Perfect Forward Secrecy (PFS)**
+
+- **Perfect forward secrecy generates a new key for every transmission. T**
+
+- **If any portion of the handshake is intercepted, the key is still uncrackable.**
+
+ |
+
+**8.3.4 Wireless Authentication and Access Methods Facts**
+
+|
+
+**Access Method**
+
+ |
+
+**Description**
+
+ |
+|
+
+**Pre-shared key\
+(PSK)**
+
+ |
+
+**A passphrase. A pre-shared key is a passphrase that is used to access the wireless network. The most commonly used access method.**
+
+ |
+|
+
+**Wi-Fi Protected Setup\
+(WPS)**
+
+ |
+
+**Only works on a network that uses a PSK && WPA2. WPS allows a device to securely connect to a wireless network without typing in the PSK. To do this, you:**
+
+-   **Think blue tooth searh/pairing.**
+-   **Button or 8-digit pin.**
+
+**Some devices and access points can also use Near Field Communication (NFC).**
+
+ |
+|
+
+**Open Network**
+
+ |
+
+**Has no authentication at all : suitable for free wifi access.**
+
+ |
+|
+
+**Captive Portal**
+
+ |
+
+**Mandatory splash portal before access.**
+
+-   **The user connects to the wireless network but is redirected to a captive portal page before internet access is granted.**
+-   **The user might be prompted to agree to the terms and conditions of using the network or even asked to pay a fee before being granted access.**
+
+ |
+
+**Authentication Protocols**
+
+|
+
+**Enterprise: 802.1x is a standard for local area networks.**
+
+**After authentication, a port only stays on if user activation is valid. This applied to virtual ports.**
+
+-   **The *supplicant* is the wireless client.**
+-   **The *authentication server* contains a centralized database for user authentication.**
+-   **The *authenticator* is a device responsible for handling the communications between the supplicant and authentication server.**
+
+**802.1x implementations on wireless networks often use RADIUS, which provides:**
+
+**Authentication, authorization, and accounting.**
+
+-   **A RADIUS server is required to centralize user account and authentication information. A centralized database for user authentication is required to allow wireless clients to roam between cells and authenticate using the same account information.**
+-   **PKI is required for issuing certificates. At a minimum, the RADIUS server must have a server certificate. To support mutual authentication, each client must also have a certificate.**
+-   **The wireless access point is a RADIUS client.**
+-   **The wireless access point forwards the wireless device's credentials to the RADIUS server for authentication.**
+-   **A RADIUS federation is multiple RADIUS servers that communicate with each other after establishing a trust relationship. These servers may be on different networks and could span multiple organizations.**
+
+**To ensure the authentication information being sent is secure, the Extensible Authentication Protocol (EAP) is used. EAP framework and its included protocols are:**
+
+ |
+
+|
+
+**Protocol**
+
+ |
+
+**Description**
+
+ |
+|
+
+**Extensible Authentication\
+Protocol\
+(EAP)**
+
+ |
+
+**interface standards that allows various authentication methods**
+
+-   **supports multiple authentication methods (smart cards, biometrics, and digital certificates).**
+-   **Allows the client and server to negotiate authentication characteristics.**
+
+**See below for types of EAP**
+
+ |
+|
+
+**Protected Extensible Authentication Protocol\
+(PEAP)**
+
+ |
+
+**Provides authentication in an SSL/TLS tunnel with a single certificate on the server.**
+
+- **Creates a secure communication channel for transmitting certificate or login credentials.**
+
+-   **Enables mutual authentication by requiring the server to prove its identity with the client.**
+
+ |
+|
+
+**EAP Flexible Authentication via Secure Tunneling\
+(EAP-FAST)**
+
+ |
+
+**Uses a Protected Access Credential (PAC)  instead of a cert to authenticate users.**
+
+-   **Establishes a TLS tunnel in which client authentication credentials are transmitted.**
+-   **Is susceptible to attackers who intercept the Protected Access Credential (PAC) and use it to compromise user credentials.**
+-   **Mitigated by manual PAC provisioning or by using server certificates.**
+
+ |
+|
+
+**EAP Transport Layer Security\
+(EAP-TLS)**
+
+ |
+
+**Uses Transport Layer Security (TLS) and is considered to be one of the most secure EAP standards available.**
+
+-   **Is widely supported by almost all manufacturers of wireless LAN hardware and software.**
+-   **Requires signed client-side and server-side certificate authority (CA) PKI certificates.**
+-   **Is labor-intensive and expensive to implement.**
+
+ |
+|
+
+**EAP Tunneled Transport Layer Security\
+(EAP-TTLS)**
+
+ |
+
+**EAP-TTLS also uses a CA signed certificate:**
+
+-   **Is an updated version of EAP-TLS.**
+-   **Requires only one CA signed certificate on the server, simplifying the implementation process.**
+
+ |
