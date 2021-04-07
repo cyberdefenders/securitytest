@@ -1,0 +1,96 @@
+**## 9.1 Host Virtualization**
+
+| **Installing and running of multiple operating systems concurrently on a single physical machine.**
+**Pros: -**  **\*\*Flexibility\*\* - because they are self-contained, VMs can be easily moved between hypervisor hosts as needed**** - \*\*Security\*\* - can be used to create honeypots or honey nets ****- \*\*Testing\*\* - can be configured in a lab environment that mirrors a production network for testing apps, updates/patches, and other controls outside of the production environment**** - \*\*Server consolidation\*\* - consolidate servers by moving multiple physical servers onto fewer physical servers with many VMs \*(Physical-to-virtual migration\* or \*P2V\* is the process of moving older OS off aging hardware &amp; into a VM) ****- \*\*Isolation\*\* - allows for \*sandboxing\* ,performing testing in an environment separate from the physical network, preventing impact to the production environment**** - \*\*Application virtualization\*\* - example , virtualized browsers which can protect the physical OS from effects of malware .**
+**Cons: -**** -An attack on a host machine could compromise all guest machines (VMs) operating on that host ****- Hardware Bottlenecks/ failure can affect multiple VMs**** - Potential for added complexity to administration****- May be susceptible to \*server sprawl\* (delays patch &amp; security update management due to the number of VMs being managed)**
+**Components:** **Physical machine | AKA the host operating system - this component has the hardware (hard disk drive(s), optical drive, RAM, motherboard) |****| Virtual machine | AKA the guest OS , software implementation of a computer which executes programs the same way as a physical machine and even appears to be a self-contained, autonomous system |****| Virtual hard disk (VHD) | A file created within the host OS and simulates a hard disk for the VM |****| Hypervisor | A thin layer of software that lives between the guest OS and the host OS. It allows VMs to interact with the hardware without going through the host OS.**
+**Two types of hypervisors**** \*\*Type 1\*\* - AKA a native hypervisor or bare-metal hypervisor, a thin operating system that interfaces with the hardware. examples: VMWare ESX, Microsoft Hyper-V, Linux KVM, Citrix Hypervisor, Xen, Oracle VM ****\*\*Type 2\*\* - AKA a hosted hypervisor, it runs as an application on a convetional OS. Most often used as a development sandbox. Type 2 examples: VMWare Workstation, Oracle VirtualBox, Microsoft Hyper-V built into Windows 8.1 and 10, Parallels Desktop for Mac |** |
+| --- |
+
+**Virtualization Security**
+
+| **Treat the same way one would treat metal. For both host and guest machines, make sure to:**** - Reduce the number of services running ****- Apply patches and updates regularly**** - Install AV and other security software ****- Implement backups, OS snapshots, and other data protection solutions**** -protect against \*\*virtual machine escape\*\* exploits where malware allows the guest OS to break out and interact directly with the hypervisor. **** To minimize this vulnerability: ****- Apply patches and updates regularly**** - Install only the resources-sharing features that are necessary ****- Install only the software applications that are necessary** |
+| --- |
+
+**### Load Balancing**
+
+| **Dispersing a workload between multiple computers or resources to achieve optimal resource utilization. Improve performance and create high availability, some extent of fault tolerance.**
+**Load balancing methods with virtualization :**** - \*\*Resource pooling\*\* creates shared logical &#39;pools&#39; of CPU and memory resources from many physical machines within the hypervisor to guarantee a level of resources for specific VMs****- \*\*Workload balancing\*\* distributes a workload (the total requests made by users/apps of a system) across multiple computers or a computer cluster to achieve optimal resource utilization, maximize throughput, minimize response time, and avoid overload.** |
+| --- |
+
+**9.2 Virtual Networking**
+
+| **A computer network consisting of virtual and physical**** devices.****Virtual Area network (VAN) -- A virtual LAN running on top of a physical****LAN. This is a virtual LAN running on top of a physical LAN. This ****configuration enables guest virtual machines on separate physical hosts**** to communicate.****Virtual Private Network (VPN) -- A secure tunnel to another network and****connects multiple remote end-points. A VPN is usually used as a secure ****tunnel over another network, connecting multiple remote end-points, such**** as routers. A multipoint VPN is a VPN connecting more than two ****end-points.**
+**Virtual Machine (VM) -- virtual computers that function like a****physical computer. Virtual servers are virtual machines capable of ****providing services such as databases, email, domains, and applications.**** The traffic between virtual machines can be routed using virtual ****switches alongside virtual routers and virtual firewalls for network**** segmentation and data isolation.**
+**Virtual Switch (vSwitch) - Software that facilitates the communication****between virtual machines by checking data packets before moving them to ****a destination.**
+**Virtual router (vRouter) - Software that replicates the functionality of****a physical router.**
+**Virtual firewall appliance (vFA) - Software that functions as a network****firewall device. A virtual firewall appliance provides packet filtering ****and monitoring functions.** |
+| --- |
+
+**9.2.4 Virtualization Implementation Facts**
+
+|
+**Virtual machine monitor (VMM)/hypervisor - Software, firmware, or****hardware that creates and runs virtual machines.**
+**- Virtual machines support an unlimited number of virtual networks and VM&#39;s**** - Multiple virtual networks can be associated with a single physical ****network adapter.**
+**- A new VN&#39;s configuration is dependent on**** the configuration and physical hardware of host OS.**
+**- The physical devices are partitioned into one or more virtual**** devices, depending on the network necessity and the device ****capability.**
+**- When setting up a new virtual device, sysadmin**  **define show much of the physical device capability each partition**** will have. One metal server can host multiple VMs with different specs.**
+**- The available resources in a network are split up so the available**** bandwidth is turned into channels. Each channel can each be assigned ****to a particular server or device in real time. Each channel is**** independently secured.**
+**- A virtual network includes a virtual Dynamic Host Configuration**** Protocol (DHCP) server that can provide IP address leases only to ****virtual machines. Even though the DHCP server is isolated, it**** assigns unique IP addresses from the range specified.**
+**- Accessing a network and network resources requires that the**** operating system on the virtual machine be configured as a part of ****the network.**
+**- Internal network virtualization configures a single system with**** software containers, or pseudo-interfaces, to emulate a physical ****network with software. This can improve a single system&#39;s**** efficiency by isolating applications to separate containers or ****pseudo-interfaces.**
+**- External network virtualization combines one or more LANs into**** virtual networks to improve a large network&#39;s efficiency. Using ****this technology, systems physically attached to the same local**** network can be configured to be separate virtual networks. Systems ****from separate LANs can also be combined into a single VLAN that**** spans segments of a large network.**
+**- Network virtualization should allow a virtual network, including all**** of its IP addresses, routes, network appliances, and so on, to ****appear to be running directly on the physical network. This allows**** the servers connected to that virtual network to continue to operate ****as if they were running directly on the physical network, even**** though multiple virtual networks share the physical network.** |
+| --- |
+
+**Network Virtualization Providers**
+
+| **Vmware -**** - VMware desktop software runs on Microsoft Windows, Linux, and macOS, ****while its enterprise software hypervisor for servers, VMware ESXi,**** is a bare-metal hypervisor that runs directly on server hardware ****without requiring an additional underlying operating system.**
+**- ESXi is primarily used for data center virtualization.**
+**Microsoft -**** - Hyper-V Network Virtualization that provides virtual networks to ****virtual machines. This is similar to how server virtualization**** (hypervisor) provides virtual machines to the operating system. ****Hyper-V Network Virtualization has high scalability, with capacity**** for over 1,000 virtual machines per host.**
+**- Microsoft Azure that provides network virtualization in the cloud.**
+**Citrix -**
+**- Provide a virtualization solution called XenServer, also referred to**** as Citrix Hypervisor.**
+**- Support the widest range of graphics applications.**
+**- Support Intel GVT-g GPU virtualization, a CPU-embedded GPU requiring**** no additional hardware.** |
+| --- |
+
+**Virtual Networks traits**
+
+| **- Organizations generally use virtual devices to save money.**
+**- By using less physical storage space, a company is able to have**** considerably more devices in a network while using very little space ****in a data center.**
+**- With virtualization, companies can take advantage of the**** efficiencies and agility of software-based devices and storage ****resources.**
+**- Physical networking devices are responsible for forwarding of**** packets.**
+**- The virtual network (software) provides an intelligent abstraction****that makes it easy to deploy and manage network services and ****underlying network resources.** |
+| --- |
+
+**Virtual Networking Devices**
+
+| **Virtual switch (vSwitch) - Software that facilitates the communication****between virtual machines by checking data packets before moving them to ****a destination. A vSwitch may be a part of software installed in the**** virtual machine or it may be part of the server firmware.**
+**Virtual router (vRouter) - A software function that replicates the****functionality of a physical router. Because virtual routing liberates ****the IP routing function from specific hardware, you can more freely move**** routing functions around a network.**
+**Virtual firewall appliance (VFA) - Software that functions as a network****firewall device that provides the usual packet filtering and monitoring. ****The VF can run as a traditional software firewall on a virtual machine.**
+**Virtual machine monitor/hypervisor (VMM/hypervisor) - Software,****firmware, or hardware that creates and runs virtual machines. A computer ****on which a hypervisor runs to provide one or more virtual machines is**** called a host machine. Each virtual machine is called a guest machine. ****The hypervisor provides the guest operating systems with a virtual**** operating platform and manages the execution of the guest operating ****systems.**
+ |
+| --- |
+
+**9.3 Software-Defined Networking**
+
+| **Allows network and security professionals to manage, control, and make changes to a network.**** Network engineers may use software to configure and control network without relying on static local config files on each device. ****Unites individual intelligent devices, i.e loadservers, switches, bridges, load balancers, etc. to have one universal profile.**  **Software is OS-like, a controller able to inventory hardware components, gather statistics, make routing decisions and enable inter-vendor compatibility. Scale can go to even just one device.**  **Example of use: directing user connections to newly minted VMs during peak usage and scale back down as needed.**  **3 layers:**** Application layer, aka northbound APIs, talks to the control layer. Example: Webapps, load balancers. ****Control layer receives its requests from the Application layer and replays to physical layer with configuration and instructions. Controller sits here.**** Physical layer/ Infrastructure/ southbound interface. Southbound APIs to communicate with the control plane bi-directionally. Has both physical and virtual devices.** |
+| --- |
+
+**SDN Advantages and Disadvantages**
+
+| **Some advantages of SDN include:**
+- **Centralized management**
+- **More granular control**
+- **Lower overall cost and labor**
+- **Give new life to old networking hardware**
+- **Gather network information and statistics**
+- **Facilitate communication between hardware from different vendors**
+ **Some disadvantages of SDN include:**
+- **Is currently a new technology**
+- **Lack of vendor support**
+- **Standards are still being developed**
+- **Centralized control opens a new target for security threats(Northbound API can be compromised to expose network)**
+ |
+| --- |
