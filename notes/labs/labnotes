@@ -1,0 +1,3643 @@
+Sec+ Labs instructions
+2.2.6 Configure Microsoft Defender
+You recognize that the threat of malware is increasing. As such, you would like to use Windows Virus & Threat Protection to protect your computer from malware.
+In this lab, your task is to enable and configure Windows Virus & Threat Protection as follows:
+1.	Add a file exclusion for D:\Graphics\cat.jpg.
+2.	Add a process exclusion for welcome.scr.
+3.	Locate the current threat definition version number.
+4.	Answer Question 1. What is the current security intelligence version
+5.	Check for updates.
+6.	Answer Question 2.After the update, what is the current security intelligence version?
+7.	Perform a quick scan.
+Steps: windows security  virus and threat protection settings
+Add exceptions
+Check for updates
+Current threats  quick scan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.3.11 Identify Social Engineering
+You work as the IT security administrator for a small corporate network in the United States of America. The name of your site is www.corpnet.xyz. The company president has received several questionable emails that he is concerned may be malicious attacks on the company.
+He has asked you to determine whether the emails are hazardous and to handle them accordingly.
+In this lab, your task is to:
+•	Read each email and determine whether it is legitimate.
+•	Delete any emails that are attempts at social engineering.
+•	Keep emails that are safe.
+Explanation
+Complete this lab as follows:
+1.	From the Inbox of the WebEmail interface, highlight an email.
+2.	Read and explore the email and determine whether it is a legitimate email. This includes using your mouse to hover over suspicious attachments and links.
+3.	Take the appropriate action for each email: 
+o	If the email is an attempt at social engineering, from the menu bar, select Delete.
+o	If the email safe, do nothing.
+4.	Repeat steps 1 through 3 for each email. The following table list the actions you should take for each email.
+  
+Email	Diagnosis	Action	Explanation for Action
+Microsoft Windows Update Center
+New Service Pack	Phishing	Delete	This email has various spelling errors. The link does not direct you to a Microsoft website.
+Joe Davis
+Re: Lunch Today?	Malicious Attachment	Delete	This email appears to be from a colleague; however, why would he fail to respond to your lunch question and send you a random attachment in return?
+Executive Recruiting
+Executive Jobs	Whaling	Delete	Whaling uses tailored information to attack executives. Clicking the link could install malware that would capture sensitive company information. The link is pointing to a site in Germany (.de). It is suspicious that this organization would recruite executives from the USA.
+Human Resources
+Ethics Video	Safe	Keep	While this email has an embedded link, it is digitally signed, as indicated by the green shield and checkmark. Therefore, you know it actually comes from your Human Resources department. When you hover over the link, you see that it is a secure link to the corporate web server.
+Online Banking Department
+Payment Pending	Phishing	Delete	This is a carefully crafted attempt to get your bank account information. Hover over the link and notice that it does not direct you to your credit union website, but to an unknown IP address. It is also very unlikely that a bank would delete your account for not verifying your information.
+Grandma Jacklin
+FW: FW: FW: Virus Attack Warning	Hoax	Delete	Any email that asks you to forward it to everyone you know is probably a hoax. This email also contains very bad grammar.
+Emily Smith
+Web Site Update	Spear Phishing	Delete	While this email appears to come from a colleague, notice that the link points to an executable file from a Russian domain name (.ru). A report file is more likely to have an extension of .pdf. .docx, .xlsx, or .txt. This probably is not a message a real colleague would send. This file will likely infect the computer with malware.
+Sara Goodwin
+Wow!!	Malicious Attachment	Delete	Emails with attachments from unknown people who address you as "Dear Friend" are probably not safe.
+Grandma Jacklin
+Free Airline Tickets	Hoax	Delete	Any email that asks you to forward it to everyone you know is probably a hoax, even if the contents promise you a prize. In addition, there is no way to know how many people the email has been forwarded to. Likewise, it is very unlikely that an airline would give away that many free tickets.
+Human Resources
+IMPORTANT NOTICE-Action Required	Safe	Keep	While this email appears very urgent, it doesn't ask you to click on anything or run any attachments. It does inform you that you need to go a website that you should already know and make sure your courses are complete.
+Activities Committee
+Pumpkin Contest	Safe	Keep	This email doesn't ask you to click on anything or run any attachments.
+Robert Williams
+Presentation	Safe	Keep	This email doesn't ask you to click on anything or run any attachments.
+
+3.1.3 Implement Physical Security
+Based on a review of physical security at your office, you have recommended several improvements. Your plan includes installing smart card readers, IP cameras, signs, and an access log book.
+In this lab, your task is to:
+Implement your physical security plan by dragging the correct items from the shelf onto the various locations in the building. As you drag the items from the shelf, the possible drop locations are highlighted. To implement your plan, you must:
+•	Install two IP security cameras in the appropriate location to record which employees access the key infrastructure. The security cameras should operate over the TCP/IP network.
+•	Install the smart card key readers in the appropriate location to control access to key infrastructure. The key card readers should be contactless and record more information than the card's ID.
+•	Install a Restricted Access sign on the networking closet door to control access to the infrastructure.
+•	Install the visitor log on the lobby desk.
+Complete this lab as follows:
+1.	Install the IP security cameras: 
+a.	From the Shelf, expand CCTV Cameras.
+b.	Drag the IP Security Camera from the shelf to the highlighted circle inside the networking closet.
+c.	Drag the IP Security Camera from the shelf to the highlighted circle just outside the networking closet.
+2.	Install the smart card key readers: 
+a.	From the Shelf, expand Door Locks.
+b.	Drag a smart card reader from the shelf to the highlighted location outside the building's front door.
+c.	Drag a smart card reader from the shelf to the highlighted location outside the networking closet's door.
+3.	Install the Restricted Access sign: 
+a.	From the Shelf, expand Restricted Access Signs.
+b.	Drag the Restricted Access sign from the shelf to the networking closet door.
+4.	Install the visitor log: 
+a.	From the Shelf, expand Visitor Logs.
+b.	Drag the visitor log from the shelf to the lobby desk.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.2.7 Configure Microsoft Defender Firewall
+You have a new laptop that is running Windows 10. You notice a security message that indicates that Windows Firewall has been disabled. The laptop is currently connected to your organization's network, and the Domain network profile settings are in effect. You plan to travel this week, and you will connect the laptop to various airport Wi-Fi hotspots. You need to enable Windows Firewall for any public network.
+In this lab, your task is to configure Windows Firewall as follows:
+•	Turn on Windows Firewall for the Public network profile only.
+•	In addition to the programs and ports currently allowed, allow the following service and programs through the firewall for the Public network profile only: 
+o	A service named Key Management Service
+o	An application named Arch98
+o	An application named Apconf
+Explanation
+To complete this lab, you need to allow the following service and programs through the firewall for the Public network profile only:
+•	A service named Key Management Service
+•	An application named Arch98
+•	An application named Apconf
+Leave all other existing apps and features as they are. 
+Complete this lab as follows:
+1.	Access the Windows Firewall settings. 
+a.	Right-click Start and then select Settings.
+b.	Select Network & Internet.
+c.	From the right pane, scroll down and select Windows Firewall.
+2.	From the Firewall & network protection dialog, under Public network, select Turn on.
+3.	Allow applications to communicate through the firewall for the Public network only. 
+a.	Select Allow an app through firewall.
+b.	Select Change settings.
+c.	For Key Management Service, clear Domain and Private, and then select Public.
+d.	Select Allow another app to configure an exception for an application not currently allowed through the firewall.
+e.	Select the application from the list and then select Add.
+f.	For the newly added application, clear Domain and Private, and then select Public.
+g.	Repeat steps 3d - 3f for the remaining application.
+4.	Select OK.
+4.3.5 Configure NTFS Permissions
+There are two groups of users who access the Office1 computer, Marketing and Research.
+Each group has a corresponding folder:
+•	E:\Marketing Data
+•	E:\Research Data
+In this lab, your task is to:
+1.	Disable permissions inheritance for E:\Marketing Data and E:\Research Data and convert the existing permissions to explicit permissions.
+2.	For each of the above folders, remove the Users group from the access control list (ACL).
+3.	Add the Marketing group to the Marketing Data folder ACL.
+4.	Add the Research group to the Research Data folder ACL.
+5.	Assign the groups Full Control to their respective folders.
+6.	Do not change any other permissions assigned to other users or groups.
+Explanation
+Complete this lab as follows:
+1.	Open the Data (E:) drive. 
+a.	From the Windows taskbar, select File Explorer.
+b.	From the left pane, expand and select This PC > Data (E:).
+2.	Disable inheritance and convert inherited permissions to explicit permissions. 
+a.	From the right pane, right-click the applicable folder and then select Properties.
+b.	Select the Security tab.
+c.	Select Advanced to modify inherited permissions.
+d.	Select Disable inheritance to prevent inherited permissions.
+e.	Select Convert inherited permissions into explicit permissions on this object.
+3.	Remove the Users group from the access control list. 
+a.	In Permission entries, select Users.
+b.	Select Remove to remove the group from the access control list.
+c.	Select OK.
+4.	Add a new group to the access control list and allow Full Control. 
+a.	Select Edit to add a group to the access control list.
+b.	Select Add.
+c.	Enter the name of the group you want to add and then select Check Names.
+d.	Select OK.
+e.	With the newly added group selected, under the Allow column, select Full control and then select OK.
+f.	Select OK to close the properties dialog.
+5.	Repeat steps 2 - 4 to modify the permissions for the additional folder.
+4.3.6 Disable Inheritance
+Confidential personnel data is stored on the CorpFiles file server in a shared directory named Personnel. You need to configure NTFS permissions for this folder so that only managers are authorized to access it.
+In this lab, your task is to perform the following:
+•	Grant the Managers group the Full Control permission to the D:\Personnel folder.
+•	Remove all inherited permissions that are flowing to the D:\Personnel folder.
+If a permission appears grayed out, it is an inherited permission. To modify it, you need to disable inheritance and create explicit permissions. 
+
+(Explicit vs. Inherited Permissions
+Each permission that exists can be assigned one of two ways: explicitly or by inheritance. For this reason, permissions are referred to as explicit permissions and inherited permissions.
+•	Explicit permissions are permissions that are set by default when the object is created, or by user action.
+•	Inherited permissions are permissions that are given to an object because it is a child of a parent object.
+Similar to the way rights are managed for groups of users, permissions are best managed for containers of objects. Objects within the container inherit all the access permissions in that container.
+For example, you might explicitly give permissions to a folder named MyFolder. All subfolders created within MyFolder automatically inherit the permissions assigned to MyFolder.
+In the example above, it is possible to stop subfolders from inheriting access permissions. To do this, you must explicitly clear a setting that causes the inheritance.
+)
+
+Explanation
+Complete this lab as follows:
+1.	Open the Data (E:) drive. 
+a.	From the Windows taskbar, select File Explorer.
+b.	From the left pane, expand and select This PC > Data (D:).
+2.	Configure NTFS permissions. 
+a.	From the right pane, right-click Personnel and select Properties.
+b.	Select the Security tab.
+c.	Select Edit.
+d.	Select Add.
+e.	Enter Managers as the group that will receive permission to the folder.
+f.	Click OK.
+g.	With the Managers group selected, select the appropriate Full control.
+h.	Click OK.
+3.	Prevent inherited permissions from parent. 
+ .	On the Security tab, select Advanced.
+a.	Select Disable inheritance.
+b.	Select Remove all inherited permissions from this object.
+c.	Click OK to close the Advanced Security Settings for Personnel dialog.
+d.	Click OK to close the Properties dialog.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.1.7 Configure a Security Appliance
+You are an IT security administrator for a small corporate network. To increase security for the corporate network, you have installed the pfSense network security appliance in your network. Now you need to configure the device.
+In this lab, your task is to configure pfSense as follows:
+•	Sign in to pfSense using the following case-sensitive information: 
+o	URL: 198.28.56.18
+o	Username: admin
+o	Password: pfsense
+•	Configure the DNS servers as follows: 
+o	Primary DNS server: 163.128.78.93 - Hostname: DNS1
+o	Secondary DNS server: 163.128.80.93 - Hostname: DNS2
+•	Configure the WAN IPv4 information as follows: 
+o	Enable the interface.
+o	Use a static IPv4 address of 65.86.24.136/8
+o	Add a new gateway using the following information: 
+	Type: Default gateway
+	Name: WANGateway
+	IP address: 65.86.1.1
+Explanation
+Complete this lab as follows:
+1.	Access the pfSense management console.
+a.	From the taskbar, select Google Chrome.
+b.	Maximize the window for better viewing.
+c.	In the address bar, type 198.28.56.18 and then press Enter.
+d.	Sign in using the following case-sensitive information: 
+	Username: admin
+	Password: pfsense
+e.	Select SIGN IN or press Enter.
+2.	Configure the DNS Servers. 
+a.	From the pfSense menu bar, select System > General Setup.
+b.	Under DNS Server Settings, configure the primary DNS Server as follows: 
+	Address: 163.128.78.93
+	Hostname: DNS1
+	Gateway: None
+c.	Select Add DNS Server to add a secondary DNS Server and then configure it as follows: 
+	Address: 163.128.80.93
+	Hostname: DNS2
+	Gateway: None
+d.	Scroll to the bottom and select Save.
+3.	Configure the WAN settings. 
+ .	From pfSense menu bar, select Interfaces > WAN.
+a.	Under General Configuration, select Enable interface.
+b.	Use the IPv4 Configuration Type drop-down to select Static IPv4.
+c.	Under Static IPv4 Configuration, in the IPv4 Address field, enter 65.86.24.136.
+d.	Use the IPv4 Address subnet drop-down to select 8.
+e.	Under Static IPv4 Configuration, select Add a new gateway.
+f.	Configure the gateway settings as follows: 
+	Default: Select Default gateway
+	Gateway name: Enter WANGateway
+	Gateway IPv4: 65.86.1.1
+g.	Select Add.
+h.	Scroll to the bottom and select Save.
+i.	Select Apply Changes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.1.8 Configure Network Security Appliance Access
+You work as the IT security administrator for a small corporate network. You need to secure access to your pfSense appliance, which is still configured with the default user settings.
+In this lab, your task is to:
+•	Change the password for the default pfSense account from pfsense to P@ssw0rd (use a zero).
+•	Create a new administrative user with the following parameters: 
+o	Username: zolsen
+o	Password: St@yout!
+o	Full Name: Zoey Olsen
+o	Group Membership: admins
+•	Set a session timeout of 15 minutes for pfSense.
+•	Disable the webConfigurator anti-lockout rule for HTTP.
+Access the pfSense management console through Google Chrome using: http://198.28.56.18 
+•	Default username: admin
+•	Password: pfsense
+Explanation
+Complete this lab as follows:
+1.	Access the pfSense management console. 
+a.	From the taskbar, select Google Chrome.
+b.	Maximize the window for better viewing.
+c.	In the Google Chrome address bar, enter 198.28.56.18 and then press Enter.
+d.	Enter the pfSense sign-in information as follows: 
+	Username: admin
+	Password: pfsense
+e.	Select SIGN IN.
+2.	Change the password for the default (admin) account. 
+ .	From the pfSense menu bar, select System > User Manager.
+a.	For the admin account, under Actions, select the Edit user icon (pencil).
+b.	For the Password field, change to P@ssw0rd (use a zero).
+c.	For the Confirm Password field, enter P@ssw0rd.
+d.	Scroll to the bottom and select Save.
+3.	Create and configure a new pfSense user.
+ .	Select Add.
+a.	For Username, enter zolsen.
+b.	For the Password field, enter St@yout!.
+c.	For the Confirm Password field, enter St@yout!
+d.	For Full Name, enter Zoey Olsen.
+e.	For Group Membership, select admins and then select Move to Member of list.
+f.	Scroll to the bottom and select Save.
+4.	Set a session timeout for pfSense. 
+ .	Under the System breadcrumb, select Settings.
+a.	For Session timeout, enter 15.
+b.	Select Save.
+5.	Disable the webConfigurator anti-lockout rule for HTTP.
+ .	From the pfSense menu bar, select System > Advanced.
+a.	Under webConfigurator, for Protocol, select HTTP.
+b.	Select Anti-lockout to disable the webConfigurator anti-lockout rule.
+c.	Scroll to the bottom and select Save.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.1.10 Configure QoS
+You are the IT administrator for a small corporate network. Several employees have complained of slow internet bandwidth. You have discovered that the user stations on the guest Wi-Fi network are consuming much of your company's bandwidth. You have decided to use pfSense's Traffic Shaper wizard to create the various rules needed to better control the bandwidth usage and to fine-tune the priority for the type of traffic used on your guest Wi-Fi network.
+Your network has one LAN and one WAN.
+In this lab, your task is to:
+•	Access the pfSense management console: 
+o	Username: admin
+o	Password: P@ssw0rd (zero)
+•	Create a firewall alias using the following specifications:
+o	Name: HighBW
+o	Description: High bandwidth users
+o	Assign the IP addresses of the high-bandwidth users to the alias: 
+	Vera's IP address: 172.14.1.25
+	Paul's IP address: 172.14.1.100
+•	The Shaper must be configured for the GuestWi-Fi interface using: 
+o	An upload bandwidth of 5 Mbits
+o	A download bandwidth of 45 Mbits
+•	Allow your voice over IP traffic to have priority with: 
+o	An upload bandwidth of 15 Mbits
+o	A download bandwidth of 20 Mbits
+•	To limit the user stations most likely to hog bandwidth, use the alias created earlier to penalize the offending stations to 2% of the bandwidth.
+•	Give a higher priority to the following services and protocols: 
+o	MSRDP
+o	VNC
+o	PPTP
+o	IPSEC
+•	Change the port number used on the floating rule created for MSRDP as follows: 
+o	Interface: GuestWi-Fi
+o	Destination Port Range: 3391
+•	Answer the question.
+1.	Sign into the pfSense management console. 
+a.	In the Username field, enter admin.
+b.	In the Password field, enter P@ssw0rd (zero).
+c.	Select SIGN IN or press Enter.
+2.	Create a high bandwidth usage alias. 
+ .	From the pfSense menu bar, select Firewall > Aliases.
+a.	Select Add.
+b.	Configure the Properties as follows: 
+	Name: HighBW
+	Description: High bandwidth users
+	Type: Host(s)
+c.	Add the IP addresses of the offending computers to the host(s) configuration as follows: 
+	Under Host(s), in the IP or FQDN field, enter 172.14.1.25.
+	Select Add Host.
+	In the IP or FQDN field, enter 172.14.1.100.
+d.	Select Save.
+e.	Select Apply Changes.
+3.	Start the Traffic Shaper wizard for dedicated links. 
+ .	From the pfSense menu bar, select Firewall > Traffic Shaper.
+a.	Under the Firewall bread crumb, select Wizards.
+b.	Select traffic_shaper_wizard_dedicated.xml.
+c.	Under Traffic shaper Wizard, in the Enter number of WAN type connections field, enter 1 and then select Next.
+4.	Configure the Traffic Shaper. 
+ .	Make sure you are on Step 1 of 8.
+a.	Using the drop-down menu for the upper Local interface, select GuestWi-Fi.
+b.	Using the drop-down menu for lower Local interface, make sure PRIQ is selected.
+c.	For the upper Upload field, enter 5.
+d.	Using the drop-down menu for the lower Upload field, select Mbit/s.
+e.	For the top Download field, enter 45.
+f.	Using the drop-down menu for the lower Download field, select Mbit/s.
+g.	Select Next.
+5.	Prioritize voice over IP traffic. 
+ .	Make sure you are on Step 2 of 8.
+a.	Under Voice over IP, select Enable to prioritize the voice over IP traffic.
+b.	Under Connection #1 parameters, in the Upload rate field, enter 15.
+c.	Using the drop-down menu for the top Units, select Mbit/s.
+d.	For the Download rate, enter 20.
+e.	Using the drop-down menu for the bottom Units, select Mbit/s.
+f.	Select Next.
+6.	Enable and configure a penalty box. 
+ .	Make sure you are on Step 3 of 8.
+a.	Under Penalty Box, select Enable to enable the penalize IP or alias option.
+b.	In the Address field, enter HighBW. This is the alias created earlier.
+c.	For Bandwidth, enter 2.
+d.	Select Next.
+7.	Continue to step 6 of 8. 
+ .	For Step 4 of 8, scroll to the bottom and select Next.
+a.	For Step 5 of 8, scroll to the bottom and select Next.
+8.	Raise and lower the applicable application's priority. 
+ .	Make sure you are on Step 6 of 8.
+a.	Under Raise or lower other Applications, select Enable to enable other networking protocols.
+b.	Under Remote Service / Terminal emulation, use the: 
+	MSRDP drop-down menu to select Higher priority.
+	VNC drop-down menu to select Higher priority.
+c.	Under VPN: 
+	Use the PPTP drop-down menu to select Higher priority
+	Use the IPSEC drop-down menu to select Higher priority
+d.	Scroll to the bottom and select Next.
+e.	For step 7 of 8, select Finish.
+Wait for the reload status to indicate that the rules have been created (look for Done).
+9.	View the floating rules created for the firewall. 
+ .	Select Firewall > Rules.
+a.	Under the Firewall breadcrumb, select Floating.
+b.	In the top right, select Answer Questions.
+c.	Answer the question and then minimize the question dialog.
+10.	Change the port number used for the MSRDP outbound rule. 
+ .	For the m_Other MSRDP outbound rule, select the edit icon (pencil).
+a.	Under Edit Firewall Rule, select GuestWi-Fi.
+b.	Under Destination, use the Destination Port Range drop-down menu to select Other.
+c.	In both Custom fields, enter 3391.
+d.	Select Save.
+e.	Select Apply Changes.
+f.	In the top right, select Answer Questions.
+g.	Select Score Lab.
+
+
+
+
+
+
+
+
+
+5.2.3 Configure a DMZ
+You are the IT administrator for a small corporate network. You want to make a web server that runs services accessible from the internet. To help protect your company, you want to place this server and other devices in a demilitarized zone (DMZ). This DMZ and server need to be protected by the pfSense Security Gateway Appliance (pfSense). Since a few of the other devices in the DMZ require an IP address, you have also decided to enable DHCP on the DMZ network.
+In this lab, your task is to perform the following:
+•	Access the pfSense management console: 
+o	Username: admin
+o	Password: P@ssw0rd (zero)
+•	Add a new pfSense interface that can be used for the DMZ. 
+o	Name the interface DMZ.
+o	Use a static IPv4 address of 172.16.1.1/16
+•	Add a firewall rule for the DMZ interface that allows all traffic from the DMZ. 
+o	Use a description of Allow DMZ to any rule
+•	Configure and enable the DHCP server for the DMZ interface. 
+o	Use a range of 172.16.1.100 to 172.16.1.200
+
+Explanation
+Complete this lab as follows:
+1.	Sign into the pfSense management console. 
+a.	In the Username field, enter admin.
+b.	In the Password field, enter P@ssw0rd (zero).
+c.	Select SIGN IN or press Enter.
+2.	Configure an interface for the DMZ. 
+ .	From the pfSense menu bar, select Interfaces > Assignments.
+a.	Select Add.
+b.	Select OPT1.
+c.	Select Enable interface.
+d.	Change the Description field to DMZ.
+e.	Under General Configuration, use the IPv4 Configuration Type drop-down menu to select Static IPv4.
+f.	Under Static IPv4 Configuration, in the IPv4 Address field, enter 172.16.1.1.
+g.	Use the subnet mask drop-down menu to select 16.
+h.	Select Save.
+i.	Select Apply Changes.
+j.	(Optional) Verify the change as follows: 
+	From the menu bar, select pfsense COMMUNITY EDITION.
+	Under Interfaces, verify that the DMZ is shown with the correct IP address.
+3.	Add a firewall rule to the DMZ interface. 
+ .	From the pfSense menu bar, select Firewall > Rules.
+a.	Under the Firewall breadcrumb, select DMZ. (Notice that no rules have been created.)
+b.	Under the Firewall breadcrumb, select LAN.
+c.	Under the Actions column, select the copy icon (two files) for the rule with a source of LAN net.
+d.	For the Action field, make sure Pass is selected.
+e.	Using the drop-down menu for the Interface field, select DMZ.
+f.	Under Source, use the drop-down menu to select DMZ net.
+g.	Under Destination, make sure it is configured for any.
+h.	Under Extra Options, change the description to Allow DMZ to any rule.
+i.	Scroll to the bottom and select Save.
+j.	Select Apply Changes.
+4.	Configure pfSense's DHCP server for the DMZ interface. 
+ .	From the menu bar, select Services > DHCP Server.
+a.	Under the Services breadcrumb, select DMZ.
+b.	Select Enable.
+c.	Configure the Range field as follows: 
+	From: 172.16.1.100
+	To: 172.16.1.200
+d.	Scroll to the bottom and select Save.
+
+
+
+
+
+
+
+
+
+
+
+
+5.3.5 Configure a Perimeter Firewall
+You work as the IT security administrator for a small corporate network. You recently placed a web server in the demilitarized zone (DMZ). You need to configure the perimeter firewall on the network security appliance (pfSense) to allow access to the web server from the LAN and from the WAN. You also want to allow all traffic from the LAN network to the DMZ network.
+In this lab, your task is to perform the following:
+•	Access the pfSense management console: 
+o	Username: admin
+o	Password: P@ssw0rd (zero)
+•	Add an HTTP firewall rule that allows traffic from the WAN to the web server in the DMZ.
+•	Add an HTTPS firewall rule that allows traffic from the WAN to the web server in the DMZ.
+
+Use the following table for the HTTP and HTTPS rules: 
+Parameter	Setting
+Source	WAN
+Source and destination port/service	HTTP (80), HTTPS (443)
+Destination	A single host
+IP address for host	172.16.1.5
+Descriptions	For HTTP: HTTP to DMZ from WAN
+For HTTPS: HTTPS to DMZ from WAN
+•	Add a firewall rule that allows all traffic from the LAN network to the DMZ network. Use the description LAN to DMZ Any.
+
+Explanation
+Complete this lab as follows:
+1.	Sign in to the pfSense management console. 
+a.	In the Username field, enter admin.
+b.	In the Password field, enter P@ssw0rd (zero).
+c.	Select SIGN IN or press Enter.
+2.	Create and configure a firewall rule to pass HTTP traffic from the internet to the Web server. 
+ .	From the pfSense menu bar, select Firewall > Rules.
+a.	Under the Firewall breadcrumb, select DMZ.
+b.	Select Add (either one).
+c.	Make sure Action is set to Pass.
+d.	Under Source, use the drop-down to select WAN net.
+e.	Select Display Advanced.
+f.	For Source Port Range, use the From drop-down to select HTTP (80).
+g.	Under Destination, use the Destination drop-down to select Single host or alias.
+h.	In the Destination Address field, enter 172.16.1.5.
+i.	Using the Destination Port Range drop-down, select HTTP (80).
+j.	Under Extra Options, in the Description field, enter HTTP to DMZ from WAN.
+k.	Select Save.
+l.	Select Apply Changes.
+3.	Create and configure a firewall rule to pass HTTPS traffic from the internet to the Web server. 
+ .	For the rule just created, select the Copy icon (two files).
+a.	Under Source, select Display Advanced.
+b.	Change the Source Port Range to HTTPS (443).
+c.	Under Destination, change the Destination Port Range to HTTPS (443).
+d.	Under Extra Options, change the Description filed to HTTPS to DMZ from WAN.
+e.	Select Save.
+f.	Select Apply Changes.
+4.	Create and configure a firewall rule to pass all traffic from the LAN network to the DMZ network. 
+ .	Select Add (either one).
+a.	Make sure Action is set to Pass.
+b.	For Protocol, use the drop-down to select Any.
+c.	Under Source, use the drop-down to select LAN net.
+d.	Under Destination, use the drop-down to select DMZ net.
+e.	Under Extra Options, change the Description filed to LAN to DMZ Any.
+f.	Select Save.
+g.	Select Apply Changes.
+
+
+
+
+
+
+
+
+5.4.3 Configure NAT
+You are the IT administrator for a small corporate network. One of your assignments is to manage several computers in the demilitarized zone (DMZ). However, your computer resides on the LAN network. To be able to manage these machines remotely, you have decided to configure your pfSense device to allow several remote control protocols to pass through the pfSense device using NAT port forwarding.
+In this lab, your task is to create NAT forwarding rules to:
+•	Access the pfSense management console: 
+o	Username: admin
+o	Password: P@ssw0rd (zero)
+•	Allow the RDP/TCP Protocols from the LAN network to the administrator's PC located in the DMZ using the following guidelines: 
+o	IP address for the administrator's PC: 172.16.1.100
+o	Description: RDP from LAN to Admin
+•	Allow the SSH Protocol through the pfSense device to the Kali Linux server using the following guidelines: 
+o	IP address for the Linux Kali server: 172.16.1.6
+o	Description: SSH from LAN to Kali
+•	Allow the RDP/TCP Protocols from the LAN network to the web server located in the DMZ using the following guidelines: 
+o	Destination and redirect port: Port 5151
+o	IP address for the web server: 172.16.1.5
+o	Description: RDP from LAN to web server
+
+Explanation
+Complete this lab as follows:
+1.	Sign into the pfSense management console. 
+a.	In the Username field, enter admin.
+b.	In the Password field, enter P@ssw0rd (zero).
+c.	Select SIGN IN or press Enter.
+2.	Configure NAT port forwarding for the administrator's PC. 
+ .	From the pfSense menu bar, select Firewall > NAT.
+a.	Select Add (either one).
+b.	Configure or verify the following settings: 
+	Interface: LAN
+	Protocol: TCP
+	Destination type: LAN address
+	Destination port range (From and To): MS RDP
+	Redirect target IP: 172.16.1.100
+	Redirect target port: MS RDP
+	Description: RDP from LAN to Admin
+c.	Select Save.
+3.	Configure NAT port forwarding for the Kali Linux server. 
+ .	Select Add (either one).
+a.	Configure or verify the following settings: 
+	Interface: LAN
+	Protocol: TCP
+	Destination type: LAN address
+	Destination port range (From and To): SSH
+	Redirect target IP: 172.16.1.6
+	Redirect target port: SSH
+	Description: SSH from LAN to Kali
+b.	Select Save.
+4.	Configure NAT port forwarding for the web server. 
+ .	Select Add (either one).
+a.	Configure or verify the following settings: 
+	Interface: LAN
+	Protocol: TCP
+	Destination type: LAN address
+	Destination port range (From and To): Other 
+	Custom (From and To) 5151
+	Redirect target IP: 172.16.1.5
+	Redirect target port: Other 
+	Custom: 5151
+	Description: RDP from LAN to web server
+b.	Select Save.
+c.	Select Apply Changes.
+
+
+
+
+
+
+
+
+
+5.5.5 Configure a VPN Connection iPad
+You work as the IT security administrator for a small corporate network. You recently set up the Remote Access VPN feature on your network security appliance to provide you and your fellow administrators with secure access to your network. You are currently at home and would like to connect your iPad to the VPN. Your iPad is connected to your home wireless network.
+In this lab, your task is to:
+•	Add an IPSec VPN connection using the following values: 
+Parameter	Value
+Description	CorpNetVPN
+Server	198.28.56.34
+Account	mbrown
+Secret	asdf1234$
+•	Turn on the VPN.
+•	Verify that a connection is established. The password for mbrown is L3tM31nN0w (0 = zero).
+Explanation
+Complete this lab as follows:
+1.	Verify your connection to the Home-Wireless network. 
+a.	Select Settings.
+b.	Select Wi-Fi.
+2.	Add and configure a VPN. 
+ .	From the left menu, select General.
+a.	From the right menu, select VPN.
+b.	Select Add VPN Configuration.
+c.	Select IPSec.
+d.	In the Description field, enter CorpNetVPN.
+e.	In the Server field, enter 198.28.56.34.
+f.	In the Account field, enter mbrown.
+g.	In the Secret field, enter asdf1234$.
+h.	In the upper right, select Save.
+3.	Connect to the VPN just created. 
+ .	Under VPN Configuration, slide Not Connected to ON.
+a.	When prompted, enter L3tM31nN0w (0 = zero) as the password.
+b.	Select OK.
+
+5.6.3 Configure URL Blocking
+You work as the IT security administrator for a small corporate network. After monitoring your network, you have discovered that several employees are wasting time visiting non-productive and potentially malicious websites. As such, you have added pfBlockerNG to your pfSense device. You now need to configure this feature and add the required firewall rules that allow/block specific URLs and prevent all DNS traffic from leaving you LAN network.
+In this lab, your task is to:
+•	Sign in to pfSense using:
+o	Username: admin
+o	Password: P@ssw0rd (zero)
+•	Create a firewall rule that allows all DNS traffic going to the LAN network.
+•	Create a firewall rule that blocks all DNS traffic coming from the LAN.
+
+Use the following table for the two rules: 
+Parameter	Setting
+Protocol	UDP (53)
+Descriptions	For the allow rule: Allow all DNS to LAN
+For the block rule: Block DNS from LAN
+•	Arrange the firewall rules in the order that allows them to function properly.
+•	Enable and configure pfBlockerNG using the information in the following table:
+•	
+Parameter	Setting
+DNSBL Virtual IP	192.168.0.0
+Top-Level Domain (TDL) Blacklist	o	financereports.co
+o	totalpad.com
+o	salesscript.info
+Top-Level Domain (TDL) Whitelist	o	.www.google.com
+o	.play.google.com
+o	.drive.google.com
+Explanation
+Complete this lab as follows:
+1.	Sign into the pfSense management console. 
+a.	In the Username field, enter admin.
+b.	In the Password field, enter P@ssw0rd (zero).
+c.	Select SIGN IN or press Enter.
+2.	Create a firewall rule that blocks all DNS traffic coming from the LAN. 
+ .	From the pfSense menu bar, select Firewall > Rules.
+a.	Under the Firewall breadcrumb, select LAN.
+b.	Select Add (either one).
+c.	Under Edit Firewall Rule, set Protocol to UDP.
+d.	Under Source, use the drop-down menu to select LAN net.
+e.	Under Destination, configure the Destination Port Range to use DNS (53) (for From and To).
+f.	Under Extra Options, in the Description field, enter Block DNS from LAN.
+g.	Select Save.
+h.	Select Apply Changes.
+3.	Create a firewall rule that allows all DNS traffic going to the LAN network. 
+ .	Select Add (either one).
+a.	Under Edit Firewall Rule, set Protocol to UDP.
+b.	Under Destination, use the drop-down menu to select LAN net.
+c.	Configure the Destination Port Range to use DNS (53) (for From and To).
+d.	Under Extra Options, in the Description field, enter Allow all DNS to LAN.
+e.	Select Save.
+f.	Select Apply Changes.
+4.	Arrange the firewall rules in the order that allows them to function properly. 
+ .	Using drag-and-drop, move the rules to the following order (top to bottom): 
+	Anti-Lockout Rule
+	Allow all DNS to LAN
+	Block DNS from LAN
+	In the simulated version of pfSense, you can only drag and drop the rules you created. You cannot drag and drop the default rule. 
+a.	Select Save.
+b.	Select Apply Changes.
+5.	Enable pfBlockerNG. 
+ .	From the pfSense menu bar, select Firewall > pfBlockerNG.
+a.	Under General Settings, select Enable pfBlockerNG.
+b.	Scroll to the bottom and select Save.
+6.	Enable and configure DNS block lists. 
+ .	Under the Firewall breadcrumb, select DNSBL.
+a.	Select Enable DNSBL.
+b.	For DNSBL Virtual IP, enter 192.168.0.0.
+c.	Scroll to the bottom and expand TLD Blacklist.
+d.	Enter the following URLs in the TLD Blacklist box: 
+	financereports.co
+	totalpad.com
+	salesscript.info
+e.	Expand TLD Whitelist and then enter the following URLs: 
+	.www.google.com
+	.play.google.com
+	.drive.google.com
+f.	Select Save.
+5.9.6 Secure a Switch
+You are the IT security administrator for a small corporate network. You need to secure access to your switch, which is still configured with the default settings.
+Access the switch management console through Chrome on http://192.168.0.2 with the username cisco and password cisco. 
+In this lab, your task is to:
+•	Create a new user account with the following settings: 
+o	Username: ITSwitchAdmin
+o	Password: Admin$only1844
+o	User Level: Read/Write Management Access (15)
+•	Edit the default user account as follows: 
+o	Username: cisco
+o	Password: CLI$only1958
+o	User Level: Read-Only CLI Access (1)
+•	Save the changes to the switch's startup configuration file.
+Explanation
+Complete this lab as follows:
+1.	Log in to the CISCO switch. 
+a.	From the taskbar, select Google Chrome.
+b.	In the URL field, enter 192.168.0.2 and press Enter.
+c.	Maximize the window for easier viewing.
+d.	In the Username and Password fields, enter cisco (case sensitive).
+e.	Select Log In.
+2.	Create a new user account. 
+ .	From Getting Started under Quick Access, select Change Device Password.
+a.	Select Add.
+b.	For the username, enter ITSwitchAdmin (case sensitive).
+c.	For the password, enter Admin$only1844 (case sensitive).
+d.	For Confirm Password, enter Admin$only1844.
+e.	For User Level, make sure Read/Write Management Access (15) is selected.
+f.	Select Apply.
+g.	Select Close.
+3.	Edit the default user account. 
+ .	Under User Account Table, select cisco (the default user) and then select Edit.
+a.	For the password, enter CLI$only1958.
+b.	For Confirm Password, enter CLI$only1958.
+c.	For User Level, select Read-Only CLI Access (1).
+d.	Select Apply.
+4.	Save the changes to the switch's startup configuration file. 
+ .	From the top of the switch window, select Save.
+a.	Under Source File Name, make sure Running configuration is selected.
+b.	Under Destination File Name, make sure Startup configuration is selected.
+c.	Select Apply.
+d.	Select OK.
+e.	Select Done.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.11.6 Spoof MAC Addresses with SMAC
+As an IT administrator, you need to know how security breaches are caused. You know that SMAC is used for MAC spoofing, so you are going to spoof your MAC address.
+In this lab, your task is to complete the following:
+•	On Office2, use ipconfig /all and find the IP address and MAC address.
+•	Using SMAC, spoof the MAC address on ITAdmin to match that of Office2.
+•	Refresh the IP address on ITAdmin.
+•	Verify the MAC and IP address now match Office2.
+
+Explanation
+Complete this lab as follows:
+1.	Find the MAC address for Office2. 
+a.	Right-click Start and then select Windows PowerShell (Admin).
+b.	From the Command Prompt, type ipconfig /all and press Enter.
+c.	Find the MAC address.
+2.	Spoof the MAC address. 
+a.	From the top navigation tabs, select Floor 1 Overview.
+b.	Under IT Administration, select ITAdmin.
+c.	In the Windows search bar, type SMAC.
+d.	Under Best match, right-click SMAC and select Run as administrator.
+e.	In the New Spoofed Mac Address field, type 00:00:55:55:44:15 (the MAC address from Office2).
+f.	Select Update MAC.
+g.	Select OK to confirm the adapter restart.
+3.	Renew the IP information for the ITAdmin computer. 
+a.	Right-click Start and select Windows PowerShell (Admin).
+b.	From the Command Prompt, type ipconfig /renew to renew the IP address.
+c.	Type ipconfig /all to confirm the MAC address and the IP address have been updated.
+
+
+
+
+
+
+5.11.10 Secure Access to a Switch
+You are the IT security administrator for a small corporate network. You need to increase the security on the switch in the Networking Closet by restricting access management and by updating the switch's firmware.
+In this lab, your task is to:
+•	Create an access profile named MgtAccess and configure it with the following settings: 
+Setting	Value
+Access Profile Name	MgtAccess
+Rule Priority	1
+Management Method	All
+Action	Deny
+Applies to Interface	All
+Applies to Source IP address	All
+•	Add a profile rule to the MgtAccess profile with the following settings: 
+Setting	Value
+Rule Priority	2
+Management Method	HTTP
+Action	Permit
+Applies to interface	All
+Applies to Source IP address	User defined
+IP Version: Version 4
+IP Address: 192.168.0.10
+Network Mask: 255.255.255.0
+•	Set the MgtAccess profile as the active access profile.
+•	Save the changes to the switch's startup configuration file using the default settings.
+•	Update the firmware image to the latest version by downloading the firmware files found in C:\Sx300_Firmware\Sx300_FW-1.2.7.76.ros.
+Explanation
+Complete this lab as follows:
+1.	Create and configure an Access Profile named MgtAccess. 
+a.	From the left pane, expand and select Security > Mgmt Access Method > Access Profiles.
+b.	Select Add.
+c.	Enter the Access Profile Name of MgtAccess.
+d.	Enter the Rule Priority of 1.
+e.	For Action, select Deny.
+f.	Select Apply and then select Close.
+2.	Add a profile rule to the MgtAccess profile. 
+a.	From the left pane, under Security > Mgmt Access Method, select Profile Rules.
+b.	Select the MgtAccess profile and then select Add.
+c.	Enter a Rule Priority of 2.
+d.	For Management Method, select HTTP.
+e.	For Applies to Source IP Address, select User Defined.
+f.	For IP Address, enter 192.168.0.10.
+g.	Enter the 255.255.255.0.
+h.	Select Apply and then select Close.
+3.	Set the MgtAccess profile as the active access profile. 
+a.	From the left pane, under Security > Mgmt Access Method, select Access Profiles.
+b.	Use the Active Access Profile drop-down list to select MgtAccess.
+c.	Select Apply.
+d.	Select OK.
+4.	Save the changes to the switch's startup configuration file. 
+a.	At the top, select Save.
+b.	For Source File Name, make sure Running configuration is selected.
+c.	For Destination File Name, make sure Startup configuration is selected.
+d.	Select Apply.
+e.	Select OK.
+5.	Upgrade the firmware image to the latest version. 
+a.	From the left pane, select Getting Started.
+b.	Under Quick Access, select Upgrade Device Software.
+c.	For File Name, select Choose File.
+d.	Browse to and select C:\Sx300_Firmware\Sx300_FW-1.2.7.76.ros.
+e.	Select Open.
+f.	Select Apply.
+g.	Select OK.
+h.	From the left pane, under File Management, select Active Image.
+i.	For Active Image After Reboot, use the drop-down menu to select Image 2.
+j.	Select Apply.
+k.	From the left pane under Administration, select Reboot.
+l.	From the right pane, select Reboot.
+m.	Select OK.
+
+
+
+
+5.11.11 Secure Access to a Switch 2
+You are the IT security administrator for a small corporate network. You need to increase the security on the switch in the Networking Closet by creating an access control list. You have been asked to prevent video game consoles from connecting to the switch.
+In this lab, your task is to:
+•	Create a MAC-based ACL named GameConsoles.
+•	Configure the GameConsoles MAC-based access control entry (ACE) settings as follows: 
+Priority	Action	Destination
+MAC Address	Source MAC Address
+1	Deny	Any	Value: 00041F111111
+Mask: 000000111111
+2	Deny	Any	Value: 005042111111
+Mask: 000000111111
+3	Deny	Any	Value: 000D3A111111
+Mask: 000000111111
+4	Deny	Any	Value: 001315111111
+Mask: 000000111111
+5	Deny	Any	Value: 0009BF111111
+Mask: 000000111111
+6	Deny	Any	Value: 00125A111111
+Mask: 000000111111
+•	Bind the GameConsoles ACL to all of the GE1-GE30 interfaces.
+Use Copy Settings to apply the binding to multiple interfaces
+•	Save the changes to the switch's startup configuration file. Use the default settings.
+Explanation
+While completing this lab, use the following information:
+•	Configure the GameConsoles MAC-based access control entry (ACE) settings as follows:
+•	
+Priority	Action	Destination
+MAC Address	Source MAC Address
+1	Deny	Any	Value: 00041F111111
+Mask: 000000111111
+2	Deny	Any	Value: 005042111111
+Mask: 000000111111
+3	Deny	Any	Value: 000D3A111111
+Mask: 000000111111
+4	Deny	Any	Value: 001315111111
+Mask: 000000111111
+5	Deny	Any	Value: 0009BF111111
+Mask: 000000111111
+6	Deny	Any	Value: 00125A111111
+Mask: 000000111111
+Complete this lab as follows:
+1.	Create the GameConsoles ACL. 
+a.	From the Getting Started page, under Quick Access, select Create MAC-Based ACL.
+b.	Select Add.
+c.	In the ACL Name field, enter GameConsoles
+d.	Click Apply and then click Close.
+2.	Create MAC-based access control. 
+ .	Select MAC-Based ACE Table.
+a.	Select Add.
+b.	Enter the priority.
+c.	Select the action.
+d.	For Destination MAC Address, make sure Any is selected.
+e.	For Source MAC Address, select User Defined.
+f.	Enter the source MAC address value.
+g.	Enter the source MAC address mask.
+h.	Click Apply.
+i.	Repeat steps 2c–2i for additional ACE entries.
+j.	Click Close.
+3.	Bind the GameConsoles ACL to all of the interfaces. 
+ .	From the left pane, under Access Control, select ACL Binding (Port).
+a.	Select GE1.
+b.	At the bottom of the window, select Edit.
+c.	Click Select MAC-Based ACL.
+d.	Select Apply and then select Close.
+e.	Select Copy Settings.
+f.	In the Copy configuration's to field, enter 2-30.
+g.	Click Apply.
+4.	Save the Configuration. 
+ .	From the top of the window, select Save.
+a.	Under Source File Name, make sure Running configuration is selected.
+b.	Under Destination File Name, make sure Startup configuration is selected.
+c.	Click Apply.
+d.	Click OK.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.12.4 Explore VLANs
+You are the IT security administrator for a small corporate network. You need to increase the networking closet's security by implementing a CCTV system with IP cameras. As part of this task, you need to separate the CCTV data traffic on the network using a separate VLAN on the switch.
+The patch panel connections for the networking closet, lobby, and IT administration office are installed and ready for use (ports 18-20). A DHCP server is already configured to provide the IP cameras and the laptop in the IT administration office with the correct TCP/IP settings (port 21). For an easier implementation, create the logical VLAN first and then establish the physical connections of the IP cameras and the laptop.
+In this lab, your task is to perform the following:
+•	Access the switch management console from ITAdmin using the following credentials: 
+o	Address: http://192.168.0.2
+o	Username: ITSwitchAdmin
+o	Password: Admin$only (the password is case-sensitive)
+•	Create and configure a VLAN on the switch as follows: 
+o	VLAN ID: 2
+o	VLAN Name: IPCameras
+o	Configure ports GE18, GE19, GE20, GE21 as untagged.
+o	Port 18 is connected to the network jack next to the laptop in the IT administration office.
+o	Port 19 is connected to the camera mount in the lobby.
+o	Port 20 is connected to the camera mount in the networking closet.
+o	Port 21 is connected to a DHCP server that provides IP addresses to the camera and the laptop. 
+•	In the lobby and networking closet, perform the following: 
+o	Connect a Cat5e cable to the RJ-45 ports on the IP camera and the IP camera wall plate.
+o	Mount the IP camera on the wall plate.
+•	In the networking closet, connect the DHCP server to the VLAN using a Cat5e cable from switch port 21 to patch panel port 21 in the rack.
+•	In the IT administration office, connect a Cat5e cable to the laptop's network port and the open port on the wall plate.
+•	On ITAdmin-Lap, verify the VLAN configuration and IP camera installation as follows: 
+1.	Select Start > IP Cameras.
+2.	Verify that the program detects the IP cameras on the VLAN 2 network.
+Explanation
+Complete this lab as follows:
+1.	From the ITAdmin computer, log into the CISCO switch. 
+a.	From the taskbar, open Google Chrome.
+b.	Maximize the window for easier viewing.
+c.	In the URL field, enter 192.168.0.2 and press Enter.
+d.	For Username, enter ITSwitchAdmin.
+e.	For Password, enter Admin$only (password is case-sensitive).
+f.	Select Log In.
+2.	Create a VLAN. 
+a.	From the Getting Started pane, under Initial Setup, select Create VLAN.
+b.	Select Add.
+c.	For VLAN ID, enter 2.
+d.	For VLAN Name, enter IPCameras.
+e.	Select Apply.
+f.	Select Close.
+3.	Configure a VLAN. 
+a.	From the left pane, under VLAN Management, select Port to VLAN.
+b.	From the the VLAN ID equals to drop-down menu, select 2.
+c.	Select Go.
+d.	For ports GE18, GE19, GE20, and GE21, select Untagged.
+e.	Select Apply.
+4.	Connect the IP camera in the lobby to the VLAN and mount the IP cameras. 
+a.	From the top navigation area, select Floor 1.
+b.	Under Lobby, select Hardware.
+c.	Under Shelf, expand CCTV Cameras.
+d.	Drag the IP Camera (Lobby) to the workspace.
+e.	Under Workspace for the IP camera, select Back to switch to the back view of the IP camera.
+f.	Under Shelf, expand Cables and then select a Cat5e Cable, RJ45.
+g.	Under Selected Component, drag a RJ45 Connector to the RJ-45 port on the IP Camera wall mount plate.
+h.	From the wall plate's Partial Connections list, drag the other connector to the RJ-45 port on the back of the IP camera.
+i.	Drag the IP camera to the IP camera wall plate.
+5.	Connect the IP camera in the networking closet to the VLAN and mount the IP cameras. 
+a.	From the top navigation area, select Floor 1.
+b.	Under Networking Closet, select Hardware.
+c.	Under Shelf, expand CCTV Cameras.
+d.	Drag the IP Camera (Networking Closet) to the workspace.
+e.	Under Workspace for the IP camera, select Back to switch to the back view of the IP camera.
+f.	Under Shelf, expand Cables and then select Cat5e Cable, RJ45.
+g.	Under Selected Component, drag a RJ45 Connector to the RJ-45 port on the IP Camera mount wall plate.
+h.	Under Selected Component, drag the unconnected RJ45 cable to the RJ-45 port on the back of the IP camera.
+i.	To mount the IP camera, drag the IP camera to the IP camera wall plate.
+6.	Connect the DHCP server and laptop to the VLAN. 
+a.	In the networking closet, under Shelf, select a Cat5e Cable, RJ45.
+b.	Under Selected Component, drag a RJ45 Connector to port 21 on the switch.
+c.	Under Selected Component, drag the unconnected RJ45 Connector to port 21 on the patch panel.
+7.	Connect the laptop to the VLAN. 
+a.	From the top menu, select Floor 1.
+b.	Under IT Administration, select Hardware.
+c.	Above the laptop, select Back to switch to the back view of the laptop.
+d.	Under Shelf, select Cat5e Cable, RJ45.
+e.	Under Selected Component, drag a RJ45 Connector to the RJ-45 port on the laptop.
+f.	Under Selected Component, drag the unconnected RJ45 Connector to the open RJ-45 port on the wall plate. 
+To verify that all components are connected, you can change location to the network closet hardware view. You should see green link/activity lights on ports 18 - 21 of the switch. You should also see amber Power Over Ethernet (POE) lights on ports 19 and 20, which are connected to the IP cameras. 
+8.	Launch the IP camera monitoring software. 
+ .	Under the laptop's workspace, select Front.
+a.	On the IT-Laptop2, select Click to view Windows 10.
+b.	From the taskbar, select Start.
+c.	Select IP Cameras.
+d.	Verify that both cameras are detected on the network.
+
+
+
+
+
+
+
+
+
+
+
+
+5.13.5 Restrict Telnet and SSH Access
+You are in the process of configuring a new router. The router interfaces connect to the following networks:
+Interface	Network
+FastEthernet0/0	192.168.1.0/24
+FastEthernet0/1	192.168.2.0/24
+FastEthernet0/1/0	192.168.3.0/24
+Only Telnet and SSH access from these three networks should be allowed.
+In this lab, your task is to:
+•	Use the access-list command to create a standard numbered access list using number 5.
+•	Add a permit statement for each network to the access list.
+•	Use the access-class command to apply the access list to VTY lines 0–4. Use the in direction to filter incoming traffic.
+•	Save your changes in the startup-config file.
+Explanation
+Complete this lab as follows:
+1.	Enter the configuration mode for the router: 
+a.	From the exhibit, select the router.
+b.	From the terminal, press Enter.
+c.	Type enable and then press Enter.
+d.	Type config term and then press Enter.
+2.	From the terminal, create a standard numbered access list using number 5. Add a permit statement for each network to the access list. 
+ .	Type access-list 5 permit 192.168.1.0   0.0.0.255 and then press Enter.
+a.	Type access-list 5 permit 192.168.2.0   0.0.0.255 and then press Enter.
+b.	Type access-list 5 permit 192.168.3.0   0.0.0.255 and then press Enter.
+3.	Apply the access list to VTY lines 0–4. Filter incoming traffic. 
+ .	Type line vty 0 4 and then press Enter.
+a.	Type access-class 5 in and then press Enter.
+b.	Press Ctrl + Z.
+4.	Save your changes in the startup-config file. 
+ .	Type copy run start and then press Enter.
+a.	Press Enter to begin building the configuration.
+b.	Press Enter.
+
+
+
+
+5.13.6 Permit Traffic
+The Fiji router has been configured with Standard IP Access List 11. The access list is applied to the Fa0/0 interface. The access list must allow all traffic except traffic coming from hosts 192.168.1.10 and 192.168.1.12. However, you've noticed that it's preventing all traffic from being sent on Fa0/0. You remember that access lists contain an implied deny any statement. This means that any traffic not permitted by the list is denied. For this reason, access lists should contain at least one permit statement or all traffic is blocked.
+In this lab, your task is to:
+•	Add a permit any statement to Access List 11 to allow all traffic other than the restricted traffic.
+•	Save your changes in the startup-config file.
+Explanation
+Complete this lab as follows:
+1.	Enter the configuration mode for the Fiji router: 
+a.	From the exhibit, select the Fiji router.
+b.	From the terminal, press Enter.
+c.	Type enable and then press Enter.
+d.	Type config term and then press Enter.
+2.	From the terminal, add a permit any statement to Access List 11 to allow all traffic other than the restricted traffic. 
+ .	Type access-list 11 permit any and press Enter.
+a.	Press Ctrl + Z.
+3.	Save your changes in the startup-config file. 
+ .	Type copy run start and then press Enter.
+a.	Press Enter to begin building the configuration.
+b.	Press Enter.
+
+
+
+
+
+
+
+
+
+
+
+5.13.7 Block Source Hosts
+You have a small business network connected to the internet through a single router as shown in the network diagram. You have noticed that three hosts on the internet have been flooding your router with unwanted traffic. As a temporary measure, you want to prevent all communication from these three hosts until the issue is resolved.
+In this lab, your task is to:
+•	Create a Standard Access List 25.
+•	Add statements to the access list to block traffic from the following hosts: 
+o	199.68.111.199
+o	202.177.9.1
+o	211.55.67.11
+•	Add a statement to allow all other traffic from all other hosts.
+•	Apply Access List 25 to the Serial0/0/0 interface to filter incoming traffic.
+You can also use 199.68.111.199 0.0.0.0 (without the host parameter) to identify a specific host. You can also use 0.0.0.0 255.255.255.255 to identify any host. Because this is a temporary solution, you do not need to save your changes. 
+
+Explanation
+Complete this lab as follows:
+1.	Enter the configuration mode for the router: 
+a.	From the exhibit, select the router.
+b.	From the terminal, press Enter.
+c.	Type enable and then press Enter.
+d.	Type config term and then press Enter.
+2.	From the terminal, create a standard numbered access list using number 25. Add statements to the access list to block traffic to the required hosts. 
+ .	Type access-list 25 deny host 199.68.111.199 and press Enter.
+a.	Type access-list 25 deny host 202.177.9.1 and press Enter.
+b.	Type access-list 25 deny host 211.55.67.11 and press Enter.
+3.	From the terminal, add a statement to allow all other traffic from all other hosts, by typing access-list 25 permit any and pressing Enter.
+4.	From the terminal, apply Access List 25 to the Serial0/0/0 interface to filter incoming traffic. 
+ .	Type int s0/0/0 and press Enter.
+a.	Type ip access-group 25 in and press Enter.
+b.	Type Ctrl + Z.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.5.5 Create OUs
+You are the IT administrator for a small corporate network. You have just installed Active Directory on a new Hyper-V guest server named CorpDC. Now you need to create an Active Directory organizational unit (OU) structure based on the company's departmental structure.
+In this lab, your task is to create the following organizational units (OUs) on the CorpDC server and ensure that each is protected from accidental deletion as follows:
+•	Beneath the CorpNet.local domain, create the following OUs: 
+o	Accounting
+o	Admins
+o	Marketing
+o	Research-Dev
+o	Servers
+o	Support
+o	Workstations
+o	Sales
+•	Within the Sales OU, create the following OUs: 
+o	SalesManagers
+o	TempSales
+----
+•	Access the CorpDC server. 
+o	From the left pane of Hyper-V Manager, select CORPSERVER.
+o	From the Virtual Machines pane, double-click CorpDC.
+•	Create the Active Directory organizational units (OUs) beneath the CorpNet.local domain. 
+o	From Server Manager's menu bar, select Tools > Active Directory Users and Computers.
+o	From the left pane, right-click CorpNet.local and then select New > Organizational Unit. 
+You can also create OUs by selecting the Create a new organizational unit in the current container icon ( ) located in the Active Directory Users and Computers ribbon. 
+o	Enter the name of the OU to be created.
+o	Ensure that Protect container from accidental deletion is selected and then select OK.
+o	Repeat steps 2b - 2d until all the required domain OUs are created.
+•	Create the OUs within the Sales OU. 
+o	From the left pane, select CorpNet.local > Sales.
+o	From the menu bar, select the Create a new organizational unit in the current container icon.
+o	Enter the name of the OU to be created.
+o	Ensure that Protect container from accidental deletion is selected and then select OK.
+o	Repeat steps 3a - 3d to create the remaining OU.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.5.6 Delete OUs
+You are the IT administrator for a corporate network. You have just installed Active Directory on a new Hyper-V guest server named CorpDC. You have created an Active Directory structure based on the company's departmental structure. While creating the structure, you added a Workstations OU in each of the departmental OUs. After further thought, you decide to use one Workstations OU for the entire company. As a result, you need to delete the departmental Workstations OUs.
+In this lab, your task is to delete the following OUs on CorpDC:
+•	Within the Marketing OU, delete the Workstations OU.
+•	Within the Research-Dev OU, delete the Workstations OU.
+•	Within the Sales OU, delete the Workstations OU.
+•	Access the CorpDC server. 
+o	From Hyper-V Manager, select CORPSERVER.
+o	From the Virtual Machines pane, double-click CorpDC.
+•	Delete the applicable OUs. 
+o	From Server Manager, select Tools > Active Directory Users and Computers.
+o	Select View > Advanced Features.
+This enables the Advanced feature, allowing you to disable the OU from accidental deletion.
+o	From the left pane, expand CorpNet.local > the_parent OU.
+o	Right-click the OU that needs to be deleted and then select Properties.
+o	Select the Object tab.
+o	Clear Protect object from accidental deletion and then select OK.
+o	Right-click the OU to be deleted and then click Delete.
+o	Click Yes to confirm the OU's deletion.
+o	Repeat steps 2c - 2h to delete the remaining OUs.
+•	From the Active Directory Users and Computers menu bar, select View > Advanced Features to turn off the Advanced Features view.
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.5.10 Create and Link a GPO
+You are the IT security administrator for a small corporate network. You would like to use Group Policy to enforce settings for certain workstations on your network. You have prepared and tested a security template file that contains policies that meet your company's requirements.
+In this lab, your task is to perform the following on CorpDC:
+•	Create a GPO named Workstation Settings in the CorpNet.local domain.
+•	Link the Workstation Settings GPO to the following organizational units (OUs): 
+o	Marketing > TempMarketing
+o	Sales > TempSales
+o	Support
+•	Import the ws_sec.inf template file, located in C:\Templates, to the Workstation Settings Group Policy object.
+1.	Access the CorpNet.local domain. 
+a.	From Server Manager, select Tools > Group Policy Management.
+b.	Expand Forest: CorpNet.local > Domains > CorpNet.local.
+c.	Maximize the window for better viewing.
+2.	Create the Workstation Settings GPO and link it to the CorpNet.local domain. 
+ .	Right-click the Group Policy Objects OU and select New.
+a.	In the Name field, enter the Workstation Settings and then click OK.
+3.	Link OUs to the Workstation Settings GPO. 
+ .	Right-click the OU and select Link an Existing GPO.
+a.	Under Group Policy Objects, select Workstation Settings from the list and then click OK.
+b.	Repeat step 3 to link the additional OUs.
+4.	Import the ws_sec.inf security policy template. 
+ .	Expand Group Policy Objects.
+a.	Right-click Workstation Settings and select Edit.
+b.	Under Computer Configuration, expand Policies > Windows Settings.
+c.	Right-click Security Settings and select Import Policy.
+d.	Browse to the C:\Templates.
+e.	Select ws_sec.inf and then click Open.
+
+
+
+
+
+
+
+
+
+
+6.5.11 Create User Accounts
+You are the IT administrator for a small corporate network. You recently added an Active Directory domain to the CorpDC server to manage network resources centrally. You now need to add user accounts in the domain.
+In this lab, your task is to create the following user accounts on CorpDC:
+User	Job Role	Departmental OU
+Juan Suarez	Marketing manager	Marketing\MarketingManagers
+Susan Smith	Permanent sales employee	Sales\PermSales
+Mark Burnes	Sales manager	Sales\SalesManagers
+Borey Chan	Temporary sales employee	Sales\TempSales
+Use the following user account naming standards and specifications as you create each account:
+•	Create the user account in the departmental OU corresponding to the employee's job role.
+•	User account name: First name + Last name
+•	Logon name: firstinitial + lastname@CorpNet.local
+•	Original password: asdf1234$ (must change after the first logon)
+•	Configure the following for the temporary sales employee: 
+o	Limit the logon hours to allow logon only from 8:00 a.m. to 5:00 p.m., Monday through Friday.
+o	Set the user account to expire on December 31st of the current year.
+•	Access Active Directory Users and Computers on the CorpDC server. 
+o	From Hyper-V Manager, select CORPSERVER.
+o	From the Virtual Machines pane, double-click CorpDC.
+o	From Server Manager's menu bar, select Tools > Active Directory Users and Computers.
+o	Maximize the window for better viewing.
+•	Create the domain user accounts. 
+o	From the left pane, expand CorpNet.local.
+o	Browse to the appropriate OU.
+o	Right-click the OU and select New > User.
+o	In the First name field, enter the user's first name.
+o	In the Last name field, enter the user's last name.
+o	In the User logon name field, enter the user's logon name (use firstinitial + lastname@Corpnet.local).
+o	Select Next.
+o	In the Password field, enter asdf1234$.
+o	In the Confirm password field, enter asdf1234$.
+o	Make sure User must change password at next logon is selected and then click Next.
+o	Select Finish to create the object.
+o	Repeat steps 3e–3m to create the additional users.
+•	Modify user account restrictions for the temporary sales employee. 
+o	Right-click Borey Chan and select Properties.
+o	Select the Account tab.
+o	Select Logon hours.
+o	From the Logon Hours dialog, select Logon Denied to clear the allowed logon hours.
+o	Select the time range of 8:00 a.m. to 5:00 p.m., Monday through Friday.
+o	Select Logon Permitted to allow logon.
+o	Select OK.
+o	Under Account expires, select End of.
+o	In the End of field, use the drop-down calendar to select 31 December of the current year.
+o	Select OK.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.5.12 Manage User Accounts
+You are the IT administrator for a small corporate network. You recently added an Active Directory domain on the CorpDC server to manage network resources centrally. Organizational units in the domain represent departments. User and computer accounts are in their respective departmental OUs.
+Over the past few days, several personnel changes have occurred that require changes to user accounts.
+In this lab, your task is to use the following information to make the necessary user account changes on CorpDC:
+•	Mary Barnes from the Accounting Department has forgotten her password, and now her account is locked. 
+o	Unlock the account.
+o	Reset the password to asdf1234$.
+o	Require a password change at the next logon.
+•	Mark Woods has been fired from the accounting department. Disable his account.
+•	Pat Benton is returning to the Research-Dev department from maternity leave. Her account is disabled to prevent logon. Enable her account.
+•	Andrea Simmons from the Research-Dev department has recently married. 
+o	Rename the account Andrea Socko.
+o	Change the last name to Socko.
+o	Change the display name to Andrea Socko.
+o	Change the user logon and the pre-Windows 2000 user logon name to asocko.
+•	For all users in the Support OU (but not the SupportManagers OU), allow logon only to the Support computer
+Access Active Directory Users and Computers on the CorpDC server. 
+o	From Hyper-V Manager, select CORPSERVER.
+o	From the Virtual Machines pane, double-click CorpDC.
+o	From Server Manager's menu bar, select Tools > Active Directory Users and Computers.
+o	Maximize the window for better viewing.
+•	From the left pane, expand CorpNet.local.
+•	Unlock the Mary Barnes account. 
+o	From the left pane, select Accounting.
+o	Right-click Mary Barnes and select Reset Password.
+o	In the New password field, enter asdf1234$.
+o	In the Confirm password field, enter asdf1234$.
+o	Make sure User must change password at next logon is selected.
+o	Make sure Unlock the user's account is selected.
+o	Select OK.
+o	Select OK to confirm the changed.
+•	Disable the Mark Woods account. 
+o	From the right pane, right-click Mark Woods and select Disable Account.
+o	Select OK to confirm the change.
+•	Enable Pat Benton's account. 
+o	From the left pane, select Research-Dev.
+o	From the right pane, right-click Pat Benton and select Enable Account.
+o	Select OK to confirm the change.
+•	Rename the Andrea Simmons account. 
+o	Right-click Andrea Simmons and select Rename.
+o	Enter Andrea Socko and press Enter. This opens the Rename User dialog.
+o	In the Last name field, enter Socko.
+o	In the User logon name field, replace the old name with asocko.
+o	Select OK.
+•	Configure user account restrictions. 
+o	From the left pane, select Support.
+o	From the right pane, press Ctrl and select both the Tom Plask and Janice Rons users to edit multiple users at the same time. 
+In Safari, press Command and select each user. 
+o	Right-click the user accounts and select Properties.
+o	Select the Account tab.
+o	Select Computer restrictions.
+o	Select Log On To.
+o	Select The following computers.
+o	In the Computer name field, type Support.
+o	Select Add.
+o	Select OK.
+o	Select OK.
+
+
+
+
+
+
+
+
+6.5.13 Create a Group
+You are the IT administrator for the CorpNet domain. You have decided to use groups to simplify the administration of access control lists. Specifically, you want to create a group containing the department managers.
+In this lab, your task is to use Active Directory Users and Computers to complete the following actions on the CorpDC server:
+•	In the Users container, create a group named Managers. Configure the group as follows: 
+o	Group scope: Global
+o	Group type: Security
+•	Make the following users members of the Managers group:
+•	
+Organization Unit	Username
+Accounting	Mark Woods
+Research-Dev	Pat Benton
+Marketing\MarketingManagers	Juan Suarez
+Research-Dev\ResearchManagers	Arlene Kimbly
+Sales\SalesManagers	Mark Burnes
+Support\SupportManagers	Shelly Emery
+
+1.	Access Active Directory Users and Computers on the CorpDC server. 
+a.	From Hyper-V Manager, select CORPSERVER.
+b.	From the Virtual Machines pane, double-click CorpDC.
+c.	From Server Manager's menu bar, select Tools > Active Directory Users and Computers.
+d.	Maximize the window for better viewing.
+2.	In the Users container, create a group named Managers.
+a.	From the left pane, expand and select CorpNet.local > Users.
+b.	Right-click the Users container and select New > Group. 
+You can also create a new group by selecting the Create a new group in the current container icon found in the ribbon. 
+c.	In the Group name field, enter Managers.
+A pre-Windows 2000 group name is created automatically, but it can be changed.
+d.	Under Group scope, make sure Global is selected.
+e.	Under Group type, make sure Security is selected and select OK.
+3.	Add user accounts to the Managers group.
+a.	From the left pane, ensure that the Users container is still selected.
+b.	From the right pane, right-click Managers and select Properties.
+c.	Select the Members tab.
+d.	Select Add.
+e.	In the Enter the object names to select field, enter all the usernames. Use a semicolon to separate each name.
+Example: Steve Hoffer; Peter Williams; Princess Diana
+f.	Select Check Names.
+g.	Select OK to add the users and close the dialog.
+h.	Select OK to close the Managers Properties dialog. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.5.14 Create Global Groups
+You are the IT Administrator for the CorpNet.local domain. You are in the process of implementing a group strategy for your network. You have decided to create global groups as shadow groups for specific departments in your organization. Each global group will contain all users in the corresponding department.
+In this lab, your task is to:
+•	Create the following global security groups on the CorpDC server in their corresponding OUs: 
+OU Creation
+Location	New Group Name
+Accounting	Accounting
+Research-Dev	Research-Dev
+Sales	Sales
+•	Add all user accounts in the corresponding OUs and sub-OUs as members of the newly created groups.
+•	Access Active Directory Users and Computers on the CorpDC server. 
+o	From Hyper-V Manager, select CORPSERVER.
+o	From the Virtual Machines pane, double-click CorpDC.
+o	From Server Manager's menu bar, select Tools > Active Directory Users and Computers.
+o	Maximize the window for better viewing.
+o	From the left pane, expand CorpNet.local.
+•	Create the groups. 
+o	Right-click the OU where the new group is to be added and select New > Group.
+o	In the Group name field, enter the name of the group.
+o	Make sure the Global Group scope is selected.
+o	Make sure the Security Group type is selected.
+o	Click OK.
+•	Add users to groups. 
+o	In the right pane, right-click the user account(s) and select Add to a group. (Use the Ctrl or Shift keys to select and add multiple user accounts to a group at one time.)
+o	In the Enter the object names to select field, enter the name of the group.
+o	Select Check Names and verify that the object name was found.
+o	Click OK to accept the groups added.
+o	Click OK to acknowledge the change.
+o	If a sub-OU with users exist, double-click on the sub-OU and then repeat step 3. Do this for each sub-group.
+•	Repeat steps 2 - 3 for additional groups and users.
+•	
+6.6.4 Configure Account Password Policies
+You have been asked to perform administrative tasks for a computer that is not a member of a domain. To increase security and prevent unauthorized access to the computer, you need to configure specific password and account lockout policies.
+In this lab, your task is to use the Local Security Policy to configure the following password and account lockout policies:
+•	Configure password settings so that the user must: 
+o	Cycle through 10 passwords before reusing an old one.
+o	Change the password every 90 days.
+o	Keep the password at least 14 days.
+o	Create a password at least eight characters long.
+o	Create a password that meets complexity requirements, such as using uppercase letters, lowercase letters, numbers, or symbols.
+•	Configure the account lockout policy to:
+•	
+o	Lock out any user who enters five incorrect passwords.
+o	Unlock an account automatically after 60 minutes.
+o	Configure the number of minutes that must elapse after a failed logon attempt to 10 minutes.
+
+1.	Using Windows Administrative Tools, access the Local Security Policy. 
+a.	Select Start.
+b.	Locate and expand Windows Administrative Tools.
+c.	Select Local Security Policy.
+d.	Maximize the window for easier viewing.
+2.	Configure the password policies. 
+ .	From the left pane, expand Account Policies and then select Password Policy.
+a.	From the center pane, expand the Policy column.
+b.	Double-click the policy to be configured.
+c.	Configure the policy settings.
+d.	Click OK.
+e.	Repeat steps 2c-2e to configure the additional password policies.
+3.	Configure the account lockout policies. 
+ .	From the left pane, select Account Lockout Policy.
+a.	From the center pane, expand the Policy column.
+b.	Double-click the policy to be configured.
+c.	Configure the policy settings (if needed, answer any prompts shown).
+d.	Click OK.
+e.	Repeat steps 3c-3e to configure the additional lockout policies.
+
+6.6.6 Restrict Local Accounts
+You are the IT security administrator for a small corporate network. You are working to increase the authentication security of the domain. You need to make sure that only authorized users have administrative rights to all local machines. Local users and groups can be controlled through a GPO linked to the domain.
+In this lab, your task is to edit the Default Domain Policy and configure the Local Users and Groups policy settings as follows:
+•	Create a policy to update the built-in Administrator local group.
+•	Delete all member users.
+•	Delete all member groups.
+•	Add BUILTIN\Administrator to the group.
+•	Add %DOMAINNAME%\Domain Admins to the group.
+The policy you create should remove all members of the built-in Administrators group and then add only the members specified. Use BUILTIN\Administrator and %DOMAINNAME%\Domain Admins in the policy to indicate which accounts to add. 
+Complete this lab as follows:
+1.	Access the CorpNet.local domain under Group Policy Management. 
+a.	From Server Manager, select Tools > Group Policy Management.
+b.	Maximize the windows for better viewing.
+c.	Expand Forest: CorpNet.local > Domains > CorpNet.local.
+2.	Create a policy to update the built-in Administrator local group. 
+ .	Right-click Default Domain Policy and select Edit.
+a.	Maximize the windows for better viewing.
+b.	Under Computer Configuration, expand Preferences > Control Panel Settings.
+c.	Right-click Local Users and Groups and select New > Local Group.
+d.	Using the Group name drop-down, select Administrators (built-in).
+e.	Select Delete all member users to remove all member users.
+f.	Select Delete all member groups to remove all member groups.
+g.	Select Add.
+h.	In the Name field, enter BUILTIN\Administrator and then select OK.
+i.	Select Add.
+j.	In the Name field, enter %DOMAINNAME%\Domain Admins and then select OK.
+k.	Select OK to save the policy.
+
+
+
+
+
+6.6.7 Secure Default Accounts
+You work as the IT security administrator for a small corporate network. You are improving office computers' security by renaming and disabling default computer accounts.
+In this lab, your task is to perform the following on the Office1 computer:
+•	Rename the Administrator account Yoda.
+•	Disable the Guest account.
+•	Verify that Password never expires is not selected for any local users. This forces them to change their passwords regularly.
+•	Delete any user accounts with User must change password at next logon selected. This indicates that a user has never logged in.
+
+1.	Access the computer's Computer Management tool. 
+a.	Right-click Start and select Computer Management.
+b.	Under System Tools, expand Local Users and Groups.
+c.	Select Users.
+2.	Rename the Administrator account. 
+ .	From the center pane, right-click Administrator and select Rename.
+a.	Enter Yoda and press Enter.
+3.	Disable the Guest account. 
+ .	Right-click Guest and select Properties.
+a.	Select Account is disabled and click OK.
+4.	Remove Password never expires option if it is selected. 
+ .	Right-click a user and select Properties.
+a.	Deselect Password never expires (if selected) and then select OK.
+b.	Repeat step 4 for each user.
+5.	Delete any unused accounts. 
+ .	Right-click the user that has User must change password at next logon selected and select Delete.
+a.	Click Yes to confirm deletion of the account.
+
+
+
+
+
+
+
+6.6.8 Enforce User Account Control
+You are the IT administrator for a small corporate network. The company has a single Active Directory domain named CorpNet.xyz. You need to increase the domain's authentication security. You need to make sure that User Account Control (UAC) settings are consistent throughout the domain and in accordance with industry recommendations.
+In this lab, your task is to configure the following UAC settings in the Default Domain Policy on CorpDC as follows:
+User Account Control	Setting
+Admin Approval mode for the built-in Administrator account	Enabled
+Allow UIAccess applications to prompt for elevation without using the secure desktop	Disabled
+Behavior of the elevation prompt for administrators in Admin Approval mode	Prompt for credentials
+Behavior of the elevation prompt for standard users	Automatically deny elevation requests
+Detect application installations and prompt for elevation	Enabled
+Only elevate UIAccess applications that are installed in secure locations	Enabled
+Only elevate executables that are signed and validated	Disabled
+Run all administrators in Admin Approval mode	Enabled
+Switch to the secure desktop when prompting for elevation	Enabled
+Virtualize file and registry write failures to per-user locations	Enabled
+User Account Control policies are set in a GPO linked to the domain. In this scenario, edit the Default Domain Policy and configure settings in the following path:
+Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options.
+1.	On CorpDC, access the CorpNet.local domain for Group Policy Management.
+a.	From Hyper-V Manager, select CORPSERVER.
+b.	Double-click CorpDC.
+c.	From Server Manager, select Tools > Group Policy Management.
+d.	Maximize the window for easy viewing.
+e.	Expand Forest: CorpNet.local > Domains > CorpNet.local.
+2.	Configure the UAC settings.
+ .	Right-click Default Domain Policy and select Edit.
+a.	Maximize the window for easier viewing.
+b.	Under Computer Configuration, expand and select Policies > Windows Settings > Security Settings > Local Policies > Security Options.
+c.	From the right pane, double-click the policy you want to edit.
+d.	Select Define this policy setting.
+e.	Select Enable or Disable as necessary.
+f.	Edit the value for the policy as needed and then click OK.
+g.	Repeat steps 2d–2g for each policy setting.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.6.11 Configure Smart Card Authentication
+You work as the IT administrator for a growing corporate network. The Research and Development Department is working on product enhancements. Last year, some secret product plans were compromised. As a result, the company decided to implement smart cards for logon to every computer in the Research and Development Department. No user should be able to log onto the workstation without using a smart card.
+In this lab, your task is to perform the following on CorpDC:
+•	Enforce the existing Research-DevGPO linked to the Research-Dev OU.
+•	Edit the Research-DevGPO and configure the following local security setting policies located in the Computer Configuration section: 
+Policy	Setting
+Interactive logon: Require smart card	Enable
+Interactive logon: Smart card removal behavior	Force logoff
+
+1.	Access the CorpDC server.
+a.	In Hyper-V Manager, select CORPSERVER.
+b.	Double-click CorpDC.
+2.	Enforce the existing Research-DevGPO.
+a.	From Server Manager, select Tools > Group Policy Management.
+b.	Maximize the window for better viewing.
+c.	From the left pane, expand Forest: CorpNet.local > Domains > CorpNet.local > Group Policy Objects.
+d.	From the left pane, select the Research-DevGPO.
+e.	From the Scope tab under Links, right-click Research-Dev and then select Enforced.
+3.	Edit Research-DevGPO polices.
+ .	From the left pane, right-click Research-DevGPO and then select Edit.
+a.	Maximize the window for better viewing.
+b.	Under Computer Configuration, expand Policies > Windows Settings > Security Settings > Local Policies.
+c.	Select Security Options.
+d.	From the right pane, double-click the policy and select Properties.
+e.	Select Define this policy setting.
+f.	Select additional parameters to configure the policy setting.
+g.	Select OK.
+h.	Repeat steps 3e-3h to configure the additional policy setting.
+
+
+6.7.4 Create a User Account
+The VP of marketing has told you that Paul Denunzio will join the company as a market analyst in two weeks. You need to create a new user account for him.
+In this lab, your task is to:
+•	Create the pdenunzio user account.
+•	Include the full name, Paul Denunzio, as a comment for the user account.
+•	Set eye8cereal as the password for the user account.
+•	When you're finished, view the /etc/passwd file to verify the creation of the account.
+•	Answer the question.
+1.	Create the Paul Denunzio account and comment. 
+a.	From the Linux prompt, type useradd -c "Paul Denunzio" pdenunzio and press Enter.
+2.	Create a password for Paul. 
+ .	Type passwd pdenunzio and press Enter.
+a.	Type eye8cereal as the password and press Enter.
+b.	Retype eye8cereal as the password and press Enter.
+3.	Verify that the account was created. 
+o	Type cat /etc/passwd and press Enter.
+4.	Answer the question. 
+ .	In the top right, select Answer Questions.
+a.	Select the correct answer.
+b.	Select Score Lab.
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.7.5 Rename a User Account
+Brenda Cassini (bcassini) was recently married. You need to update her Linux user account to reflect her new last name of Palmer.
+In this lab, your task is to use the usermod command to:
+•	Rename Brenda's user account bpalmer.
+•	Change Brenda's comment field to read Brenda Palmer.
+•	Change and move Brenda's home directory to /home/bpalmer.
+•	When you're finished, view the /etc/passwd file and /home directory to verify the modification.
+
+1.	Rename the bpalmer account and move her home directory. 
+a.	From the Linux prompt, type usermod -l bpalmer bcassini -m -c "Brenda Palmer" -d /home/bpalmer and press Enter.
+2.	Verify account modification. 
+ .	Type cat /etc/passwd and press Enter.
+a.	Type ls /home and press Enter to verify that the account was modified.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.7.6 Delete a User
+Terry Haslam (thaslam) was dismissed from the organization. His colleagues have harvested the files they need from his home and other directories. Your company security policy states that upon dismissal, users accounts should be removed in their entirety.
+In this lab, your task is to:
+•	Delete the thaslam user account and home directory from the system.
+•	When you're finished, view the /etc/passwd file and /home directory to verify the account's removal.
+1.	Delete the Terry Haslam account and home directory. 
+a.	At the prompt, type userdel -r thaslam and press Enter.
+2.	Verify the account's removal. 
+ .	Type cat /etc/passwd and press Enter.
+a.	Type ls /home and press Enter to verify that the account was removed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.7.7 Change Your Password
+You use a special user account called Administrator to log on to your computer. However, you think someone has learned your password. You are logged on as Administrator.
+In this lab, your task is to change your password to r8ting4str. The current Administrator account uses 7hevn9jan as the password.
+As you type in the password, the cursor will not move. Continue entering the password anyway. 
+Complete this lab as follows:
+1.	Change your password. 
+a.	At the prompt, type passwd and press Enter.
+b.	When prompted, enter 7hevn9jan and press Enter. This is the current password.
+c.	At the New password prompt, enter r8ting4str and press Enter.
+d.	Retype r8ting4str as the new password and press Enter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.7.8 Change a User's Password
+Salman Chawla (schawla) forgot his password and needs access to the resources on his computer. You are logged on as wadams. The password for the root account is 1worm4b8.
+In this lab, your task is to:
+•	Change the password for the schawla user account to G20oly04 (0 is a zero).
+•	Make sure the password is encrypted in the shadow file.
+Do not use the usermod -p command to change the password, as this stores the unencrypted version of the password in the /etc/shadow file. 
+
+Change Salman Chawla's password. 
+a.	At the prompt, type su -c "passwd schawla", then press Enter.
+b.	Type 1worm4b8, then press Enter. This is the password for the root user.
+c.	At the New password prompt, type G20oly04, then press Enter. This is the new password for the schawla user account.
+d.	At the Retype new password prompt, type G20oly04, then press Enter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.7.9 Lock and Unlock User Accounts
+Every seven years, your company provides a six-week sabbatical for every employee. Vera Edwards (vedwards), Corey Flynn (cflynn), and Bhumika Kahn (bkahn) are leaving today. Maggie Brown (mbrown), Brenda Cassini (bcassini), and Arturo Espinoza (aespinoza) are just returning.
+The company security policy mandates that user accounts for employees gone for longer than two weeks be disabled.
+In this lab, your task is to:
+•	Lock the following user accounts: 
+o	vedwards
+o	cflynn
+o	bkahn
+•	Unlock the following user accounts: 
+o	mbrown
+o	bcassini
+o	aespinoza
+•	When you're finished, view the /etc/shadow file to verify the changes.
+Complete this lab as follows:
+1.	Lock the applicable accounts. 
+a.	At the prompt, type usermod -L vedwards or passwd -l vedwards and press Enter.
+b.	Type usermod -L cflynn or passwd -l cflynn and press Enter.
+c.	Type usermod -L bkahn or passwd -l bkahn and press Enter.
+2.	Unlock the applicable accounts. 
+ .	Type usermod -U mbrown or passwd -u mbrown and press Enter.
+a.	Type usermod -U bcassini or passwd -u bcassini and press Enter.
+b.	Type usermod -U aespinoza or passwd -u aespinoza and press Enter.
+3.	Verify your changes by typing cat /etc/shadow and pressing Enter.
+The inclusion of the exclamation point (!) in the password field indicates whether the account is disabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.8.3 Rename and Create Groups
+Currently, all the salespeople in your company belong to a group called sales. The VP of sales wants two sales groups, a western sales division and an eastern sales division.
+In this lab, your task is to:
+•	Rename the sales group to western_sales_division.
+•	Create the eastern_sales_division group.
+•	Remove aespinoza as a member of the western_sales_division group.
+•	Assign aespinoza as a member of the eastern_sales_division group.
+•	When you're finished, view the /etc/group file or use the groups command to verify the changes.
+Complete this lab as follows:
+1.	Rename the sales group western_sales_division and create the eastern_sales_division group. 
+a.	At the prompt, type groupmod -n western_sales_division sales and press Enter.
+b.	Type groupadd eastern_sales_division and press Enter.
+2.	Modify the group membership as needed. 
+o	Type usermod -G eastern_sales_division aespinoza and press Enter. 
+When you assign aespinoza to the eastern_sales_division group using the usermod -G option, the user account is removed from the western_sales_division group. 
+3.	Use cat /etc/group or groups aespinoza to verify aespinoza's group membership.
+
+
+
+
+
+
+
+
+
+
+
+6.8.4 Add Users to a Group
+Maggie Brown (mbrown) and Corey Flynn (cflynn) have recently been hired in the human resources department. You have already created their user accounts.
+In this lab, your task is to:
+•	Add the hr group as a secondary group for the mbrown and cflynn user accounts.
+•	When you're finished, view the /etc/group file or use the groups command to verify the changes.
+When the -g switch is used with the usermod command, it sets the primary group membership, not the secondary group membership. 
+
+Complete this lab as follows:
+1.	Add users to the hr group. 
+a.	At the prompt, type usermod -G hr mbrown and press Enter.
+b.	Use usermod -G hr cflynn and press Enter.
+2.	Verify the group membership for the users added to each group. 
+ .	Use groups mbrown and press Enter.
+a.	Use groups cflynn and press Enter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.8.5 Remove a User from a Group
+Corey Flynn (cflynn) currently belongs to several groups. Due to some recent restructuring, he no longer needs to be a member of the hr group.
+To preserve existing group membership, use the usermod -G command to list all groups to which the user must belong. Do not include the primary group name in the list of groups.
+In this lab, your task is to:
+•	Remove cflynn from the hr group.
+•	Preserve all other group memberships.
+•	View the /etc/group file or use the groups command to verify the changes.
+
+1.	View a list of all groups to which Cory Flynn belongs. 
+o	At the prompt, type groups cflynn and press Enter.
+Notice that cflynn currently belongs to the mgmt1, hr, and it secondary groups. The cflynn group is the user's primary group.
+2.	Change and verify Cory Flynn's group membership. 
+a.	Type usermod -G mgmt1,it cflynn and press Enter.
+b.	Type groups cflynn and press Enter.
+Cory now only belongs to the mgmt1 and it groups.
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.1.11 Hide Files with OpenStego
+You are the IT security administrator for a small corporate network. Recently, some of your firm's proprietary data leaked online. You have been asked to use steganography to encrypt data into a file that is to be shared with a business partner. The data will allow you to track the source if the information is leaked again.
+In this lab, your task is to use OpenStego to hide data in photos as follows:
+•	Encrypt the user data into the file to be shared.
+•	Name the file send.png and save it in the Documents folder.
+•	Password-protect the file with NoMor3L3@ks! as the password.
+•	Confirm the functionality of the steganography by extracting the data and opening the file to confirm that the associated username has been embedded into the file.
+1.	Encrypt the user data into the file to be shared.
+a.	In the search field on the taskbar, type OpenStego.
+b.	Under Best match, select OpenStego.
+2.	Select the Message, Cover, and Output Stego files.
+a.	For Message File, select the ellipses [...] button at the end of the field.
+b.	Double-click John.txt to select the file.
+c.	For Cover File, select the ellipses [...] button at the end of the field.
+d.	Double-click gear.png to select the file.
+e.	For Output Stego File, select the ellipses [...] button at the end of the field.
+f.	In the File name field, enter send.png and then select Open.
+3.	Password protect the file.
+a.	In the Password field, enter NoMor3L3@ks!
+b.	In the Confirm Password field, enter NoMor3L3@ks!
+c.	Select Hide Data.
+d.	Select OK.
+4.	Extract the data and open the file.
+a.	Under Data Hiding, select Extract Data.
+b.	For the Input Stego File field, select the ellipses [...] button.
+c.	Double-click send.png to select the file with the encryption.
+d.	For the Output Folder for Message File, select the ellipses [...] button.
+e.	Double-click Export to set it as the destination of the file output.
+f.	Click Select Folder.
+g.	In the Password field, enter NoMor3L3@ks! as the password.
+h.	Select Extract Data.
+i.	Select OK.
+5.	Verify that the decryption process was successful.
+a.	From the taskbar, select File Explorer.
+b.	Double-click Documents to navigate to the folder.
+c.	Double-click Export to navigate to the folder.
+d.	Double-click John.txt.
+7.3.5 Compare an MD5 Hash
+You are the IT administrator at a small corporate office. You just downloaded a new release for a program you use. You need to make sure the file was not altered before you received it. Another file containing the original file hash was also downloaded. Both files are located in the C:\Downloads folder.
+In this lab, your task is to use MD5 hash files to confirm that the Release.zip file was unaltered.
+From Windows PowerShell:
+•	Generate a file hash for the new Release.zip file.
+•	View the hash of the original file stored in the release821hash.txt file.
+•	Use the following command to compare the original hash of the Release.zip file to its calculated hash to see if they match:
+
+"new hash" -eq "known hash"
+
+You can highlight text in PowerShell and right-click it to copy the text to the active line. If using Chromebooks, highlight the desired hash amount and then click on the touchpad using 2 fingers to copy and paste the value.
+•	Answer the question.
+•	The new hash is the hash generated by the get-filehash file_name -a md5 command.
+•	The known hash is the hash generated by the get-content file_name.txt command.
+•	Include the quotation marks and the file extensions with the file names in the commands.
+1.	View the files in the C:\Downloads folder. 
+a.	Right-click Start and select Windows PowerShell (Admin).
+b.	At the prompt, type cd C:\downloads and press Enter to navigate to the directory that contains the files.
+c.	Type dir and press Enter to view the available files.
+2.	Confirm that the Release.zip file is unaltered. 
+ .	Type get-filehash Release.zip -a md5 and press Enter to view the MD5 hash.
+a.	Type get-content release821hash.txt and press Enter to view the known hash contained in the .txt file.
+b.	Type "new hash" -eq "known hash" and press Enter to determine whether the file hashes match. 
+	The new hash is the hash generated by the get-filehash file_name -a md5 command.
+	The known hash is the hash generated by the get-content file_name.txt command.
+	Include the quotation marks and the file extensions with the file names in the commands.
+3.	Answer the question. 
+ .	In the top right, select Answer Questions.
+a.	Answer the question.
+b.	Select Score Lab.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.4.3 Encrypt Files with EFS
+At work, you share a computer with other users. You want to secure the contents of the Finances folder so that unauthorized users cannot view its contents.
+In this lab, your task is to:
+•	Encrypt the D:\Finances folder and all of its contents.
+•	Add the Susan user account as an authorized user for the D:\Finances\2020report.xls file.
+1.	Open the D: drive. 
+a.	From the Windows taskbar, select File Explorer.
+b.	From the left pane, select This PC.
+c.	From the right pane, double-click Data (D:).
+2.	Encrypt the Finances folder. 
+a.	Right-click Finances and then select Properties.
+b.	Select Advanced.
+c.	Select Encrypt contents to secure data and then select OK.
+d.	Select OK to close the properties dialog.
+e.	Select OK to confirm the attribute changes.
+3.	Give Susan authorization to modify the 2020report.xls file. 
+a.	Double-click Finances.
+b.	Right-click 2020report.xls and then select Properties.
+c.	Select Advanced.
+d.	Select Details.
+e.	Select Add.
+f.	Select Susan and then select OK.
+g.	Select OK as many times as needed to close all remaining dialogs.
+
+
+
+
+
+
+
+
+
+7.4.8 Configure BitLocker with a TPM
+You work as the IT security administrator for a small corporate network. The employee in Office 1 is working on a very sensitive project. Management is concerned that if the hard drive in the computer were stolen, sensitive information could be compromised. As a result, you have been asked to encrypt the entire System volume. The Office1 computer has a built-in TPM on the motherboard.
+In this lab, your task is to configure BitLocker drive encryption as follows:
+•	From within the computer's BIOS, turn on and activate TPM Security.
+•	From Windows, turn on BitLocker for the System (C:) drive.
+•	Back up the recovery key to the \\CorpServer\BU-Office1 folder.
+•	Encrypt the entire System (C:) drive. 
+•	Use the new encryption mode.
+•	Run the BitLocker system check.
+
+Complete this lab as follows:
+1.	(Optional) Try to enable BitLocker. 
+a.	From the search field on the Windows taskbar, type Control.
+b.	From Best match, select Control Panel.
+c.	Select System and Security.
+d.	From the right pane, select BitLocker Drive Encryption.
+e.	Under Operating system drive, select Turn on BitLocker.
+An error message at the bottom of the screen indicates that a TPM security device was not found.
+f.	Select Cancel.
+2.	Access the BIOS settings.
+a.	Right-click the Start menu and then select Shut down or sign out > Restart to reboot your computer.
+b.	When the TestOut logo appears, press Delete to enter the BIOS.
+3.	Turn on and activate the TPM. 
+a.	From the left pane, expand and select Security > TPM Security.
+b.	From the right pane, select TPM Security and then select Apply.
+c.	Select Activate and then select Apply.
+d.	Select Exit.
+Your computer will automatically reboot.
+4.	Turn BitLocker on. 
+a.	From the search field on the Windows taskbar, type Control.
+b.	From Best match, select Control Panel.
+c.	Select System and Security.
+d.	Select BitLocker Drive Encryption.
+e.	Under Operating system drive, select Turn on BitLocker. Windows begins the Drive Encryption setup.
+5.	Back up a BitLocker recovery key. 
+a.	Select Save to a file.
+b.	In the left pane, expand and select Network > CorpServer > BU-Office1.
+c.	Select Save.
+d.	Select Next.
+6.	Configure BitLocker encryption. 
+a.	Select Encrypt entire drive and then select Next.
+b.	Make sure that New encryption mode is selected and then select Next.
+c.	Select Run BitLocker system check and then select Continue.
+d.	Select Restart now.
+The computer will reboot, and the encryption process will run automatically.
+e.	When the encryption process is complete, select Close.
+7.	Verify that encryption is enabled. 
+a.	From the Windows taskbar, select File Explorer.
+b.	From the left pane, select This PC.
+c.	From the right pane, verify that the System (C:) drive shows the encryption lock icon.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.5.6 Manage Certificates
+You are the IT administrator for a growing corporate network. You manage the certification authority for your network. As part of your daily routine, you perform several certificate management tasks. CorpCA, the certification authority, is a guest server on CorpServer2.
+In this lab, your task is to complete the following:
+•	Your network uses smart cards to control access to sensitive computers. Currently, the approval process dictates that you manually approve smart card certificate requests.
+Approve pending certificate requests for smart card certificates from tsutton and mmallory.
+•	Deny the pending web server certificate request for CorpSrv12.
+•	User bchan lost his smartcard. Revoke the certificate assigned to bchan.CorpNet.com using the Key Compromise reason code.
+•	Unrevoke the CorpDev3 certificate.
+1.	Access Certification Authority on the CORPSERVER2 server. 
+a.	From Hyper-V Manager, select CORPSERVER2.
+b.	Maximize the window for easier viewing.
+c.	From the Virtual Machines pane, double-click CorpCA.
+d.	From Server Manager's menu bar, select Tools > Certification Authority.
+e.	Maximize the window for easier viewing.
+f.	From the left pane, expand CorpCA-CA.
+2.	Approve the pending certificate request for tsutton and mmallory. 
+ .	Select Pending Requests.
+a.	From the right pane, scroll to the Request Common Name column.
+b.	Right-click tsutton and select All Tasks > Issue to approve the certificate.
+c.	Right-click mmallory and select All Tasks > Issue.
+3.	Deny the pending request for CorpSrv12. 
+ .	Right-click CorpSrv12.CorpNet.com and select All Tasks > Deny.
+a.	Select Yes.
+4.	Revoke bchan's certificates. 
+ .	From the left pane, select Issued Certificates.
+a.	From the right pane, right-click bchan.CorpNet.com and select All Tasks > Revoke Certificate.
+b.	Using the Reason code drop-down menu list, select Key Compromise.
+c.	Select Yes.
+5.	Unrevoke the CorpDev3 certificate. 
+ .	From the left pane, select Revoked Certificates.
+a.	From the right pane, right-click CorpDev3.CorpNet.com and select All Tasks > Unrevoke Certificate.
+
+
+8.1.5 Configure a Wireless Network
+You are a network technician for a small corporate network. You just installed a Ruckus zone controller and wireless access points throughout your office buildings using wired connections. You now need to configure basic wireless network settings.
+Access the Wireless Controller console through Chrome on http://192.168.0.6 with the username admin and the password password. The username and password are case sensitive.
+In this lab, your task is to:
+•	Create a WLAN using the following settings: 
+o	Name: CorpNet Wireless
+o	ESSID: CorpNet
+o	Type: Standard Usage
+o	Authentication: Open
+o	Encryption: WPA2
+o	Encryption algorithm: AES
+o	Passphrase: @CorpNetWeRSecure!
+•	Connect the Exec-Laptop in the Executive office to the new wireless network.
+1.	Access the Ruckus zone controller. 
+a.	From the taskbar, open Chrome.
+b.	In the URL field, enter 192.168.0.6 and press Enter.
+c.	Maximize the window for easier viewing.
+2.	Log into the Wireless Controller console. 
+ .	In the Admin field, enter admin (case sensitive).
+a.	In the Password field, enter password as the password.
+b.	Select Login.
+3.	Create a new WLAN. 
+ .	Select the Configure tab.
+a.	From the left menu, select WLANs.
+b.	Under WLANs, select Create New.
+c.	In the New Name field, enter the CorpNet Wireless.
+d.	In the ESSID field, enter the CorpNet.
+e.	Under Type, make sure Standard Usage is selected.
+f.	Under Authentication Options, make sure Open is selected.
+g.	Under Encryption Options, select WPA2.
+h.	Under Algorithm, make sure AES is selected.
+i.	In the Passphrase field, enter @CorpNetWeRSecure!.
+j.	Select OK.
+4.	Switch to the Exec-Laptop. 
+ .	Using the navigation tabs at the top of the screen, select Floor 1.
+a.	Under Executive Office, select Exec-Laptop.
+5.	Connect to the new CorpNet wireless network. 
+ .	In the notification area, select the wireless network icon to view the available networks.
+a.	Select CorpNet.
+b.	Select Connect.
+c.	Enter @CorpNetWeRSecure! for the security key.
+d.	Select Next.
+e.	Select Yes to make the computer discoverable on the network.
+The CorpNet network now shows as being connected and secured.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8.2.6 Configure Rogue Host Protection
+You are a network technician for a small corporate network. You want to take advantage of the self-healing features provided by the small enterprise wireless solution you've implemented. You're already logged in as WxAdmin on the Wireless Controller console from ITAdmin.
+In this lab, your task is to:
+•	Configure self-healing on the wireless network. 
+o	Automatically adjust AP radio power to optimize coverage when interference is present.
+o	Set 2.4 GHz and 5 GHz radio channels to use the Background Scanning method to adjust for interference.
+•	Configure the background scanning needed for rogue device detection, AP locationing, and self-healing. Background scans should be performed on all radios every 30 seconds.
+•	Configure load balancing for all radios by adjusting the threshold to 40 dB.
+•	Configure band balancing to allow no more than 30% of clients to use the 2.4 GHz radios.
+•	Reduce the power levels to -3 dB for three access points in Building A to reduce RF emanations. Use the wireless survey results in the exhibit to identify the access points. 
+The amount you reduce TX Power by requires a judgment call based on the wireless survey results. In practice, you would repeat the wireless survey to verify the proper TX Power settings. 
+
+1.	Configure self-healing. 
+a.	From the top, select the Configure tab.
+b.	From the left menu, select Services.
+c.	Under Self-Healing, select Automatically adjust AP radio power to optimize coverage when interference is present.
+d.	Using the Automatically adjust 2.4GHz channels using drop-down menu, select Background Scanning from the drop-down menu.
+e.	Using the Automatically adjust 5GHz channels using drop-down menu, select Background Scanning from the drop-down menu.
+f.	On the right, select Apply.
+2.	Configure background scanning. 
+a.	Select Run a background scan on 2.4GHz radio.
+b.	Enter 30 seconds.
+c.	Select Run a background scan on 5GHz radio.
+d.	Enter 30 seconds.
+e.	On the right, select Apply.
+3.	Configure load balancing. 
+a.	Select Run load balancing on 2.4GHz radio.
+b.	In the Adjacent radio threshold(dB) field, enter 40.
+c.	Select Run load balancing on 5GHz radio.
+d.	In the Adjacent radio threshold(dB) field, enter 40.
+e.	On the right, select Apply.
+4.	Configure band balancing. 
+a.	Select Percent of clients on 2.4GHz radio.
+b.	Enter the 30.
+c.	On the right, select Apply.
+5.	Adjust the AP power level. 
+a.	From the left menu, select Access Points.
+b.	From the top right, select Exhibit to determine which access points to adjust.
+c.	Select Edit next to the access point to be modified.
+d.	Under Radio B/G/N(2.4G) next to TX Power, make sure Override Group Config is selected.
+e.	From the TX Power drop-down list, select -3dB (1/2).
+f.	Under Radio A/N/AC(5G) next to TX Power, make sure Override Group Config is selected.
+g.	From the TX Power drop-down list, select -3dB (1/2).
+h.	Select OK.
+i.	Repeat steps 5b - 5h for additional access points.
+
+8.3.7 Configure WIPS
+You are a network technician for a small corporate network. You would like to enable Wireless Intrusion Prevention on the wireless controller. You are already logged in as WxAdmin.
+Access the Wireless Controller console through Chrome on http://192.168.0.6. 
+In this lab, your task is to:
+•	Configure the wireless controller to protect against denial-of-service (DOS) attacks as follows: 
+o	Protect against excessive wireless requests.
+o	Block clients with repeated authentication failures for two minutes (120 seconds).
+•	Configure Intrusion Detection and Prevention as follows: 
+o	Report all rogue devices regardless of type.
+o	Protect the network from rogue access points.
+•	Enable Rogue DHCP Server Detection.
+Complete this lab as follows:
+1.	Access the Ruckus zone controller. 
+a.	From the taskbar, open Google Chrome.
+b.	In the URL field, enter 192.168.0.6 and press Enter.
+c.	Maximize the window for easier viewing.
+2.	Configure Denial of Service protection. 
+ .	Select the Configure tab.
+a.	From the left menu, select WIPS.
+b.	Under Denial of Services(DoS), select Protect my wireless network against excessive wireless requests.
+c.	Select Temporarily block wireless clients with repeated authentication failures.
+d.	Enter 120 seconds.
+e.	On the right, select Apply.
+3.	Configure Intrusion Detection and Prevention: 
+ .	Under Intrusion Detection and Prevention, select Enable report rogue devices.
+a.	Select Report all rogue devices.
+b.	Select Protect the network from malicious rogue access points.
+c.	On the right, select Apply.
+4.	Select Enable rogue DHCP server detection and then select Apply.
+
+8.3.9 Configuring a Captive Portal
+You have been hired by a small hotel to configure how their guests access the internet. You have chosen to use pfSense's captive portal feature. Guests must pass through this portal to access the internet.
+In this lab, your task is to:
+•	Access the pfSense management console: 
+o	Username: admin
+o	Password: P@ssw0rd (zero)
+•	Add a captive portal zone named Guest_WiFi 
+o	Use the description Zone used for the guest Wi-Fi
+•	Using the GuestWi-Fi interface, configure your portal as follows: 
+o	Allow a maximum of 100 concurrent connections.
+o	Disconnect user from the internet if their connection is inactive for 30 minutes.
+o	Disconnect user from the internet after two hours regardless of their activity.
+o	Limit user's download and upload to 8000 and 2500 Kbit/s, respectively.
+o	Force to pass through your portal prior to authentication.
+•	Allow the following MAC and IP address to pass through the portal: 
+o	MAC: 00:00:1B:12:34:56
+o	IP: 198.28.1.100/16 
+	Give the IP address the description Admin's Laptop
+Complete this lab as follows:
+1.	Sign into the pfSense management console. 
+a.	In the Username field, enter admin.
+b.	In the Password field, enter P@ssw0rd (zero).
+c.	Select SIGN IN or press Enter.
+2.	Add a captive portal zone. 
+ .	From the pfSense menu bar, select Services > Captive Portal.
+a.	Select Add.
+b.	For Zone name, enter Guest_WiFi.
+c.	For Zone description, enter Zone used for the guest Wi-Fi.
+d.	Select Save & Continue.
+3.	Enable and configure the captive portal. 
+ .	Under Captive Portal Configuration, select Enable.
+a.	For Interfaces, select GuestWi-Fi.
+b.	For Maximum concurrent connections, select 100.
+c.	For Idle timeout, enter 30.
+d.	For Hard timeout, enter 120.
+e.	Scroll down and select Per-user bandwidth restriction.
+f.	For Default download (Kbit/s), enter 8000.
+g.	For Default upload (Kbit/s), enter 2500.
+h.	Under Authentication, use the drop-down menu to select None, don't authenticate users.
+i.	Scroll to the bottom and select Save.
+4.	Allow a MAC address to pass through the portal. 
+ .	From the Captive Portal page, select the Edit Zone icon (pencil).
+a.	Under the Services breadcrumb, select MACs.
+b.	Select Add.
+c.	Make sure the Action field is set to Pass.
+d.	For Mac Address, enter 00:00:1B:12:34:56.
+e.	Select Save.
+5.	Allow an IP address to pass through the portal. 
+ .	Under the Services breadcrumb, select Allowed IP Addresses.
+a.	Select Add.
+b.	For IP Address, enter 198.28.1.100.
+c.	Use the IP address drop-down menu to select 16. This sets the subnet mask to 255.255.0.0.
+d.	For the Description field, enter Admin's Laptop.
+e.	Make sure Direction is set to Both.
+f.	Select Save.
+9.1.6 Create Virtual Machines
+You have installed Hyper-V on ITAdmin. You're experimenting with creating virtual machines.
+In this lab, your task is to create two virtual machines named VM1 and VM2. Use the following settings as specified for each machine:
+VM1:
+•	Virtual machine name: VM1
+•	Virtual machine location: D:\HYPERV
+•	Generation: Generation 1
+•	Startup memory: 1024 MB (do not use dynamic memory)
+•	Networking connection: External
+•	Virtual hard disk name: VM1.vhdx
+•	Virtual hard disk location: D:\HYPERV\Virtual Hard Disks
+•	Virtual hard disk size: 50 GB
+•	Operating system will be installed later
+VM2:
+•	Virtual machine name: VM2
+•	Virtual machine location: D:\HYPERV
+•	Generation: Generation 1
+•	Startup memory: 2048 MB (use dynamic memory)
+•	Networking connection: Internal
+•	Virtual hard disk name: VM2.vhdx
+•	Virtual hard disk location: D:\HYPERV\Virtual Hard Disks
+•	Virtual hard disk size: 250 GB
+•	Operating system will be installed later
+•	Minimum RAM: 512 MB
+•	Maximum RAM: 4096 MB
+Explanation
+While completing this lab, use the following virtual machine (VM) specifications:
+VM1:
+•	Virtual machine name: VM1
+•	Virtual machine location: D:\HYPERV
+•	Generation: Generation 1
+•	Startup memory: 1024 MB (do not use dynamic memory)
+•	Networking connection: External
+•	Virtual hard disk name: VM1.vhdx
+•	Virtual hard disk location: D:\HYPERV\Virtual Hard Disks
+•	Virtual hard disk size: 50 GB
+•	Operating system will be installed later
+VM2:
+•	Virtual machine name: VM2
+•	Virtual machine location: D:\HYPERV
+•	Generation: Generation 1
+•	Startup memory: 2048 MB (use dynamic memory)
+•	Networking connection: Internal
+•	Virtual hard disk name: VM2.vhdx
+•	Virtual hard disk location: D:\HYPERV\Virtual Hard Disks
+•	Virtual hard disk size: 250 GB
+•	Operating system will be installed later
+•	Minimum RAM: 512 MB
+•	Maximum RAM: 4096 MB
+Complete this lab as follows:
+1.	Access the Hyper-V Manager. 
+a.	Select Start.
+b.	Expand Windows Administrative Tools and then select Hyper-V Manager.
+2.	Create virtual machines on ITAdmin. 
+Use all default settings unless directed otherwise. 
+ .	Right-click ITADMIN and then select New > Virtual Machine.
+a.	From the Before You Begin dialog, select Next.
+b.	In the Name field, enter VM_name and then select Next.
+c.	Make sure Generation 1 is selected and then select Next.
+d.	In the Startup memory field, enter size.
+e.	Set the Use Dynamic Memory for this virtual machine appropriately and then select Next.
+f.	Use the Connection drop-down menu to select connection_type and then select Next.
+g.	In the Size field, enter disk_size and then select Next.
+h.	Make sure Install an operating system later is selected and then select Next.
+i.	Review your configuration and then select Finish to create the virtual machine.
+j.	Repeat step 2 to created the second virtual machine.
+3.	Adjust virtual machine memory for VM2. 
+ .	From the Hyper-V Manager, under Virtual Machines, right-click VM2 and select Settings.
+a.	From the left pane, select Memory.
+b.	In the Minimum RAM field, enter 512.
+c.	In the Maximum RAM field, enter 4096.
+d.	Select OK.
+9.2.6 Create Virtual Switches
+You have installed Hyper-V on the CorpServer server. You want to use the server to create virtual machines. Prior to creating the virtual machines, you are experimenting with virtual switches.
+In this lab, your task is to:
+•	Create an internal virtual switch named Switch 1.
+•	Create a private virtual switch named Switch 2.
+1.	Open the Virtual Switch Manager. 
+a.	From Hyper-V Manager, right-click CORPSERVER.
+b.	Select Virtual Switch Manager.
+2.	Create an internal switch named Switch 1. 
+ .	Select Create Virtual Switch.
+a.	In the Name field, enter Switch 1.
+b.	Under Connection type, select Internal network.
+c.	Select Apply.
+3.	Create a private switch named Switch 2. 
+ .	From the left pane, select New virtual network switch.
+a.	From the right pane, select Private.
+b.	Select Create Virtual Switch.
+c.	In the Name field, enter Switch 2.
+d.	Select OK.
+9.8.4 Secure an iPad
+You work as the IT security administrator for a small corporate network. The receptionist uses an iPad to manage employees' schedules and messages. You need to help her secure the iPad because it contains all of the employees' personal information.
+In this lab, your task is to:
+•	View the current iOS version and then answer the applicable question.
+•	Apply the latest software update and then answer the applicable question.
+•	Configure Auto-Lock with a five-minute delay.
+•	Configure Passcode Lock using a passcode of C@sp3r
+•	Require the passcode after five minutes.
+•	Configure Data Erase to wipe all data after 10 failed passcode attempts.
+•	Require unknown networks to be added manually.
+•	Turn off Bluetooth.
+1.	Verify the current version of iOS installed on your iPad. 
+a.	Select Settings.
+b.	From the Settings pane, select General.
+c.	From the General pane, select About.
+d.	In the top right, select Answer Questions.
+e.	Answer Question 1. Leave the question dialog open.
+2.	Apply the latest software update. 
+ .	From the About pane's heading, select General. This returns you to the General settings.
+a.	From the General pane, select Software Update.
+b.	Select Download and Install.
+c.	Select Agree.
+d.	Select OK. The software is downloaded.
+e.	Select Install. 
+The installation automatically starts after 10 seconds. 
+f.	Slide the arrow to the right to unlock the iPad.
+g.	Answer Question 2 and then minimize the question dialog.
+3.	Configure Auto-Lock. 
+ .	From the Settings pane, select Display & Brightness.
+a.	From the right pane, select Auto-Lock and then select 5 minutes.
+4.	Configure Complex Passcode Lock and Data Erase. 
+ .	From the left menu, select Touch ID & Passcode.
+a.	From the right pane, select Turn Passcode On.
+b.	Enter the new passcode of C@sp3r
+c.	Select Next.
+d.	Re-enter C@sp3r.
+e.	Select Done.
+f.	Scroll down and then slide Erase Data to ON.
+g.	Select Enable.
+h.	Select Require Passcode.
+i.	Select After 5 minutes.
+5.	Require unknown networks to be manually added. 
+ .	From the left menu, select Wi-Fi.
+a.	Slide Ask to Join Networks to OFF.
+6.	Turn off Bluetooth as follows: 
+ .	From the left pane, select Bluetooth.
+a.	Slide Bluetooth to OFF.
+b.	In the top right, select Answer Questions.
+c.	Select Score Lab.
+9.8.6 Create a Guest Network for BYOD
+You are a network technician for a small corporate network. You need to enable BYOD Guest Access Services on your network for guests and employees that have mobile phones, tablets, and personal computers.
+In this lab, your task is to perform the following:
+•	Access the Wireless Controller console through Google Chrome on http://192.168.0.6. 
+o	Username: admin (case sensitive)
+o	password: password
+•	Set up Guest Access Services using the following parameters: 
+o	Name: Guest_BYOD
+o	Authentication: Use guest pass authentication
+o	The guest should be presented with your terms of use statement and then allowed to go to the URL he or she was trying to access.
+o	Verify that 192.168.0.0/16 is on the list of restricted subnets.
+•	Create a guest WLAN using the following parameters: 
+o	Network name: Guest
+o	ESSID: Guest_BYOD
+o	Type: Guest Access
+o	Authentication: Open
+o	Encryption Method: None
+o	Guest Access Service: Guest_BYOD
+o	Isolate guest wireless clients from other clients on the access point.
+•	Open a new Google Chrome window and request a guest pass using the BYODAdmin user as follows: 
+o	URL: 192.168.0.6/guestpass
+o	Username: BYODAdmin (case sensitive)
+o	Password: P@ssw0rd (0 is a zero)
+o	Use any full name in the Full Name field.
+o	Make a note of or copy and paste the key in the Key field.
+•	Use the key from the guest pass request to authenticate to the wireless LAN Guest_BYOD from the Gst-Lap laptop computer in the Lobby.
+
+
+1.	Access and log into the Ruckus ZoneDirector. 
+a.	From the taskbar, select Google Chrome.
+b.	In the URL field, enter 192.168.0.6 and then press Enter.
+c.	Maximize the window for easier viewing.
+d.	In the Admin field, enter admin (case sensitive).
+e.	In the Password field, enter password as the password.
+f.	Select Login.
+2.	Set up Guest Access Services. 
+ .	Select the Configure tab.
+a.	From the left menu, select Guest Access.
+b.	Under Guest Access Service, select Create New.
+c.	Change the Name field to Guest_BYOD.
+d.	For Terms of Use, select Show terms of use.
+e.	Expand Restricted Subnet Access.
+f.	Verify that 192.168.0.0/16 is listed.
+g.	Select OK.
+3.	Create a Guest WLAN. 
+ .	From the left menu, select WLANs.
+a.	Under WLANs, select Create New.
+b.	Change the Name to Guest.
+c.	Change the ESSID to Guest_BYOD.
+d.	Under Type, select Guest Access.
+e.	For Wireless Client Isolation, select Isolate wireless client traffic from other clients on the same AP.
+f.	Select OK.
+g.	Close Google Chrome.
+4.	Request a Guest password. 
+ .	Open a new Google Chrome browser window.
+a.	In the URL field, enter 192.168.0.6/guestpass and then press Enter.
+b.	Maximize the window for easier viewing.
+c.	In the Username field, enter BYODAdmin (case sensitive).
+d.	Enter P@ssw0rd as the password (0 is a zero).
+e.	Select Log In.
+f.	In the Full Name field, enter any full name.
+g.	In the Key field, highlight the key and press Ctrl + C to copy the key.
+h.	Select Next.
+5.	Access the wireless Guest Access Service from the guest laptop in the lobby. 
+ .	From the top menu, select Floor 1.
+a.	Select Gst-Lap in the lobby.
+b.	In the notification area, select the Network icon.
+c.	Select Guest_BYOD.
+d.	Select Connect.
+e.	Select Yes.
+f.	After Internet Explorer opens to the Guest Access login page, paste the key from the Key field.
+g.	Select Log In.
+10.1.5 Allow SSL Connections
+You are the IT security administrator for a small corporate network. You currently run a website on the CorpWeb server. You want to allow SSL connections to this website.
+In this lab, your task is to add a binding to the CorpNet website using the following settings:
+•	Website: www.corpnet.xyz
+•	Protocol: HTTPS
+•	Port: 443
+•	SSL certificate: www.corpnet.xyz
+1.	Open the IIS Manager to the CorpNet.xyz site. 
+a.	From the Server Manager's menu bar, select Tools > Internet Information Services (IIS) Manager.
+b.	Expand CorpWeb(CorpNet.com\Administrator) > Sites.
+c.	Select CorpNet.xyz.
+2.	Add a binding to the CorpNet website. 
+ .	From the Actions pane (far right), select Bindings.
+a.	Select Add.
+b.	Using the Type drop-down menu, select HTTPS.
+c.	Make sure the port is set to 443.
+d.	Using the SSL certificate drop-down menu, select www.CorpNet.xyz and then select OK.
+e.	Select Close.
+10.3.10 Clear the Browser Cache
+You use Google Chrome as your web browser on the desktop computer in your dorm room. You are concerned about privacy and security while surfing the web. You are also concerned about exploits that harvest data from your Google Chrome browsing history.
+In this lab, your task is to delete the following items from your Google Chrome browser history for all time:
+•	Browsing history
+•	Download history
+•	Cookies and other site data
+•	Cached images and files
+•	Hosted app data
+Delete all items from your Google Chrome history. 
+a.	From the Windows taskbar, select Google Chrome.
+b.	In the upper right, select the ellipsis (three dots) and then select History > History.
+c.	Maximize the window for easier viewing.
+d.	Select Clear browsing data.
+e.	Select Advanced.
+f.	For the Time range field, use the drop-down menu to select All time.
+g.	Make sure the following items are checked: 
+o	Browsing history
+o	Download history
+o	Cookies and other site data
+o	Cached images and files
+o	Hosted app data
+h.	Select Clear data.
+10.3.15 Perform an SQL Injection Attack
+Your name is Blake Jackson. You are the penetration tester for a small corporate network. After performing several SQL injection attract test on the corporate network, you have decided to see how secure your own online bank's web page is.
+In this lab, your task is to perform a simple SQL injection attack using the following information:
+•	Your bank's URL: MySecureOnlineBank.com
+•	Make an account query using your account number of: 90342
+•	Answer Question 1.
+•	Perform a simple SQL attack using: 0 OR 1=1
+Use the entire statement of "0 OR 1=1", but without quotes.
+•	Answer Question 2.
+1.	Look up Blake Jackson's account balance.
+a.	From the taskbar, select Google Chrome.
+b.	Maximize the window for easier viewing.
+c.	In the URL field, type mysecureonlinebank.com and then press Enter.
+d.	In the Enter your Account Number field, enter 90342.
+e.	Select Lookup.
+2.	Answer Question 1.
+ .	In the top right, select Answer Questions.
+a.	Answer Question 1.
+3.	Perform a simple SQL attack.
+ .	In the Enter your Account Number field, enter 0 OR 1=1 for the SQL injection.
+a.	Select Lookup.
+4.	Answer Question 2 and then select Score Lab.
+10.4.10 Implement Application Whitelisting with AppLocker
+You are the IT security administrator for a small corporate network. You are increasing network security by implementing application whitelisting.
+Your first step is to prevent applications not located in the operating system directory or the program files directory from running on your computers. In addition, the call center application used by the support team runs from C:\CallCenter\CallStart.exe and must be allowed to run. You also want any future versions of the call center application to run without changing any settings.
+In this lab, your task is to configure AppLocker in the default domain policy as follows:
+•	Create the default rules. 
+o	Allow all files located in the Program Files folder.
+o	Allow all files located in the Windows folder.
+•	Allow the Support group to run the call center software found in C:\CallCenter\CallStart.exe.
+•	Configure a publisher rule to allow future updates from the same vendor.
+1.	Access the CorpNet.local domain under Group Policy Management. 
+a.	From Server Manager's menu bar, select Tools > Group Policy Management.
+b.	Maximize the window for better viewing.
+c.	Expand Forest: CorpNet.local > Domains > CorpNet.local.
+2.	Access the AppLocker policy. 
+ .	Right-click Default Domain Policy and select Edit.
+a.	Maximize the window for better viewing.
+b.	Under Computer Configuration, expand and select:
+Policies > Windows Settings > Security Settings > Application Control Policies > AppLocker.
+3.	Configure rule enforcement. 
+ .	From the right pane, select Configure rule enforcement.
+a.	Under Executable rules, select Configured.
+b.	Make sure Enforce rules is selected in the drop-down list.
+c.	Select OK.
+4.	Configure a Publisher rule and allow the Support group to run the call center software. 
+ .	From the left pane, expand AppLocker.
+a.	Right-click Executable Rules and then select Create New Rule.
+b.	Select Next.
+c.	Make sure Allow is selected.
+d.	For User or group, click Select.
+e.	In the Enter the object names to select box, type Support and then select OK.
+f.	Select Next.
+g.	Make sure Publisher is selected; then select Next.
+h.	For the Reference file, select Browse.
+i.	Browse to and select the C:\CallCenter\CallStart.exe file.
+j.	Select Open.
+k.	Slide the pointer from File version to Publisher and then select Next.
+l.	Select Next.
+m.	Accept the default name and select Create.
+n.	Select Yes to create the default rules.
+Notice that the Publisher rule was created.
+10.4.12 Implement Data Execution Preventions
+You work as the IT security administrator for a small corporate network. You are configuring the computer in Office 1 to use Data Execution Prevention (DEP) for all programs and services. You have noticed that the accounting program used on some computers does not function well when DEP is enabled.
+In this lab, your task is to configure DEP as follows:
+•	Enable DEP for all files.
+•	Disable DEP for C:\Program Files (x86)\AccountWizard\AccountWizard.exe.
+•	Restart the computer to activate DEP.
+Complete this lab as follows:
+1.	Access the Advanced system settings (System Properties). 
+a.	Right-click Start and then select System.
+b.	From the left pane, select About.
+c.	From the right pane, under Related settings, select System info.
+d.	Select Advanced system settings to open the System Properties dialog.
+2.	Configure Data Execution Prevention. 
+ .	From the Advanced tab, under Performance, select Settings.
+a.	Select the Data Execution Prevention tab.
+b.	Select Turn on DEP for all programs and services except those I select.
+c.	Select Add.
+d.	Open the C:\Program Files (x86)\AccountWizard folder.
+e.	Select AccountWizard.exe.
+f.	Select Open.
+g.	Make sure AccountWizard.exe is selected and then select OK.
+h.	Select OK to confirm that a system restart is needed.
+i.	Select OK to close System Properties.
+j.	Select Restart Now to restart the computer and activate DEP.
+11.3.5 Implement Intrusion Prevention
+You work as the IT security administrator for a small corporate network. In an effort to protect your network against security threats and hackers, you have added Snort to pfSense. With Snort already installed, you need to configure rules and settings and then assign Snort to the desired interface.
+In this lab, your task is to use pfSense's Snort to complete the following:
+Sign into pfSense using the following: 
+•	Username: admin
+•	Password: P@ssw0rd (zero)
+•	Enable the downloading of the following:
+o	Snort free registered User rules 
+	Oinkmaster Code: 359d00c0e75a37a4dbd70757745c5c5dg85aa
+o	Snort GPLv2 Community rules
+o	Emerging Threats Open rules
+o	Sourcefire OpenAppID detectors
+o	APPID Open rules
+•	Configure rule updates to happen once a day at 1:00 a.m. 
+o	Hide any deprecated rules.
+•	Block offending hosts for 1 hour.
+•	Send all alerts to the system log when the Snort starts and stops.
+•	Assign Snort to the WAN interface using a description of WANSnort. 
+o	Include: 
+	Sending alerts to the system log
+	Automatically blocking hosts that generate a Snort alert
+•	Start Snort on the WAN interface.
+
+1.	Sign into the pfSense management console. 
+a.	In the Username field, enter admin.
+b.	In the Password field, enter P@ssw0rd (zero).
+c.	Select SIGN IN or press Enter.
+2.	Access the Snort Global Settings. 
+ .	From the pfSense menu bar, select Services > Snort.
+a.	Under the Services breadcrumb, select Global Settings.
+3.	Configure the required rules to be downloaded. 
+ .	Select Enable Snort VRT.
+a.	In the Sort Oinkmaster Code field, enter 359d00c0e75a37a4dbd70757745c5c5dg85aa. You can copy and paste this from the scenario.
+b.	Select Enable Snort GPLv2.
+c.	Select Enable ET Open.
+4.	Configure the Sourcefire OpenAppID Detectors to be downloaded. 
+ .	Under Sourcefire OpenAppID Detectors, select Enable OpenAppID.
+a.	Select Enable RULES OpenAppID.
+5.	Configure when and how often the rules will be updated. 
+ .	Under Rules Update Settings, use the Update Interval drop-down menu to select 1 Day.
+a.	For Update Start Time, change to 01:00.
+b.	Select Hide Deprecated Rules Categories.
+6.	Configure Snort General Settings. 
+ .	Under General Settings, use the Remove Blocked Hosts Interval drop-down menu to select 1 HOUR.
+a.	Select Startup/Shutdown Logging.
+b.	Select Save.
+7.	Configure the Snort Interface settings for the WAN interface. 
+ .	Under the Services breadcrumb, select Snort Interfaces and then select Add.
+a.	Under General Settings, make sure Enable interface is selected.
+b.	For Interface, use the drop-down menu to select WAN (PFSense port 1).
+c.	For Description, use WANSnort.
+d.	Under Alert Settings, select Send Alerts to System Log.
+e.	Select Block Offenders.
+f.	Scroll to the bottom and select Save.
+8.	Start Snort on the WAN interface. 
+ .	Under the Snort Status column, select the arrow.
+a.	Wait for a checkmark to appear, indicating that Snort was started successfully.
+
+
+
+
+11.4.7 Scan for Windows Vulnerabilities
+You are the IT security administrator for a small corporate network. You are performing vulnerability scans on your network. Mary is the primary administrator for the network and the only person authorized to perform local administrative actions. The company network security policy requires complex passwords for all users. It is also required that Windows Firewall is enabled on all workstations. Sharing personal files is not allowed.
+In this lab, your task is to:
+•	Run a vulnerability scan for the Office2 workstation using the Security Evaluator. A shortcut is located on the taskbar.
+•	Remediate the vulnerabilities found in the vulnerability report for Office2.
+•	Re-run a vulnerability scan to make sure all of the issues are resolved.
+•  Run a Security Evaluator report. 
+a.	From the taskbar, open Security Evaluator.
+b.	Next to Target Local Machine, select the Target icon to select a new target.
+c.	Select Workstation.
+d.	From the Workstation drop-down list, select Office2 as the target.
+e.	Select OK.
+f.	Next to Status, select the Run/Rerun Security Evaluation icon.
+g.	Review the results to determine which issues you need to resolve on Office2.
+•  Access local users using Office2's Computer Management console. 
+a.	From the top navigation tabs, select Floor 1.
+b.	Under Office 2, select Office2.
+c.	From Office2, right-click Start and select Computer Management.
+d.	Expand and select Local Users and Groups > Users.
+•  Rename a user account. 
+a.	Right-click Administrator and select Rename.
+b.	Enter a new name of your choice and press Enter.
+•  Disable the Guest account. 
+a.	Right-click Guest and select Properties.
+b.	Select Account is disabled and then select OK.
+•  Set a new password for Mary. 
+a.	Right-click Mary and select Set Password.
+b.	Select Proceed.
+c.	Enter a new password of your choice (12 characters or more).
+d.	Confirm the new password and then select OK.
+e.	Select OK. 
+Ideally, you should have created a policy that requires passwords with 12 characters or more. 
+•  Configure Mary's password to expire and to change at next logon. 
+a.	Right-click Mary and select Properties.
+b.	Clear Password never expires.
+c.	Select User must change password at next logon and then select OK.
+•  Unlock Susan's account and remove her from the Administrators group. 
+a.	Right-click Susan and select Properties.
+b.	Clear Account is locked out and then select Apply.
+c.	Select the Member of tab.
+d.	Select Administrators.
+e.	Select Remove.
+f.	Select OK.
+g.	Close Computer Management.
+•  Enable Windows Firewall for all profiles. 
+a.	Right-click Start and then select Settings.
+b.	Select Network & Internet.
+c.	From the right pane, scroll down and select Windows Firewall.
+d.	Under Domain network, select Turn on.
+e.	Under Private network, select Turn on.
+f.	Under Public network, select Turn on.
+g.	Close all open Windows.
+•  Remove a file share. 
+a.	From the taskbar, select File Explorer.
+b.	From the left pane, select This PC.
+c.	From the right pane, double-click Local Disk (C:).
+d.	Right-click MyMusic and select Properties.
+e.	Select the Sharing tab.
+f.	Select Advanced Sharing.
+g.	Clear Share this folder.
+h.	Select OK.
+i.	Select OK.
+•  Use the Security Evaluator feature to verify that all of the issues on the ITAdmin computer were resolved.
+
+
+
+
+
+11.4.8 Scan for Linux Vulnerabilities
+You are the IT security administrator for a small corporate network. You need to use a vulnerability scanner to check for security issues on your Linux computers.
+In this lab, your task is to:
+•	Use the Security Evaluator to check the security: 
+o	On the Linux computer with the 192.168.0.45 IP address.
+o	On the Linux computers in the IP address range of 192.168.0.60 through 192.168.0.69
+•	Answer the questions.
+•	Run a Security Evaluator report for 192.168.0.45. 
+o	From the taskbar, open Security Evaluator.
+o	Next to Target: Local Machine, select the Target icon.
+o	Select IPv4 Address.
+o	Enter 192.168.0.45
+o	Select OK.
+o	Next to Status: No Results, select the Status Run/Rerun Security Evaluation icon.
+o	Review the results.
+o	In the top right, select Answer Questions.
+o	Answer Question 1.
+•	Run a Security Evaluator report for the IP address range of 192.168.0.60 through 192.168.0.69. 
+o	From Security Evaluator, select the Target icon to select a new target.
+o	Select IPv4 Range.
+o	In the left field, type 192.168.0.60
+o	In the right field, type 192.168.0.69
+o	Select OK.
+o	Select the Status Run/Rerun Security Evaluation icon.
+o	Review the results.
+o	Answer Questions 2 and 3.
+o	Select Score Lab.
+
+
+
+11.4.9 Scan for Domain Controller Vulnerabilities
+You are the IT security administrator for a small corporate network. You are performing vulnerability scans on your network. Use the Security Evaluator tool to run a vulnerability scan on the CorpDC domain controller.
+In this lab, your task is to:
+•	Run a vulnerability scan for the CorpDC domain controller using the Security Evaluator on the taskbar.
+•	Remediate the vulnerabilities in the Default Domain Policy using Group Policy Management on CorpDC.
+•	Re-run a vulnerability scan to make sure all of the issues are resolved.
+1.	Run a Security Evaluator report. 
+a.	From the taskbar, open Security Evaluator.
+b.	Next to Target: Local Machine, select the Target icon to select a target.
+c.	Select Domain Controller.
+d.	Using the Domain Controller drop-down list, select CorpDC as the target.
+e.	Select OK.
+f.	Next to Status: No Results, select the Status Run/Rerun Security Evaluation icon.
+g.	Review the results to determine which issues you need to resolve on CorpDC.
+2.	Access the CorpDC server. 
+a.	From the top navigation tabs, select Floor 1.
+b.	Under Networking Closet, select CorpDC. 
+If you need to return to the ITAdmin computer to review the Security Evaluator results: 
+1.	From the top navigation tabs, select Floor 1.
+2.	Under IT Administration, select ITAdmin.
+3.	Access and edit the CorpNet.local Default Domain Policy. 
+ .	From Server Manager, select Tools > Group Policy Management.
+a.	Maximize the window for easier viewing.
+b.	Expand Forest: CorpNet.local > Domains >CorpNet.local.
+c.	Right-click Default Domain Policy and then select Edit.
+d.	Maximize the window for easier viewing.
+4.	Remediate the password policy issues in Account Policies. 
+ .	Under Computer Configuration, expand Policies > Windows Settings > Security Settings > Account Policies.
+a.	From the left pane, select Password Policy.
+b.	From the right pane, double-click the policy.
+c.	Select Define this policy setting.
+d.	Enter the password setting and then select OK.
+e.	Repeat steps 4c-4e for each additional password policy.
+5.	Remediate the reset account lockout counter issue in Account Policies. 
+ .	From the left pane, select Account Lockout Policy.
+a.	From the right pane, double-click Reset account lockout counter after.
+b.	Select Define this policy setting.
+c.	Enter 60 minutes and then select OK.
+6.	Remediate the Event Log issues. 
+ .	From the left pane, select Event Log.
+a.	From the right pane, double-click the policy.
+b.	Select Define this policy setting.
+c.	Select Do not overwrite events (clear log manually) and then select OK.
+d.	Repeat steps 6b–6d for each additional Event Log policy.
+7.	Remediate System Services issues. 
+ .	From the left pane, select System Services.
+a.	From the right pane, double-click the policy.
+b.	Select Define this policy setting.
+c.	Make sure Disabled is selected and then select OK.
+d.	Repeat steps 7b-7d for the remaining System Services policy.
+8.	Verify that all the issues were resolved using the Security Evaluator feature on the ITAdmin computer. 
+ .	From the top navigation tabs, select Floor 1.
+a.	Under IT Administration, select ITAdmin.
+b.	From Security Evaluator, select the Status Run/Rerun Security Evaluation icon to rerun the security evaluation.
+c.	If you still see unresolved issues, select Floor 1, navigate to CorpDC, and remediate any remaining issues.
+
+
+11.4.10 Scan for IoT Vulnerabilities
+You are the IT security administrator for a small corporate network. You have some security issues on a few Internet of Things (IoT) devices. You have decided to use the Security Evaluator to find these problems.
+In this lab, your task is to use the Security Evaluator to:
+•	Find a device using the IP address of 192.168.0.54.
+•	Find all devices using an IP address in the range of 192.168.0.60 through 192.168.0.69.
+•	Answer the questions.
+•	Run a Security Evaluator report for 192.168.0.54. 
+o	From the taskbar, open Security Evaluator.
+o	Next to Target Local Machine, select the Target icon.
+o	Select IPv4 Address.
+o	Enter 192.168.0.54 as the IP address.
+o	Select OK.
+o	Next to Status No Results, select the Run/Rerun Security Evaluation icon to run a security evaluation.
+o	In the top right, select Answer Questions.
+o	Answer Questions 1 and 2.
+•	Run a Security Evaluator report for an IP range of 192.168.0.60 through 192.168.0.69. 
+o	From the Security Evaluator, select the Target icon to select a new target.
+o	Select IPv4 Range.
+o	In the left field, type 192.168.0.60 as the beginning IP address.
+o	In the right field, type 192.168.0.69 as the ending IP address.
+o	Select OK.
+o	Next to Status No Results, select the Run/Rerun Security Evaluation icon to run a security evaluation.
+o	Answer Question 3.
+o	Select Score Lab.
+
+
+11.4.11 Scan for WAP Vulnerabilities
+You are the IT security administrator for a small corporate network. You perform vulnerability scans on your network. You need to verify the security of your wireless network and your Ruckus wireless access controller.
+In this lab, your task is to:
+•	Run a vulnerability scan for the wireless access controller 192.168.0.6 using Security Evaluator, which is accessible from the taskbar.
+•	Remediate the vulnerabilities found in the vulnerability report for the wireless access controller. 
+o	New admin name: your choice
+o	New password: your choice
+o	Enable reporting of rogue devices for intrusion prevention.
+•	Rerun a vulnerability scan to make sure all of the issues are resolved.
+Access the wireless controller console through Google Chrome on http://192.168.0.6 with the admin name admin and the password password. The username and password are case-sensitive.
+
+You are the IT security administrator for a small corporate network. You perform vulnerability scans on your network. You need to verify the security of your wireless network and your Ruckus wireless access controller.
+In this lab, your task is to:
+•	Run a vulnerability scan for the wireless access controller 192.168.0.6 using Security Evaluator, which is accessible from the taskbar.
+•	Remediate the vulnerabilities found in the vulnerability report for the wireless access controller. 
+o	New admin name: your choice
+o	New password: your choice
+o	Enable reporting of rogue devices for intrusion prevention.
+•	Rerun a vulnerability scan to make sure all of the issues are resolved.
+Access the wireless controller console through Google Chrome on http://192.168.0.6 with the admin name admin and the password password. The username and password are case-sensitive.
+
+
+
+
+11.6.4 Poison ARP and Analyze with Wireshark
+You are the IT security administrator for a small corporate network. You believe a hacker has penetrated your network and is using ARP poisoning to infiltrate it.
+In this lab, your task is to discover whether ARP poisoning is taking place as follows:
+•	Use Wireshark to capture packets on the enp2s0 interface for five seconds.
+•	Analyze the Wireshark packets to determine whether ARP poisoning is taking place.
+•	Use the 192.168.0.2 IP address to help make your determination.
+•	Answer the questions.
+1.	Use Wireshark to capture packets on enp2s0. 
+a.	From the Favorites bar, select Wireshark.
+b.	Maximize the window for easier viewing.
+c.	Under Capture, select enp2s0. From the menu bar, select the blue fin to begin a Wireshark capture.
+d.	After capturing packets for five seconds, select the red box to stop the Wireshark capture.
+2.	Filter for only ARP packets. 
+ .	In the Apply a display filter field, type arp and press Enter to only show ARP packets.
+a.	In the Info column, look for the lines containing the 192.168.0.2 IP address.
+3.	Answer the questions.
+ .	In the top right, select Answer Questions.
+a.	Answer the questions.
+b.	Select Score Lab.
+
+
+11.6.6 Poison DNS
+You are the IT security administrator for a small corporate network. You want to spoof the DNS to redirect traffic as part of a man-in-the-middle attack.
+In this lab, your task is to:
+•	(Optional) From the Exec computer, access rmksupplies.com and verify that site can be accessed.
+•	From the Linux Support computer, use Ettercap to begin sniffing and scanning for hosts.
+•	Configure the Exec computer (192.168.0.30) as the target 1 machine.
+•	Initiate DNS spoofing.
+•	From the Exec computer, access rmksupplies.com and verify that it has been redirected to a different site.
+Complete this lab as follows:
+1.	From the Support computer, use Ettercap to begin sniffing and scanning for hosts. 
+a.	From the Favorites bar, select Ettercap.
+b.	Select Sniff > Unified sniffing.
+c.	From the Network Interface drop-down menu, select enp2s0.
+d.	Select OK.
+e.	Select Hosts >Scan for hosts.
+2.	Configure the Exec computer (192.168.0.30) as the target 1 machine. 
+a.	Select Hosts > Host list.
+b.	Under IP Address, select 192.168.0.30.
+c.	Select Add to Target 1 to assign it as the target.
+3.	Initiate DNS spoofing. 
+a.	Select Plugins > Manage the plugins.
+b.	Select the Plugins tab.
+c.	Double-click dns_spoof to activate it.
+d.	Select Mitm > ARP poisoning.
+e.	Select Sniff remote connections and then select OK.
+4.	From the Exec computer, access rmksupplies.com. 
+a.	From the top navigation tabs, select Floor 1 Overview.
+b.	Under Executive Office, select Exec.
+c.	From the taskbar, select Google Chrome.
+d.	In the URL field, type rmksupplies.com and then press Enter.
+Notice that the page was redirected to RUS Office Supplies despite the web address staying the same.
+
+
+11.6.8 Analyze a SYN Flood Attack
+You are the CorpNet IT administrator. Your support team says that CorpNet's customers are unable to browse to the public-facing web server. You suspect that it might be under some sort of denial-of-service attack, possibly a TCP-SYN flood attack. Your www_stage computer is on the same network segment as your web server, so you should use this computer to investigate the problem.
+In this lab, your task is to:
+•	Capture packets from the network segment on www_stage using Wireshark.
+o	Use the enp2s0 interface.
+•	Analyze the attack using the following filters: 
+o	tcp.flags.syn==1 and tcp.flags.ack==1
+o	tcp.flags.syn==1 and tcp.flags.ack==0
+•	Answer the question.
+1.	Using Wireshark, only capture packets containing both the SYN flag and ACK flags. 
+a.	From the Favorites bar, select Wireshark.
+b.	Under Capture, select enp2s0.
+c.	From the menu, select the blue fin to begin the capture.
+d.	In the Apply a display filter field, type tcp.flags.syn==1 and tcp.flags.ack==1 and press Enter to filter Wireshark to display only those packets with both the SYN flag and ACK flag.
+You may have to wait up to a minute before any SYN-ACK packets are captured and displayed.
+e.	Select the red square to stop the capture.
+2.	Change the filter to only display packets with the SYN flag. 
+ .	In the Apply a display filter field, change the tcp.flags.ack ending from the number 1 to the number 0 and press Enter.
+Notice that there are a flood of SYN packets being sent to 198.28.1.1 (www.corpnet.xyz) that are not being acknowledged.
+a.	In the top right, select Answer Questions.
+b.	Answer the question.
+c.	Select Score Lab.
+
+
+11.7.4 Crack Password with Rainbow Tables
+A recent breach of a popular 3rd party service has exposed a password database. The security team is evaluating the risk of the exposed passwords for the company. The password hashes are saved in the root user's home directory, /root/captured_hashes.txt. You want to attempt to hack these passwords using a rainbow table. The password requirements for your company are as follows:
+•	The password must be 12 or more characters in length.
+•	The password must include at least one uppercase and one lowercase letter.
+•	The password must have at least one of these special characters: !, ", #, $, %, &, _, ', *, or @.
+•	All passwords are encrypted using a hash algorithm of either md5 or sha1.
+In this lab, your task is to:
+•	Create md5 and sha1 rainbow tables using rtgen.
+•	Sort the rainbow tables using rtsort.
+•	Crack the hashes using rcrack. You must run rcrack on an individual hash and run it on the hash file.
+•	Answer the question.
+The type of charset that can be used to create a rainbow table is stored in the /usr/share/rainbowcrack/charset.txt file. This file can be viewed using the cat command. 
+1.	Create and sort an md5 and sha1 rainbow crack table. 
+a.	From the Favorites bar, select Terminal.
+b.	At the prompt, type rtgen md5 ascii-32-95 1 20 0 1000 1000 0 and press Enter to create a md5 rainbow crack table.
+c.	Type rtgen sha1 ascii-32-95 1 20 0 1000 1000 0 and press Enter to create a sha1 rainbow crack table.
+d.	Cd /usr/share/rainbowcrack
+e.	Type rtsort .) and press Enter to sort every rainbow table in the directory.
+2.	Crack the password hashes. 
+ .	To crack the password contained in a hash file, type ./rcrack /usr/share/rainbowcrack -1
+/root/captured_hashes.txt and press Enter.
+a.	To crack the password contained in a hash, type ./rcrack . -h hash_value and press Enter.
+b.	Repeat step 2b for the remaining hashes.
+3.	Answer the questions. 
+ .	In the top right, select Answer Questions.
+a.	Answer the questions.
+b.	Select Score Lab.
+
+
+
+11.7.7 Crack a Password with John the Ripper
+You are the IT security administrator for a small corporate network. You've received a zip file that contains sensitive password-protected files. You need to access these files. The zip file is located in the home directory.
+In this lab, your task is to use John the Ripper to:
+•	Crack the root password on the Linux computer named Support.
+•	Crack the password of the protected.zip file located in the home directory on IT-Laptop.
+After John the Ripper cracks the password, it won’t crack it again. The results are stored in the john.pot file. 
+1.	View the current John the Ripper password file. 
+a.	From the Favorites bar, select Terminal.
+b.	At the prompt, type cd /usr/share/john and press Enter.
+c.	Type ls and press Enter.
+d.	Type cat password.lst and press Enter to view the password list.
+e.	Type cd and press Enter to go back to the root.
+2.	Crack the root password on the Support computer. 
+a.	Type john /etc/shadow and press Enter. The password is shown. Can you find it?
+b.	Type john /etc/shadow and press Enter to attempt to crack the Linux passwords again.
+Notice that it does not attempt to crack the password again. The cracked password is already stored in the john.pot file.
+c.	Use alternate methods of viewing the previously cracked password. 
+	Type john /etc/shadow --show and press Enter.
+	Type cat ./.john/john.pot and press Enter to view the contents of the john.pot file.
+d.	In the top right, select Answer Questions and then answer question 1.
+3.	Open a terminal on the IT-Laptop. 
+a.	From the top navigation tabs, select Floor 1 Overview.
+b.	Under IT Administration, select IT-Laptop.
+c.	From the Favorites bar, select Terminal.
+4.	Export the contents of the protected.zip file to a text file. 
+a.	At the prompt, type ls and press Enter.
+Notice the protected.zip file you wish to crack.
+b.	Type zip2john protected.zip > ziphash.txt and press Enter.
+c.	Type cat ziphash.txt and press Enter to confirm that the hashes have been copied.
+5.	Using the text file, crack the password of the protected.zip file. 
+a.	Type john --format=pkzip ziphash.txt and press Enter to crack the password.
+The password is shown. Can you find it?
+b.	Type john ziphash.txt --show and press Enter to show the previously cracked password.
+c.	In the top right, select Answer Questions.
+d.	In the top right, select Answer Questions and then answer Question 2.
+e.	Select Score Lab.
+
+
+
+
+
+
+
+
+
+
+12.7.6 Configure Fault-Tolerant Volumes
+You are the IT administrator for a small corporate network. You have installed the Windows Server 2019 operating system on a server named CorpServer2. During this installation, you created a single partition that took up the entire first disk. You would like to add fault tolerance to the system volume and create an additional fault tolerant volume for storing data. Four additional, uninitialized hard disks have been installed in the server for this purpose.
+In this lab, your task is to complete the following:
+•	To add fault tolerance for the System (C:) volume, create a mirrored volume using Disk 1.
+•	Create a new volume that provides both fault tolerance and improved performance using the following settings: 
+o	Disks: Disk 2, Disk 3, and Disk 4
+o	Volume size: 2048000 MB (2 TB)
+o	Drive letter: R
+o	Format: NTFS
+o	Volume label: Data
+1.	Mirror an existing volume as follows: 
+a.	Right-click Start and then select Disk Management.
+b.	Select OK to initialize new disks.
+c.	Maximize the Disk Management window to better view the volumes.
+d.	Right-click the System (C:) volume and select Add Mirror.
+e.	Select Disk 1. This is the disk that will be used for the mirrored copy.
+f.	Select Add Mirror.
+g.	Select Yes to convert the basic disk to a dynamic disk.
+2.	Create a RAID 5 volume as follows: 
+a.	From Disk Management, right-click a Disk 2 with free space and select New RAID 5 Volume.
+b.	Select Next.
+c.	Under Available, hold down the Ctrl key and then select Disk 3 and Disk 4 to be part of the new volume with Disk 2.
+d.	Select Add.
+e.	Select Next.
+f.	Using the Assign the following drive letter drop-down, select R and then click Next.
+g.	Make sure that NTFS is selected as the file system.
+h.	Change the Volume label field to Data and then select Next.
+i.	Select Finish to create the volume.
+j.	Select Yes to convert the basic disk to a dynamic disk.
+
+
+
+
+
+
+
+
+12.8.6 Back Up Files with File History
+You have recently installed a new Windows 10 computer. To protect valuable data, you need to implement file history backups on this computer.
+In this lab, your task is to configure automatic backups for the Exec computer as follows:
+•	Save the backup to the Backup (E:) volume.
+•	Back up files daily.
+•	Keep backup files for six months.
+•	Back up the entire Data (D:) volume.
+•	Make a backup now.
+1.	Access the File History Backup options.
+a.	Right-click Start and then select Settings.
+b.	Select Update & Security.
+c.	From the left pane, select Backup.
+2.	Configure and run a file history backup plan.
+a.	From the right pane, select Add a drive.
+b.	Select Backup (E:).
+c.	Under Automatically back up my files, slide the switch to On.
+d.	Select More options.
+e.	Under Back up my files, use the drop-down menu to select Daily.
+f.	Under Keep my backups, use the drop-down menu to select 6 months.
+g.	Under Back up these folders, select Add a folder.
+h.	Double-click the Data (D:) volume and then select Choose this folder.
+i.	Select Back up now.
+j.	Wait for the backup to complete.
+
+
+
+12.8.8 Recover a File from File History
+Susan produces your organization's monthly magazine. While working on an upcoming issue, Susan accidentally deleted significant portions of the layout image. She also made extensive changes to the cover artwork, but has now been asked to discard the changes and use the original artwork.
+Susan has asked you to help her recover older versions of her files in the Pictures library so she can still meet her publishing deadline.
+In this lab, your task is to complete the following:
+•	Using the Settings app, access the program needed to restore files from a current backup.
+•	From the File History dialog, restore the following files:
+File	File Version to Restore
+Pictures\Layouts\June2020_Issue.jpg	Wednesday, March 16, 2020 11:15 AM
+Pictures\Images\coverart.jpg	Wednesday, March 16, 2020 12:15 PM
+1.	Access the File History options using the Settings app. 
+a.	Right-click Start and then select Settings.
+b.	Select Update & Security.
+c.	From the left pane, select Backup.
+d.	Make sure Automatically back up my files is set to On.
+e.	Select More options.
+f.	Scroll to the bottom of the Backup options dialog and select Restore files from a current backup.
+g.	Maximize the window for better viewing.
+2.	Restore the June2020_Issue.jpg file. 
+a.	From the bottom of the File History dialog, select the Previous version button (left arrow) to navigate to the backups captured on Monday, March 16, 2020 11:15 AM.
+b.	Double-click Pictures.
+c.	Double-click Layouts.
+d.	Select the June2020_Issue.jpg file.
+e.	Select the green Restore to original location arrow located at the bottom center.
+f.	Select Replace the file in the destination.
+The Layouts folder where the file was restored is opened.
+g.	From the Layouts folder, right-click the June2020_Issue.jpg file and then select Properties.
+h.	Verify that the file is 115.44 MB in size and was last modified on March 16, 2020 at 11:15:12 AM.
+i.	Select OK.
+j.	Close the Layouts window.
+3.	Restore the Coverart.jpg file. 
+a.	In the top left of the File History dialog, select the up arrow to navigate to the Home\Pictures folder.
+b.	Select the Previous version button at the bottom to navigate to the backups captured on Monday, March 16, 2020 12:15 PM.
+c.	Double-click Images.
+d.	Select the coverart.jpg file.
+e.	Select the green Restore to original location arrow located at the bottom center.
+f.	Select Replace the file in the destination.
+g.	Right-click the coverart.jpg file and select Properties.
+h.	Verify that the file is 1.09 MB in size and was last modified on March 16, 2020 at 12:15:12 PM
+i.	Select OK.
+
+
+12.8.10 Backup a Domain Controller
+You are the IT administrator for a small corporate network. You need to back up the system state of your domain controllers so that, in the event of a disaster, Active Directory is backed up. You want to configure regular backups on CorpDC4.
+In this lab, your task is to perform the following using Windows Server Backup on CorpDC4:
+•	Create a regular backup schedule for the CorpDC4 server using the following settings: 
+o	Backup items: System State
+o	Backup schedule: once per day at 1:00 a.m.
+o	Backup location: \\CorpFiles\Backup
+•	Take an immediate backup using the following settings: 
+o	Backup items: System State and C: drive
+o	Backup location: \\CorpFiles\Backup
+•  Access Windows Server Backup on the CorpDC4 server. 
+a.	From Hyper-V Manager, select CORPSERVER2.
+b.	From the Virtual Machines pane, double-click CorpDC4.
+c.	From the Server Manager menu bar, select Tools > Windows Server Backup.
+d.	Maximize the window for easier viewing.
+•  Create a backup schedule. 
+a.	From the left pane, select Local Backup.
+b.	From the far right pane, under Actions, select Backup Schedule.
+c.	Select Next in the wizard.
+d.	From the Select Backup Configuration window, select Custom; then select Next.
+e.	Select Add items.
+f.	Select System state; then select OK.
+g.	Select Next.
+h.	Make sure Once a day is selected.
+i.	Using the Select time of day drop-down list, select 1:00 AM; then select Next.
+j.	Select Back up to a shared network folder; then select Next.
+k.	Read the warning message; then select OK.
+l.	In the Location field, enter \\CorpFiles\Backup; then select Next.
+m.	Select Finish.
+n.	Select Close.
+•  Perform an immediate backup. 
+a.	From the far right pane, under Actions, select Backup Once.
+b.	From the Backup Options window, select Different options; then select Next.
+c.	From the Select Backup Configuration window, select Custom; then select Next.
+d.	Select Add items.
+e.	Select System state.
+
+
+
+13.3.5 Configure Email Filters
+You are the IT security administrator for a small corporate network. You helped your boss remove a lot of junk email, and now he would like you to only allow emails and attachments from senders on his safe sender list.
+In this lab, your task is to configure email filtering as follows:
+•	Only allow emails from the safe senders list.
+•	Report junk email messages to your email provider.
+•	Only allow attachments from the safe senders list.
+•	In the upper right corner of the WebEmail interface, select Options > More Options.
+•	Under Preventing junk email, select Filters and reporting.
+•	Under Choose a junk email filter, select Exclusive.
+•	Under Report junk messages, select Report junk.
+•	Under Block content from unknown senders, select Block attachments, pictures, and links for anyone not in my safe senders list.
+•	Select Save.
+
+
+
+
+13.3.7 Secure Email on iPad
+You work as the IT security administrator for a small corporate network. The receptionist, Maggie Brown, uses an iPad to manage employee schedules and messages. You need to help her secure her email and browser on her iPad.
+In this lab, your task is to complete the following:
+•	Configure Maggie's email account to use SSL for incoming mail.
+•	Secure the internet browser as follows: 
+o	Turn off AutoFill
+o	Turn on Block Pop-ups
+o	Block all cookies
+o	Turn on Fraudulent Website Warning
+o	Turn off JavaScript
+
+1.	Configure email for SSL. 
+a.	Select Settings.
+b.	Scroll down and select Accounts & Passwords.
+c.	From the right pane, select Gmail.
+d.	Select Account mbrown@gmail.com.
+e.	Select Advanced.
+f.	Under Incoming Settings, set Use SSL to ON.
+g.	From the top, select Account to return to the Account menu.
+h.	Select Done.
+2.	Turn off AutoFill. 
+a.	From the Settings menu, select Safari.
+b.	From the right pane, select AutoFill.
+c.	Set Use Contact Info to OFF.
+d.	Set Names and Passwords to OFF.
+e.	From the top, select Safari to return to the Safari menu
+3.	Block all pop-up and cookies. 
+ .	From the right pane, set Block Pop-ups to ON.
+a.	Set Block All Cookies to On.
+4.	Turn on the fraudulent website Warning and turn off JavaScript. 
+ .	From the right pane, set Fraudulent Website Warning to ON.
+a.	Select Advanced.
+b.	Set JavaScript to OFF.
+
+
+14.1.4 Configure Advanced Audit Policy
+•	You work as the IT security administrator for a small corporate network. As part of an ongoing program to improve security, you want to implement an audit policy for all workstations. You plan to audit user logon attempts and other critical events.
+•	In this lab, your task is to configure the following audit policy settings in WorkstationGPO:
+Local Policies	Setting
+Audit: Force audit policy subcategory settings (Windows Vista or later) to override audit policy category settings	Enabled
+Audit: Shut down system immediately if unable to log security audits	Enabled
+•	
+Event Log	Setting
+Retention method for security log	Define: Do not overwrite events (clear log manually)
+•	
+Advanced Audit Policy Configuration	Setting
+Account Logon: Audit Credential Validation	Success and Failure
+Account Management: Audit User Account Management	Success and Failure
+Account Management: Audit Security Group Management	Success and Failure
+Account Management: Audit Other Account Management Events	Success and Failure
+Account Management: Audit Computer Account Management	Success
+Detailed Tracking: Audit Process Creation	Success
+Logon/Logoff: Audit Logon	Success and Failure
+Logon/Logoff: Audit Logoff	Success
+Policy Change: Audit Authentication Policy Change	Success
+Policy Change: Audit Audit Policy Change	Success and Failure
+Privilege Use: Audit Sensitive Privilege Use	Success and Failure
+System: Audit System Integrity	Success and Failure
+System: Audit Security System Extension	Success and Failure
+System: Audit Security State Change	Success and Failure
+System: Audit IPsec Driver	Success and Failure
+•	Do not use the old audit policies located in Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Audit Policies. 
+Edit Audit Policies as follows:
+1.	Using Group Policy Management, access CorpNet.local's Group Policy Objects > WorkgroupGPO.
+a.	From Server Manager's menu bar, select Tools > Group Policy Management.
+b.	Expand Forest: CorpNet.local > Domains > CorpNet.local > Group Policy Objects.
+c.	Maximize the windows for better viewing.
+2.	Access the WorkstationGPO's Security Settings Local Policies.
+a.	Right-click WorkstationGPO and select Edit.
+b.	Maximize the windows for better viewing.
+c.	Under Computer Configuration, expand Policies > Windows Settings > Security Settings > Local Policies.
+3.	Modify Local Policies.
+a.	Select Security Options.
+b.	From the right pane, double-click the policy you want to edit.
+c.	Select Define this policy setting.
+d.	Select the policy settings as required.
+e.	Select OK.
+f.	Select Yes to confirm changes as necessary.
+g.	Repeat steps 3b - 3f for additional policy settings.
+4.	Modify the Event Log.
+a.	From the left pane, select Event Log.
+b.	From the right pane, double-click the policy you want to edit.
+c.	Select Define this policy setting.
+d.	Select the policy settings as required.
+e.	Select OK.
+5.	Modify Advanced Audit Policy Configuration.
+a.	From the left pane, expand Advanced Audit Policy Configuration > Audit Policies.
+b.	Select the audit policy category.
+c.	From the right pane, double-click the policy you want to edit.
+d.	Select Configure the following audit events.
+e.	Select the policy settings as required.
+f.	Select OK.
+g.	Repeat steps 5b–5f for additional policy settings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14.1.6 Enable Device Logs
+You are the IT security administrator for a small corporate network. You need to enable logging on the switch in the networking closet.
+In this lab, your task is to:
+•	Enable logging and the Syslog Aggregator.
+•	Configure RAM Memory Logging as follows: 
+o	Emergency, Alert, and Critical: Enable
+o	Error, Warning, Notice, Informational, and Debug: Disable
+•	Configure Flash Memory Logging as follows: 
+o	Emergency and Alert: Enable
+o	Critical, Error, Warning, Notice, Informational, and Debug: Disable
+•	Copy the running configuration file to the startup configuration file using the following settings: 
+o	Source File Name: Running configuration
+o	Destination File Name: Startup configuration
+1.	Access the Log Settings for the switch. 
+a.	From the left menu, expand Administration > System Log.
+b.	Select Log Settings.
+2.	Enable Logging and Syslog Aggregator. 
+ .	For Logging, mark Enable.
+a.	For Syslog Aggregator, mark Enable.
+3.	Configure RAM and Flash memory logging: 
+ .	Under RAM Memory Logging: 
+	Mark Emergency, Alert, and Critical.
+	Clear Error, Warning, Notice, Informational, and Debug.
+a.	Under Flash Memory Logging: 
+	Mark Emergency and Alert.
+	Clear Critical, Error, Warning, Notice, Informational, and Debug.
+4.	Select Apply.
+5.	From the top menu bar, select Save.
+6.	Under Copy/Save Configuration, select Apply.
+7.	Select OK.
+8.	Select Done.
+
